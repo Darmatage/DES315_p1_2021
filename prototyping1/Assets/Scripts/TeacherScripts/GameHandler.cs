@@ -7,11 +7,11 @@ using UnityEngine.UI;
 public class GameHandler : MonoBehaviour
 {
 	public GameObject healthText;
-	public static int PlayerHealth;
+	public static int PlayerHealth = 100;
 	public int PlayerHealthStart = 100;
 	private GameObject playerObj;
 	private bool isDead = false;
-	public float deathTime = 2.0f;
+	private float deathTime = 3.0f;
 	private float deathTimer = 0f;
 
 	public static bool GameisPaused = false;
@@ -22,7 +22,10 @@ public class GameHandler : MonoBehaviour
 		if (GameObject.FindGameObjectWithTag ("Player") != null) {
 			playerObj = GameObject.FindGameObjectWithTag ("Player");
 		}
-		PlayerHealth = PlayerHealthStart;
+
+		Scene thisScene = SceneManager.GetActiveScene();
+		if (thisScene.name == "MainMenu"){PlayerHealth = PlayerHealthStart;}
+
 		UpdateHealth();
 		pauseMenuUI.SetActive(false);
     }

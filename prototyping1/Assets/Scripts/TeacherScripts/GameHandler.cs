@@ -11,7 +11,7 @@ public class GameHandler : MonoBehaviour
 	public int PlayerHealthStart = 100;
 	private GameObject playerObj;
 	private bool isDead = false;
-	private float deathTime = 3.0f;
+	private float deathTime = 10.0f;
 	private float deathTimer = 0f;
 
 	public static bool GameisPaused = false;
@@ -68,13 +68,14 @@ public class GameHandler : MonoBehaviour
 
 	public void TakeDamage(int damage){
 		PlayerHealth -= damage;
-		playerObj.GetComponent<PlayerMove>().playerHit();
-		UpdateHealth();
-		if (PlayerHealth <= 0){
+ 		if (PlayerHealth <= 0){
 			PlayerHealth = 0;
 			playerObj.GetComponent<PlayerMove>().playerDie();
 			isDead = true;
+		} else {
+			playerObj.GetComponent<PlayerMove>().playerHit();
 		}
+		UpdateHealth();
 	}
 
 	public void UpdateHealth(){

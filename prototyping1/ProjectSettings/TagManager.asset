@@ -8,6 +8,7 @@ TagManager:
   - Door
   - GameHandler
   - door
+  - monsterShooter
   layers:
   - Default
   - TransparentFX

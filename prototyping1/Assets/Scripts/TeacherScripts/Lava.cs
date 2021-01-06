@@ -10,7 +10,6 @@ public class Lava : MonoBehaviour
 	private float damageTimer = 0f;
 	private GameHandler gameHandlerObj;
 
-
 	void Start () {
 
 		if (GameObject.FindGameObjectWithTag ("GameHandler") != null) {

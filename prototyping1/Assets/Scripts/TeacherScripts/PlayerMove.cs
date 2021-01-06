@@ -11,9 +11,13 @@ public class PlayerMove : MonoBehaviour
 	private Animator anim;
 	private bool isAlive = true;
 
+	private Renderer rend;
+
     // Start is called before the first frame update
     void Start(){
 		anim = gameObject.GetComponentInChildren<Animator>();
+		rend = GetComponentInChildren<Renderer> ();
+
 		if (gameObject.GetComponent<Rigidbody2D>() != null) {
 			rb2d = GetComponent<Rigidbody2D>();
 		}
@@ -63,16 +67,29 @@ public class PlayerMove : MonoBehaviour
 	public void playerHit(){
 		if (isAlive == true){
 			anim.SetTrigger("Hurt"); 
+			StopCoroutine(ChangeColor());
+			StartCoroutine(ChangeColor());
 		}
 	}
 
 	public void playerDie(){
-		anim.SetTrigger("Dead"); 
-		if (isAlive == true) {
-			isAlive = false;
-			gameObject.GetComponent<Rigidbody>().isKinematic = true;
-			gameObject.GetComponent<Collider>().enabled = false;
+		anim.SetTrigger("Dead");
+		if (isAlive == false) {
+			//Debug.Log("I'm already dead");
 		}
+		else if (isAlive == true) {
+			isAlive = false;
+			gameObject.GetComponent<Collider2D>().enabled = false;
+			//gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+		}
+	}
+
+
+	IEnumerator ChangeColor(){
+		// color values are R, G, B, and alpha, each 0-255 divided by 100
+		rend.material.color = new Color(2.0f, 1.0f, 0.0f, 0.5f);
+		yield return new WaitForSeconds(0.5f);
+		rend.material.color = Color.white;
 	}
 
 }

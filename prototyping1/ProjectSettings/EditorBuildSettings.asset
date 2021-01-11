@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TeacherScenes/StudentSampleScene.unity
     guid: 505721ee2d56b5549ba095945e303ebd
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/RobertSeiver.unity
+    guid: 9bef4b3306f8c094980c693851d5e44d
   m_configObjects: {}

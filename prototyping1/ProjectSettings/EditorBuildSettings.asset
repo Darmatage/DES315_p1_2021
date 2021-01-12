@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TeacherScenes/StudentSampleScene.unity
     guid: 505721ee2d56b5549ba095945e303ebd
+  - enabled: 1
+    path: Assets/Scenes/Ethan Villasin Scene/EthanV_Scene.unity
+    guid: 50d0b8c989ebd7942aecf79a3b2ca53b
   m_configObjects: {}

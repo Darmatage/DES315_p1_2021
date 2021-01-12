@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6854189612802431479}
   - component: {fileID: 3471438388775674640}
   - component: {fileID: 6671112620590114610}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MonsterSkullVisionConeRS
   m_TagString: monsterShooter
   m_Icon: {fileID: 0}
@@ -96,8 +96,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DebugDraw: 1
   Speed: 2
+  CornerningTime: 1.5
   ViewDistance: 10
   VisionConeWidth: 10
+  RaysPerFrame: 2
+  Visible:
+    serializedVersion: 2
+    m_Bits: 51
   Path: []
   NodeMap: {fileID: 0}
 --- !u!120 &6671112620590114610

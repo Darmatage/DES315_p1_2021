@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StudentScenes/DillonHahnScene.unity
     guid: 94d35bd6cb513bb4cbe8de82886d3360
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/CarlosGarciaPerezScene.unity
+    guid: ea1c2d31cf975ce49bf4953ebd9b18b7
   m_configObjects: {}

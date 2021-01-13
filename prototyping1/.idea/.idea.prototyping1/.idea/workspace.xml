@@ -40,6 +40,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/StudentScripts/MatthewKlingman/mklingmanPlayerWrapper.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/ButtonColorRS.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/MonsterFieldOfViewMoveRS.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/MonsterPatrollingGuardRS.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/JacobPresley/JacobPresleyAbility.cs" />
+      </list>
+    </option>
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/MatthewKlingman/mklingmanPlayerDash.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/MatthewKlingman/mklingmanPlayerWrapper.cs" />
@@ -94,6 +102,7 @@
       <updated>1610385258936</updated>
       <workItem from="1610385262481" duration="8504000" />
       <workItem from="1610406318801" duration="5186000" />
+      <workItem from="1610518225932" duration="6297000" />
       <workItem from="1610557970818" duration="779000" />
     </task>
     <servers />

@@ -11,6 +11,9 @@ TagManager:
   - monsterShooter
   - Sludge
   - togglebutton
+  - box
+  - Fire
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -20,8 +23,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Bridge
+  - Lava
   - 
   - 
   - 

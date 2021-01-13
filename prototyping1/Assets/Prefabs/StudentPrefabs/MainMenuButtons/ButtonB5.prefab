@@ -175,10 +175,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.7759663, g: 0.8207547, b: 0.6852527, a: 1}
-    m_HighlightedColor: {r: 0.9528302, g: 0.77177787, b: 0.6067551, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 1, g: 0.3537736, b: 0.9391787, a: 1}
+    m_HighlightedColor: {r: 0.9974991, g: 1, b: 0, a: 1}
+    m_PressedColor: {r: 0.28050545, g: 0, b: 0.7264151, a: 1}
+    m_SelectedColor: {r: 0, g: 1, b: 0.94843197, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -221,4 +221,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 416fef9a3c48a9140b58169f4f8dce8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoToScene: 
+  GoToScene: CarlosGarciaPerezScene

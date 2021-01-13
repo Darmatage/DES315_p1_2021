@@ -59,4 +59,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StudentScenes/DustinKeplinger_Scene.unity
     guid: 50d435facd300ea4795286cf78e42186
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/MatthewKlingmanScene.unity
+    guid: 56c2f814aaaff2740abfeb8ed6c60a59
   m_configObjects: {}

@@ -1821,6 +1821,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonA17
       objectReference: {fileID: 0}
+    - target: {fileID: 1459186263935061677, guid: f487a08bf40bf0640b78a8d69535aa81,
+        type: 3}
+      propertyPath: GoToScene
+      value: DevinCavnessScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f487a08bf40bf0640b78a8d69535aa81, type: 3}
 --- !u!1001 &462529785

@@ -47,4 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StudentScenes/LJNScene.unity
     guid: 108bf916ac8157841a99a00295deca59
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/AustinSteadScene.unity
+    guid: c1701e8d1581b6045b2802d8269d9ddd
   m_configObjects: {}

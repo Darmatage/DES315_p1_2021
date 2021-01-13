@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StudentScenes/AmoghSubhedar.unity
     guid: a30a4a55a133d734999f245b246550e4
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/JiwonJungScene.unity
+    guid: 1c3d80e8a826b4045961f75b558f211d
   m_configObjects: {}

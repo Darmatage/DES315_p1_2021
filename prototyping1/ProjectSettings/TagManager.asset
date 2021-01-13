@@ -10,6 +10,7 @@ TagManager:
   - door
   - monsterShooter
   - Sludge
+  - togglebutton
   layers:
   - Default
   - TransparentFX

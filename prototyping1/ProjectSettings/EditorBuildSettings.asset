@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StudentScenes/DevinCavnessScene.unity
     guid: d44e788b927248f4cb375b3ae1bb29ec
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/LJNScene.unity
+    guid: 108bf916ac8157841a99a00295deca59
   m_configObjects: {}

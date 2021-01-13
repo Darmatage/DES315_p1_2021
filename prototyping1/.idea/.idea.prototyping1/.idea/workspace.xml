@@ -40,6 +40,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/ButtonColorRS.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/MonsterFieldOfViewMoveRS.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/MonsterPatrollingGuardRS.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/JacobPresley/JacobPresleyAbility.cs" />
       </list>
     </option>
   </component>
@@ -56,6 +57,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
@@ -67,10 +69,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="6276">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="6276" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -87,8 +89,12 @@
       <updated>1610385258936</updated>
       <workItem from="1610385262481" duration="8504000" />
       <workItem from="1610406318801" duration="5186000" />
+      <workItem from="1610518225932" duration="6297000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />

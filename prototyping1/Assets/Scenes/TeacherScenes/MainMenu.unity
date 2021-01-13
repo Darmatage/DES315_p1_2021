@@ -1205,6 +1205,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonB7
       objectReference: {fileID: 0}
+    - target: {fileID: 3688493574915477389, guid: 0f128fa2e6ec46b45bdbac373c6789cd,
+        type: 3}
+      propertyPath: GoToScene
+      value: DustinKeplinger_Scene
+      objectReference: {fileID: 0}
     - target: {fileID: 6949529551082595697, guid: 0f128fa2e6ec46b45bdbac373c6789cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1821,6 +1826,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonA17
       objectReference: {fileID: 0}
+    - target: {fileID: 1459186263935061677, guid: f487a08bf40bf0640b78a8d69535aa81,
+        type: 3}
+      propertyPath: GoToScene
+      value: DevinCavnessScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f487a08bf40bf0640b78a8d69535aa81, type: 3}
 --- !u!1001 &462529785
@@ -2306,6 +2316,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1787377386}
     m_Modifications:
+    - target: {fileID: 3381721581118863024, guid: 249e842794872ac4997ce60bc6447dc9,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.5849056
+      objectReference: {fileID: 0}
+    - target: {fileID: 3381721581118863024, guid: 249e842794872ac4997ce60bc6447dc9,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.32386765
+      objectReference: {fileID: 0}
+    - target: {fileID: 3381721581118863024, guid: 249e842794872ac4997ce60bc6447dc9,
+        type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.08552865
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753060625276935603, guid: 249e842794872ac4997ce60bc6447dc9,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.13555393
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753060625276935603, guid: 249e842794872ac4997ce60bc6447dc9,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.6415094
+      objectReference: {fileID: 0}
+    - target: {fileID: 3753060625276935603, guid: 249e842794872ac4997ce60bc6447dc9,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4747125245932454763, guid: 249e842794872ac4997ce60bc6447dc9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2410,6 +2450,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878650466656786910, guid: 249e842794872ac4997ce60bc6447dc9,
+        type: 3}
+      propertyPath: GoToScene
+      value: LJNScene
       objectReference: {fileID: 0}
     - target: {fileID: 8977420349228368408, guid: 249e842794872ac4997ce60bc6447dc9,
         type: 3}

@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StudentScenes/AmyStoltzScene.unity
     guid: fa500292af44e0c4b92a141e16d6dca5
   - enabled: 1
+    path: Assets/Scenes/StudentScenes/JWymerScene.unity
+    guid: a35ebaa9d4f5d014298bfd3f83a5e67f
+  - enabled: 1
     path: Assets/Scenes/StudentScenes/LorenzoDeMaineScene.unity
     guid: c47e007af23199f479571c478c85d722
   - enabled: 1
@@ -41,4 +44,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StudentScenes/AmoghSubhedar.unity
     guid: a30a4a55a133d734999f245b246550e4
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/DevinCavnessScene.unity
+    guid: d44e788b927248f4cb375b3ae1bb29ec
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/LJNScene.unity
+    guid: 108bf916ac8157841a99a00295deca59
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/AustinSteadScene.unity
+    guid: c1701e8d1581b6045b2802d8269d9ddd
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/ZacaryBrownScene.unity
+    guid: 9ced9290f963e364486e8edac96c214a
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/DustinKeplinger_Scene.unity
+    guid: 50d435facd300ea4795286cf78e42186
   m_configObjects: {}

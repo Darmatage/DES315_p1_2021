@@ -19054,7 +19054,7 @@ GameObject:
   - component: {fileID: 2069496576}
   - component: {fileID: 2069496575}
   m_Layer: 0
-  m_Name: ChangeableWalls
+  m_Name: TilemapChangeableWalls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

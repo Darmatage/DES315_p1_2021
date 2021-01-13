@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   speed: 10
-  hitEffectAnim: {fileID: 0}
+  hitEffectAnim: {fileID: 2910622652403808077}
   projectileLife: 10
 --- !u!50 &8873357548059110801
 Rigidbody2D:

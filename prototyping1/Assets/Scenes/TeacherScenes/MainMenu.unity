@@ -1205,6 +1205,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonB7
       objectReference: {fileID: 0}
+    - target: {fileID: 3688493574915477389, guid: 0f128fa2e6ec46b45bdbac373c6789cd,
+        type: 3}
+      propertyPath: GoToScene
+      value: DustinKeplinger_Scene
+      objectReference: {fileID: 0}
     - target: {fileID: 6949529551082595697, guid: 0f128fa2e6ec46b45bdbac373c6789cd,
         type: 3}
       propertyPath: m_LocalPosition.x

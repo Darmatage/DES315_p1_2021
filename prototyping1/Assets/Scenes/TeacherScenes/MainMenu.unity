@@ -1076,6 +1076,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonA3
       objectReference: {fileID: 0}
+    - target: {fileID: 7360613195083009116, guid: d028c571f7775204a8318b921886c2e3,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.83921576
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360613195083009116, guid: d028c571f7775204a8318b921886c2e3,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.9490197
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360613195083009116, guid: d028c571f7775204a8318b921886c2e3,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.98823535
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d028c571f7775204a8318b921886c2e3, type: 3}
 --- !u!224 &223129735 stripped

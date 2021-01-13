@@ -13,6 +13,9 @@ public class InventoryHandlerJW : MonoBehaviour
 	public KeyCode key = KeyCode.Tab;
 	public bool pauseOnOpen = true;
 
+	public int coinCount = 0;
+	public Text coinCounter;
+
     void Start()
 	{	
 		if (GameObject.FindGameObjectWithTag ("Player") != null) {
@@ -29,6 +32,9 @@ public class InventoryHandlerJW : MonoBehaviour
 			if (InventoryIsOpen){ Close(); }
 			else{ Open(); }
 		}
+
+		if (coinCounter)
+			coinCounter.text = coinCount.ToString();
 	}
 
 	void Open(){

@@ -10,6 +10,7 @@ TagManager:
   - door
   - monsterShooter
   - Sludge
+  - togglebutton
   layers:
   - Default
   - TransparentFX
@@ -19,8 +20,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Bridge
+  - Lava
   - 
   - 
   - 

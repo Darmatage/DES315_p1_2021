@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -77,7 +77,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A-20
+  m_Text: 'AdamD
+
+'
 --- !u!1 &8228241420248097137
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +177,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.6862745, g: 0.81960785, b: 0.79825294, a: 1}
+    m_NormalColor: {r: 0, g: 0.20616484, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9528302, g: 0.77177787, b: 0.6067551, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -221,4 +223,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 416fef9a3c48a9140b58169f4f8dce8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoToScene: 
+  GoToScene: AdamDoolittleScene

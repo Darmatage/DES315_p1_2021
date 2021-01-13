@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StudentScenes/AmyStoltzScene.unity
     guid: fa500292af44e0c4b92a141e16d6dca5
   - enabled: 1
+    path: Assets/Scenes/StudentScenes/JWymerScene.unity
+    guid: a35ebaa9d4f5d014298bfd3f83a5e67f
+  - enabled: 1
     path: Assets/Scenes/StudentScenes/LorenzoDeMaineScene.unity
     guid: c47e007af23199f479571c478c85d722
   - enabled: 1

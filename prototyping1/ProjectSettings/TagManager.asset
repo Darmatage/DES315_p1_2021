@@ -12,6 +12,8 @@ TagManager:
   - Sludge
   - togglebutton
   - box
+  - Fire
+  - Water
   layers:
   - Default
   - TransparentFX

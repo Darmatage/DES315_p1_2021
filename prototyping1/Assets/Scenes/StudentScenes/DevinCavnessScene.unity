@@ -15948,6 +15948,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Switch (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5030332085016981614, guid: 1b99b23316a9cc0478ea67da14d36152,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5068055484113892002, guid: 1b99b23316a9cc0478ea67da14d36152,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16012,6 +16017,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8738262046309918624, guid: 1b99b23316a9cc0478ea67da14d36152,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5712548454575749515, guid: 1b99b23316a9cc0478ea67da14d36152, type: 3}
@@ -17766,6 +17776,7 @@ MonoBehaviour:
   SwitchOffArt: {fileID: 894342963}
   SwitchOnArt: {fileID: 210661643}
   DoorObj: {fileID: 1961287840}
+  ChangeableWalls: {fileID: 0}
 --- !u!1 &1271886149 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5760936439049708838, guid: 1b99b23316a9cc0478ea67da14d36152,
@@ -19018,6 +19029,7 @@ MonoBehaviour:
   SwitchOffArt: {fileID: 21754673}
   SwitchOnArt: {fileID: 1271886149}
   DoorObj: {fileID: 1961287840}
+  ChangeableWalls: {fileID: 2069496573}
 --- !u!1 &1961287840 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3530746435627036704, guid: 401a933dbd2195744a4fb43f251707d7,

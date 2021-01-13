@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TeacherScenes/EndWin.unity
     guid: 60c9e5ad1f519974cb1b603b75ba067b
   - enabled: 1
-    path: Assets/Scenes/TeacherScenes/TeacherSampleScene.unity
+    path: Assets/Scenes/StudentScenes/KeeganTompkinsScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/TeacherScenes/StudentSampleScene.unity

@@ -17168,12 +17168,12 @@ PrefabInstance:
     - target: {fileID: 8650859984151159953, guid: c9779a708930e4a4aa998efb6e9c8b07,
         type: 3}
       propertyPath: dodgeCooldown
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 8650859984151159953, guid: c9779a708930e4a4aa998efb6e9c8b07,
         type: 3}
       propertyPath: dodgeDistance
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8650859984151159953, guid: c9779a708930e4a4aa998efb6e9c8b07,
         type: 3}
@@ -17183,7 +17183,7 @@ PrefabInstance:
     - target: {fileID: 8650859984151159953, guid: c9779a708930e4a4aa998efb6e9c8b07,
         type: 3}
       propertyPath: dodgeDuration
-      value: 0.1
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9779a708930e4a4aa998efb6e9c8b07, type: 3}

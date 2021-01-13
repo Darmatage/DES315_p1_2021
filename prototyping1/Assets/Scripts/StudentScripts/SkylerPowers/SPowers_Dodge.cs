@@ -7,7 +7,8 @@ public class SPowers_Dodge : MonoBehaviour
   private Vector3 change; // Player movement direction
 
   private Transform trans; // Player transform
-  private Rigidbody2D rb2d; // Player ridigbody
+
+  private SpriteRenderer rend; // Child sprite renderer
 
   public float dodgeCooldown; // Max cooldown
   private float cooldownTimer; // Current cooldown
@@ -23,7 +24,26 @@ public class SPowers_Dodge : MonoBehaviour
     gameObject.tag = "Player";
     cooldownTimer = 0f;
     trans = gameObject.GetComponent<Transform>();
-    rb2d = gameObject.GetComponent<Rigidbody2D>();
+    rend = GetComponentInChildren<SpriteRenderer>();
+  }
+
+  void OnCollisionEnter2D(Collision2D collision)
+  {
+    if (collision.gameObject.name == "TilemapWalls" || collision.gameObject.name == "TilemapSpikes")
+    {
+      dodgeTimer = 0f;
+    }
+  }
+
+  // Physics update
+  void FixedUpdate()
+  {
+    if (dodgeTimer > 0f)
+    {
+      Vector3 pos = (change * dodgeDistance / dodgeDuration) * Time.fixedDeltaTime;
+      trans.position += pos;
+      dodgeTimer -= Time.fixedDeltaTime;
+    }
   }
 
   // Update is called once per frame
@@ -31,11 +51,13 @@ public class SPowers_Dodge : MonoBehaviour
   {
     if (dodgeTimer > 0f)
     {
-      rb2d.MovePosition(trans.position + (change * dodgeDistance / dodgeDuration) * Time.deltaTime);
-      dodgeTimer -= Time.deltaTime;
+      rend.color = new Color(0.3f, 0.9f, 0f);
+      return;
     }
-    else if (cooldownTimer <= 0)
+
+    if (cooldownTimer <= 0)
     {
+      rend.color = Color.white;
       if (Input.GetButtonDown("Fire3"))
       {
         change = Vector3.zero;
@@ -48,6 +70,7 @@ public class SPowers_Dodge : MonoBehaviour
     }
     else
     {
+      rend.color = new Color(0.8f, 0.8f, 0.8f);
       cooldownTimer -= Time.deltaTime;
     }
   }

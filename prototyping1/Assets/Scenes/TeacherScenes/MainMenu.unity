@@ -1061,6 +1061,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2853507879210066651, guid: d028c571f7775204a8318b921886c2e3,
+        type: 3}
+      propertyPath: GoToScene
+      value: JiwonJungScene
+      objectReference: {fileID: 0}
     - target: {fileID: 4516263217698647980, guid: d028c571f7775204a8318b921886c2e3,
         type: 3}
       propertyPath: m_Name

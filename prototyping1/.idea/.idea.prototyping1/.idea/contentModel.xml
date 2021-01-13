@@ -10,6 +10,7 @@
           <e p="StudentScripts" t="Include">
             <e p="RobertSeiver" t="Include">
               <e p="ButtonColorRS.cs" t="Include" />
+              <e p="MonsterPatrollingGuardRS.cs" t="Include" />
             </e>
           </e>
           <e p="TeacherScripts" t="Include">

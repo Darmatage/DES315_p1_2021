@@ -9,6 +9,7 @@ TagManager:
   - GameHandler
   - door
   - monsterShooter
+  - Sludge
   layers:
   - Default
   - TransparentFX

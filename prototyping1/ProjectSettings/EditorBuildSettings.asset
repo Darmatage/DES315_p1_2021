@@ -56,4 +56,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StudentScenes/DustinKeplinger_Scene.unity
     guid: 50d435facd300ea4795286cf78e42186
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/AaronJohnsonScene.unity
+    guid: 4c315505b1c460e4392b9a79204bb184
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/AkshatMadanScene.unity
+    guid: 1d2d624a611245d4c859bb0d2a6f2b98
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/AloraNewburyScene.unity
+    guid: 6b81563a30b2ad14b8a3a4ca3ea77e45
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/JasonWiser.unity
+    guid: 3e686bd0ec4e088489151aa14e3ef978
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/JWymerScene.unity
+    guid: a35ebaa9d4f5d014298bfd3f83a5e67f
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/RhiannaPinkertonScene.unity
+    guid: 616c97f6a2577d140aae0cce724c6762
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/RyanGarvanScene.unity
+    guid: 60fb73239d173d04c8fcc6f80fad823c
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/RyanHeathScene.unity
+    guid: 12c806f98d8895f4c9713e2fe378169e
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/WillMielkeScene.unity
+    guid: 75a96916d67334147906adf1f4d665ec
   m_configObjects: {}

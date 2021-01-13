@@ -1086,6 +1086,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonA10
       objectReference: {fileID: 0}
+    - target: {fileID: 4268522479195134151, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: GoToScene
+      value: DavidDasky
+      objectReference: {fileID: 0}
     - target: {fileID: 7142760554811778893, guid: 43043ad63e6d6c741a9d7e29ab54e363,
         type: 3}
       propertyPath: m_LocalPosition.x

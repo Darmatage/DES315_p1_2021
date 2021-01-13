@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2807b824-211b-4825-8c41-b9035f51e944" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Media/StudentMedia.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StudentScenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TeacherScenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TeacherScenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentScripts.meta" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentSwitch.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/TeacherScripts/Door.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentDoor.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1mwZ4q0wiN2DJQFlqSAetr8fzGT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30010834" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2807b824-211b-4825-8c41-b9035f51e944" name="Default Changelist" comment="" />
+      <created>1610406427494</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610406427494</updated>
+      <workItem from="1610406432099" duration="1835000" />
+      <workItem from="1610484462384" duration="866000" />
+      <workItem from="1610489639314" duration="5324000" />
+      <workItem from="1610500964575" duration="41000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="379" key="GridCell.Tab.0.bottom" timestamp="1610496915663">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.0.bottom/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915663" />
+    <state width="1877" height="379" key="GridCell.Tab.0.center" timestamp="1610496915662">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.0.center/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915662" />
+    <state width="1877" height="379" key="GridCell.Tab.0.left" timestamp="1610496915662">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.0.left/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915662" />
+    <state width="1877" height="379" key="GridCell.Tab.0.right" timestamp="1610496915662">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.0.right/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915662" />
+    <state width="1877" height="379" key="GridCell.Tab.1.bottom" timestamp="1610496915663">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.1.bottom/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915663" />
+    <state width="1877" height="379" key="GridCell.Tab.1.center" timestamp="1610496915663">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.1.center/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915663" />
+    <state width="1877" height="379" key="GridCell.Tab.1.left" timestamp="1610496915663">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.1.left/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915663" />
+    <state width="1877" height="379" key="GridCell.Tab.1.right" timestamp="1610496915663">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.1.right/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915663" />
+    <state width="1877" height="379" key="GridCell.Tab.2.bottom" timestamp="1610496915663">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.2.bottom/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915663" />
+    <state width="1877" height="379" key="GridCell.Tab.2.center" timestamp="1610496915663">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.2.center/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915663" />
+    <state width="1877" height="379" key="GridCell.Tab.2.left" timestamp="1610496915663">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.2.left/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915663" />
+    <state width="1877" height="379" key="GridCell.Tab.2.right" timestamp="1610496915663">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.2.right/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915663" />
+    <state width="1877" height="379" key="GridCell.Tab.3.bottom" timestamp="1610496915663">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.3.bottom/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915663" />
+    <state width="1877" height="379" key="GridCell.Tab.3.center" timestamp="1610496915663">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.3.center/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915663" />
+    <state width="1877" height="379" key="GridCell.Tab.3.left" timestamp="1610496915663">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.3.left/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915663" />
+    <state width="1877" height="379" key="GridCell.Tab.3.right" timestamp="1610496915663">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="379" key="GridCell.Tab.3.right/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915663" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentDoor.cs</url>
+          <line>33</line>
+          <properties documentPath="D:\DigiPen\DES315\DES315_p1_2021\prototyping1\Assets\Scripts\StudentDavidDaskyScripts\StudentDoor.cs" initialLine="38">
+            <startOffsets>
+              <option value="879" />
+            </startOffsets>
+            <endOffsets>
+              <option value="912" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

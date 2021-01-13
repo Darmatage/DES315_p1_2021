@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StudentScenes/CarlosGarciaPerezScene.unity
     guid: ea1c2d31cf975ce49bf4953ebd9b18b7
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/AmoghSubhedar.unity
+    guid: a30a4a55a133d734999f245b246550e4
   m_configObjects: {}

@@ -3268,6 +3268,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7389279109821636765, guid: 5e6a284ae4543a547a80b0f4121146b6,
+        type: 3}
+      propertyPath: GoToScene
+      value: QuinnBeierle
+      objectReference: {fileID: 0}
     - target: {fileID: 8840986313050624729, guid: 5e6a284ae4543a547a80b0f4121146b6,
         type: 3}
       propertyPath: m_Name

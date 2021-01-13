@@ -29,10 +29,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StudentScenes/LorenzoDeMaineScene.unity
     guid: c47e007af23199f479571c478c85d722
-  - enabled: 1
-    path: Assets/Scenes/StudentScenes/QuinnBeierle.unity
-    guid: 7d95b55ee9929eb4c8f9edc70eb43efe
-  - enabled: 1
-    path: Assets/Scenes/StudentScenes/DillonHahnScene.unity
-    guid: 94d35bd6cb513bb4cbe8de82886d3360
   m_configObjects: {}

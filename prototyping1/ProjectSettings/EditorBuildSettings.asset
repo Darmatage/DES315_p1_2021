@@ -92,4 +92,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StudentScenes/WillMielkeScene.unity
     guid: 75a96916d67334147906adf1f4d665ec
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/DieterVoegelsScene.unity
+    guid: c554fcfdd0241704eb0fe9ce5c3dcacc
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/EthanV_Scene.unity
+    guid: 50d0b8c989ebd7942aecf79a3b2ca53b
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/JacobPresleyScene.unity
+    guid: d55a22477fada33429f579e0e64e6671
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/JohnPaulAbidesScene.unity
+    guid: bbf0ab9254651a44daca781a17bb9521
   m_configObjects: {}

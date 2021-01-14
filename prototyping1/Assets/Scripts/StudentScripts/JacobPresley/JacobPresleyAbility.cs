@@ -8,31 +8,54 @@ using UnityEngine.UIElements;
 
 public class JacobPresleyAbility : MonoBehaviour
 {
+  public struct TempWall
+  {
+    public Vector3Int position;
+    public TileBase wall;
+  }
+  
   public GameObject gameMap;
-
   public int tempWallMax;
-  private TileBase[] tempWalls;
-  private Tilemap tileGameMap;
+  public TileBase wallTile;
+  public TempWall[] tempWalls = new TempWall[3]; //public to test in editor
 
-  private void SelectTile()
+  private Tilemap tileGameMap;
+  private int oldestTile = 0;
+
+  private void PlaceWall()
   {
     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     Vector3Int hoveredTile = tileGameMap.WorldToCell(mousePos);
     
-    tileGameMap.SetTile(hoveredTile, null);
+    tileGameMap.SetTile(hoveredTile, wallTile);
+    TileBase newTempWall = tileGameMap.GetTile(hoveredTile);
+
+    if (tempWalls[0].wall == null)
+    {
+      tempWalls[0].wall = newTempWall;
+      tempWalls[0].position = hoveredTile;
+    }
+    else if (tempWalls[1].wall == null)
+    {
+      tempWalls[1].wall = newTempWall;
+      tempWalls[1].position = hoveredTile;
+    }
+    else if (tempWalls[2].wall == null)
+    {
+      tempWalls[2].wall = newTempWall;
+      tempWalls[2].position = hoveredTile;
+    }
+    else
+    {
+      tileGameMap.SetTile(tempWalls[oldestTile].position, null);
+      tempWalls[oldestTile].position = hoveredTile;
+      tempWalls[oldestTile].wall = newTempWall;
+      oldestTile++;
+      if (oldestTile > 2)
+        oldestTile = 0;
+    }
   }
 
-  private void ReplaceTile()
-  {
-    Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    Vector3Int hoveredTile = tileGameMap.WorldToCell(mousePos);
-    Vector3Int standingTile = tileGameMap.WorldToCell(GetComponentInParent<Transform>().position);
-
-    TileBase standing = tileGameMap.GetTile(standingTile);
-
-    tileGameMap.SetTile(hoveredTile, standing);
-  }
-  
   // Start is called before the first frame update
   void Start()
   {
@@ -44,12 +67,7 @@ public class JacobPresleyAbility : MonoBehaviour
   {
     if (Input.GetMouseButtonDown(0) == true)
     {
-      SelectTile();
-    }
-
-    if (Input.GetMouseButtonDown(1) == true)
-    {
-      ReplaceTile();
+      PlaceWall();
     }
   }
 }

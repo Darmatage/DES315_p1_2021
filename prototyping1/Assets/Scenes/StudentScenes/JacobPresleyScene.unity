@@ -18956,6 +18956,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: JacobPresleyPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 4166414878801073431, guid: 81f682c277f794f4f87f399bf3467d1a,
+        type: 3}
+      propertyPath: speed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5175674504669002683, guid: 81f682c277f794f4f87f399bf3467d1a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19013,13 +19018,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5795415937402128166, guid: 81f682c277f794f4f87f399bf3467d1a,
         type: 3}
+      propertyPath: tempWalls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795415937402128166, guid: 81f682c277f794f4f87f399bf3467d1a,
+        type: 3}
       propertyPath: gameMap
       value: 
-      objectReference: {fileID: 251074920}
+      objectReference: {fileID: 915919624}
     - target: {fileID: 5795415937402128166, guid: 81f682c277f794f4f87f399bf3467d1a,
         type: 3}
       propertyPath: tempWallMax
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5795415937402128166, guid: 81f682c277f794f4f87f399bf3467d1a,
+        type: 3}
+      propertyPath: wallTile
+      value: 
+      objectReference: {fileID: 11400000, guid: c10e5f6b25b9b264184bd44cef3e7881,
+        type: 2}
+    - target: {fileID: 8023475439678988263, guid: 81f682c277f794f4f87f399bf3467d1a,
+        type: 3}
+      propertyPath: m_Name
+      value: TempWallScript
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81f682c277f794f4f87f399bf3467d1a, type: 3}

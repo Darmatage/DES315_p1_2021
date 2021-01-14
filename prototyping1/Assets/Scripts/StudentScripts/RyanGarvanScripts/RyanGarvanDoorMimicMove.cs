@@ -49,7 +49,7 @@ public class RyanGarvanDoorMimicMove : MonoBehaviour
         if (!m_isAwakened)
         {
             // If the door is open, the player is close, and the door has a line of sight to the player, wake up
-            if (m_childCollider.enabled && dist_from_player <= 2 && can_see_player)
+            if (m_childCollider.enabled && dist_from_player <= 3 && can_see_player)
             {
                 m_eyeSprite.enabled = true; // Make eye sprite visible
                 m_isAwakened = true;        // Enable movement

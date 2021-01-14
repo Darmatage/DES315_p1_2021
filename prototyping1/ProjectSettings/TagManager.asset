@@ -11,6 +11,7 @@ TagManager:
   - monsterShooter
   - Sludge
   - togglebutton
+  - box
   layers:
   - Default
   - TransparentFX

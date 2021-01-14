@@ -4,9 +4,10 @@ using UnityEngine;
 public class PatrolRS : MonoBehaviour
 {
 	public bool DebugDraw = true; // Display debug drawing
-	[Range(1, 100)] public int ChompDamage = 100;  // Damage done by chomping
-	[Range(1.0f, 10.0f)] public float WalkingSpeed; // Movement speed while patroling
-	[Range(1.0f, 10.0f)] public float ChasingSpeed; // Movement speed while chasing the player
+	[Range(1, 100)] public int ChompDamage = 100;     // Damage done by chomping
+	[Range(1.0f, 10.0f)] public float TargetingSpeed; // Movement speed while patroling
+	[Range(1.0f, 10.0f)] public float WalkingSpeed;   // Movement speed while patroling
+	[Range(1.0f, 10.0f)] public float ChasingSpeed;   // Movement speed while chasing the player
 	[Range(0.1f, 5.0f)] public float CornerningTime = 1.0f; // Time it takes to rotate around corners
 	private float corneringTimer;
 
@@ -31,12 +32,12 @@ public class PatrolRS : MonoBehaviour
 
 	// Map containing nodes for monster pathing nodes
 	public GridLayout NodeMap;
-
 	private LineRenderer visionCone;
 	private Transform player;
 	private Animator anim;
 	public Animator Anim => anim;
 	public SpriteRenderer sensingColor;
+	public SpriteRenderer skullSprite;
 
 	private void Start()
 	{
@@ -146,13 +147,21 @@ public class PatrolRS : MonoBehaviour
 	// Chase the player
 	private void ChasePlayer()
 	{
-		target = player.transform.position;
+		if (Vector3.Distance(target, player.transform.position) > 0.1f)
+			target = Vector3.Lerp(target, player.transform.position, TargetingSpeed * Time.deltaTime);
+		else
+			target = player.transform.position;
 		transform.position = Vector2.MoveTowards(transform.position, target, ChasingSpeed * Time.deltaTime);
 	}
 
 	// Update all vision cone data
 	private void UpdateVisionCone()
 	{
+		if (visionCone.GetPosition(1).x > visionCone.GetPosition(0).x)
+			skullSprite.flipX = true;
+		else
+			skullSprite.flipX = false;
+		
 		float highLerpScale = 0.3f;
 		float lowLerpScale  = 0.05f;
 		

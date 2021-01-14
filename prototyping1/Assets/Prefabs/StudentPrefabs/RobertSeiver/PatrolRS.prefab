@@ -211,11 +211,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ef9a6c31e468840996db7e78b487b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DebugDraw: 1
-  ChompDamage: 40
-  WalkingSpeed: 2
+  DebugDraw: 0
+  ChompDamage: 30
+  TargetingSpeed: 3
+  WalkingSpeed: 3
   ChasingSpeed: 5
-  CornerningTime: 1.5
+  CornerningTime: 0.75
   ViewDistance: 10
   VisionConeWidth: 10
   VisionColorNormal:
@@ -283,6 +284,7 @@ MonoBehaviour:
   Path: []
   NodeMap: {fileID: 0}
   sensingColor: {fileID: 1952539688478686971}
+  skullSprite: {fileID: 1401506593591344159}
 --- !u!120 &6671112620590114610
 LineRenderer:
   m_ObjectHideFlags: 0

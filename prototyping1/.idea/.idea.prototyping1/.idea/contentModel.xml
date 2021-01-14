@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\jacpb\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\jacpb\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_prototyping1.1469949209.00" t="ExcludeRecursive" />
-    <e p="C:\Users\jacpb\Desktop\j.presley\Junior\Spring\DES315\GIT\DES315_p1_2021\prototyping1" t="IncludeRecursive">
+    <e p="C:\Users\Robert\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Robert\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_prototyping1.132115489.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Robert\Desktop\School\DES 315\Project 1\DES315_p1_2021\prototyping1" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="StudentScripts" t="Include">
             <e p="AaronJohnson" t="Include">
               <e p="SludgeLogic.cs" t="Include" />
+            </e>
+            <e p="AdamDoolittle" t="Include">
+              <e p="TurretLogic.cs" t="Include" />
             </e>
             <e p="AmoghSubhedar" t="Include">
               <e p="Bridge.cs" t="Include" />
@@ -34,6 +37,22 @@
             <e p="DustinKeplingerScripts" t="Include">
               <e p="Burning_Dustin_Keplinger.cs" t="Include" />
             </e>
+            <e p="EthanVillasin" t="Include">
+              <e p="LeverFunction.cs" t="Include" />
+            </e>
+            <e p="JacobPresley" t="Include">
+              <e p="JacobPresleyAbility.cs" t="Include" />
+            </e>
+            <e p="JiwonJung" t="Include">
+              <e p="JiwonJung_Proliferation.cs" t="Include" />
+            </e>
+            <e p="JohnPaulAbides" t="Include">
+              <e p="WallSwitch.cs" t="Include" />
+            </e>
+            <e p="JWymer" t="Include">
+              <e p="CollectibleJW.cs" t="Include" />
+              <e p="InventoryHandlerJW.cs" t="Include" />
+            </e>
             <e p="LorenzoDeMaineScripts" t="Include">
               <e p="lorenzoFireDebuff.cs" t="Include" />
               <e p="lorenzoLavaScript.cs" t="Include" />
@@ -42,18 +61,22 @@
               <e p="mklingmanPlayerDash.cs" t="Include" />
               <e p="mklingmanPlayerWrapper.cs" t="Include" />
             </e>
-            <e p="JacobPresley" t="Include">
-              <e p="JacobPresleyAbility.cs" t="Include" />
-            </e>
             <e p="RobertSeiver" t="Include">
+              <e p="AudioCreditsRS.cs" t="Include" />
               <e p="ButtonColorRS.cs" t="Include" />
-              <e p="MonsterPatrollingGuardRS.cs" t="Include" />
+              <e p="CrunchPlayerRS.cs" t="Include" />
+              <e p="PatrolChompRS.cs" t="Include" />
+              <e p="PatrolRS.cs" t="Include" />
+              <e p="PlayerStunRS.cs" t="Include" />
             </e>
             <e p="RyanGarvanScripts" t="Include">
               <e p="RyanGarvanDoorMimicMove.cs" t="Include" />
             </e>
             <e p="RyanHeath" t="Include">
               <e p="EnemyMovementPattern.cs" t="Include" />
+            </e>
+            <e p="SkylerPowers" t="Include">
+              <e p="SPowers_Dodge.cs" t="Include" />
             </e>
             <e p="WillMielke" t="Include">
               <e p="BoxMove_Mielke.cs" t="Include" />

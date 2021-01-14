@@ -15,6 +15,7 @@ TagManager:
   - box
   - Fire
   - Water
+  - Enemy
   layers:
   - Default
   - TransparentFX

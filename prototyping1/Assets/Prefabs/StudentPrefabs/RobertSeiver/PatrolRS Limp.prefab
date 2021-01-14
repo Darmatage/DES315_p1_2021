@@ -10,17 +10,17 @@ PrefabInstance:
     - target: {fileID: 1401506593591344159, guid: b9e1d01b56d403942b6474217c3b2767,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.54901963
+      value: 0.70199996
       objectReference: {fileID: 0}
     - target: {fileID: 1401506593591344159, guid: b9e1d01b56d403942b6474217c3b2767,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.33333334
+      value: 0.68704736
       objectReference: {fileID: 0}
     - target: {fileID: 1401506593591344159, guid: b9e1d01b56d403942b6474217c3b2767,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.33333334
+      value: 0.60231596
       objectReference: {fileID: 0}
     - target: {fileID: 1794408831066137493, guid: b9e1d01b56d403942b6474217c3b2767,
         type: 3}
@@ -180,12 +180,12 @@ PrefabInstance:
     - target: {fileID: 3471438388775674640, guid: b9e1d01b56d403942b6474217c3b2767,
         type: 3}
       propertyPath: WalkingSpeed
-      value: 1.5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3471438388775674640, guid: b9e1d01b56d403942b6474217c3b2767,
         type: 3}
       propertyPath: ChasingSpeed
-      value: 2.5
+      value: 3.01
       objectReference: {fileID: 0}
     - target: {fileID: 3471438388775674640, guid: b9e1d01b56d403942b6474217c3b2767,
         type: 3}
@@ -202,6 +202,18 @@ PrefabInstance:
       propertyPath: ChompDamage
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3471438388775674640, guid: b9e1d01b56d403942b6474217c3b2767,
+        type: 3}
+      propertyPath: AlertHandlerPrefab
+      value: 
+      objectReference: {fileID: 2957613801549160854, guid: 18ce2739ac8b99e41b6caa24c02f442c,
+        type: 3}
+    - target: {fileID: 3471438388775674640, guid: b9e1d01b56d403942b6474217c3b2767,
+        type: 3}
+      propertyPath: AlertPopUpPrefab
+      value: 
+      objectReference: {fileID: 402760830186682625, guid: cd5b7aefc542fcf4c994c120773a2df9,
+        type: 3}
     - target: {fileID: 4078256246479289528, guid: b9e1d01b56d403942b6474217c3b2767,
         type: 3}
       propertyPath: m_Name

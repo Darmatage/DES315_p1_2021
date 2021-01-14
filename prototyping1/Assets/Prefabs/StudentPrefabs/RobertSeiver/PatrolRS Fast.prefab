@@ -197,6 +197,18 @@ PrefabInstance:
       propertyPath: ChompDamage
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 3471438388775674640, guid: b9e1d01b56d403942b6474217c3b2767,
+        type: 3}
+      propertyPath: AlertHandlerPrefab
+      value: 
+      objectReference: {fileID: 2957613801549160854, guid: 18ce2739ac8b99e41b6caa24c02f442c,
+        type: 3}
+    - target: {fileID: 3471438388775674640, guid: b9e1d01b56d403942b6474217c3b2767,
+        type: 3}
+      propertyPath: AlertPopUpPrefab
+      value: 
+      objectReference: {fileID: 402760830186682625, guid: cd5b7aefc542fcf4c994c120773a2df9,
+        type: 3}
     - target: {fileID: 4078256246479289528, guid: b9e1d01b56d403942b6474217c3b2767,
         type: 3}
       propertyPath: m_Name

@@ -39,6 +39,15 @@ public class PatrolRS : MonoBehaviour
 	public SpriteRenderer sensingColor;
 	public SpriteRenderer skullSprite;
 
+	// Alert sound effect player
+	public GameObject AlertHandlerPrefab;
+	
+	// Alert pop up image
+	public GameObject AlertPopUpPrefab;
+
+	// Chomp script reference
+	private PatrolChompRS chompScript;
+	
 	private void Start()
 	{
 		player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -58,6 +67,9 @@ public class PatrolRS : MonoBehaviour
 		
 		// Grab animator component
 		anim = GetComponentInChildren<Animator>();
+		
+		// Grab chomp script
+		chompScript = GetComponentInChildren<PatrolChompRS>();
 	}
 
 	private void Update()
@@ -99,6 +111,9 @@ public class PatrolRS : MonoBehaviour
 			{
 				detectedPlayer = true;
 				anim.Play("monsterSkull_walk");
+				GameObject popUp = Instantiate(AlertPopUpPrefab, transform);
+				popUp.transform.position += transform.lossyScale.y * Vector3.up;
+				Instantiate(AlertHandlerPrefab, transform.position, Quaternion.identity);
 				break;
 			}
 		}
@@ -147,7 +162,10 @@ public class PatrolRS : MonoBehaviour
 	// Chase the player
 	private void ChasePlayer()
 	{
-		if (Vector3.Distance(target, player.transform.position) > 0.1f)
+		float distance = Vector3.Distance(target, player.transform.position);
+		if (distance > ViewDistance)
+			detectedPlayer = false;
+		else if (distance > 0.1f)
 			target = Vector3.Lerp(target, player.transform.position, TargetingSpeed * Time.deltaTime);
 		else
 			target = player.transform.position;
@@ -157,11 +175,14 @@ public class PatrolRS : MonoBehaviour
 	// Update all vision cone data
 	private void UpdateVisionCone()
 	{
-		if (visionCone.GetPosition(1).x > visionCone.GetPosition(0).x)
-			skullSprite.flipX = true;
-		else
-			skullSprite.flipX = false;
-		
+		if (!chompScript.Chomped)
+		{
+			if (visionCone.GetPosition(1).x > visionCone.GetPosition(0).x)
+				skullSprite.flipX = true;
+			else
+				skullSprite.flipX = false;
+		}
+
 		float highLerpScale = 0.3f;
 		float lowLerpScale  = 0.05f;
 		

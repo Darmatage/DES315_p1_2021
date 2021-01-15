@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 6671112620590114610}
   m_Layer: 2
   m_Name: PatrolRS
-  m_TagString: monsterShooter
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -285,6 +285,10 @@ MonoBehaviour:
   NodeMap: {fileID: 0}
   sensingColor: {fileID: 1952539688478686971}
   skullSprite: {fileID: 1401506593591344159}
+  AlertHandlerPrefab: {fileID: 2957613801549160854, guid: 18ce2739ac8b99e41b6caa24c02f442c,
+    type: 3}
+  AlertPopUpPrefab: {fileID: 402760830186682625, guid: cd5b7aefc542fcf4c994c120773a2df9,
+    type: 3}
 --- !u!120 &6671112620590114610
 LineRenderer:
   m_ObjectHideFlags: 0

@@ -27,6 +27,7 @@
               <e p="AustinSteadEnemyBounce.cs" t="Include" />
             </e>
             <e p="DevinCavness" t="Include">
+              <e p="MonsterMoveHitStop_DRC.cs" t="Include" />
               <e p="NewDoor_DRC.cs" t="Include" />
               <e p="NewDoorSwitch_DRC.cs" t="Include" />
             </e>

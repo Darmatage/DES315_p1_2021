@@ -20,13 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b2b7116-ade0-4fd8-8fa4-37f17ee7df59" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/StudentScenes/RobertSeiver.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StudentScenes/RobertSeiver.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/CameraFollowRS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/CameraFollowRS.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PlayerMoveRS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PlayerMoveRS.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PlayerStunRS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PlayerStunRS.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,13 +41,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/MonsterFieldOfViewMoveRS.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/MonsterPatrollingGuardRS.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/JacobPresley/JacobPresleyAbility.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PlayerStunRS.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/AlertPopUpRS.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolChompRS.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PlayerMoveRS.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/TorchlightRS.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/CameraFollowRS.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PlayerStunRS.cs" />
       </list>
     </option>
   </component>
@@ -93,10 +88,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="16696">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="16696" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -116,7 +111,7 @@
       <workItem from="1610518225932" duration="6297000" />
       <workItem from="1610557970818" duration="779000" />
       <workItem from="1610588479188" duration="1106000" />
-      <workItem from="1610646463445" duration="17157000" />
+      <workItem from="1610646463445" duration="17555000" />
     </task>
     <servers />
   </component>

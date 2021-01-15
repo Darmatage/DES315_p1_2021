@@ -72,8 +72,10 @@
               <e p="PatrolRS.cs" t="Include" />
               <e p="PlayerMoveRS.cs" t="Include" />
               <e p="PlayerStunRS.cs" t="Include" />
+              <e p="TorchlightRS.cs" t="Include" />
             </e>
             <e p="RyanGarvanScripts" t="Include">
+              <e p="RyanGarvanAStarPather.cs" t="Include" />
               <e p="RyanGarvanDoorMimicMove.cs" t="Include" />
             </e>
             <e p="RyanHeath" t="Include">

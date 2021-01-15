@@ -14,7 +14,7 @@ public class PlayerMoveRS : MonoBehaviour
 	private Renderer rend;
 
 	// Start is called before the first frame update
-	void Start()
+	private void Start()
 	{
 		anim = gameObject.GetComponentInChildren<Animator>();
 		rend = GetComponentInChildren<Renderer>();
@@ -24,7 +24,7 @@ public class PlayerMoveRS : MonoBehaviour
 	}
 
 	// Update is called once per frame
-	void Update()
+	private void FixedUpdate()
 	{
 		if (isAlive == true)
 		{

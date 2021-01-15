@@ -1373,6 +1373,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1787377386}
     m_Modifications:
+    - target: {fileID: 1753281227383224542, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753281227383224542, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753281227383224542, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753281227383224542, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4527799750313788441, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
         type: 3}
       propertyPath: GoToScene

@@ -81,14 +81,14 @@ public class ExplodingEnemy_AS : MonoBehaviour
                 }
             }
 
-            //if (attackPlayer == true)
-            //{
-            //    transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-            //}
-            //else if (attackPlayer == false)
-            //{
-            //    transform.position = Vector2.MoveTowards(transform.position, target.position, speed * 0.0f * Time.deltaTime);
-            //}
+            if (attackPlayer == true)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            }
+            else if (attackPlayer == false)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * 0.0f * Time.deltaTime);
+            }
         }
     }
 

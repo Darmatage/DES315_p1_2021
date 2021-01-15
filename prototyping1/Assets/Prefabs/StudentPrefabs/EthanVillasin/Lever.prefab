@@ -72,8 +72,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0725d8faf972e24394d9803c312ea99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LeverOn: {fileID: 0}
-  LeverOff: {fileID: 0}
+  LeverOn: {fileID: 9037188302296429757}
+  LeverOff: {fileID: 4137016988152556516}
   Doors: []
 --- !u!1 &4137016988152556516
 GameObject:

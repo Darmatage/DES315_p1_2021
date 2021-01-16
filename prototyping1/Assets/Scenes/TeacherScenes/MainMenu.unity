@@ -2935,6 +2935,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3624300986296904096, guid: 9b9a96cc30d056349acd41194cd66b4c,
+        type: 3}
+      propertyPath: m_Text
+      value: KeanuC
+      objectReference: {fileID: 0}
     - target: {fileID: 8004016788331300129, guid: 9b9a96cc30d056349acd41194cd66b4c,
         type: 3}
       propertyPath: m_Name

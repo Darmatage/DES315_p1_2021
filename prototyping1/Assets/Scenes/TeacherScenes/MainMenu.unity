@@ -806,6 +806,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5493847842979081850, guid: b9f2a2a79bdbc8e49879ae99853da122,
+        type: 3}
+      propertyPath: GoToScene
+      value: DieterVoegelsScene
+      objectReference: {fileID: 0}
     - target: {fileID: 6905518328301599351, guid: b9f2a2a79bdbc8e49879ae99853da122,
         type: 3}
       propertyPath: m_Name
@@ -1061,10 +1066,30 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2853507879210066651, guid: d028c571f7775204a8318b921886c2e3,
+        type: 3}
+      propertyPath: GoToScene
+      value: JiwonJungScene
+      objectReference: {fileID: 0}
     - target: {fileID: 4516263217698647980, guid: d028c571f7775204a8318b921886c2e3,
         type: 3}
       propertyPath: m_Name
       value: ButtonA3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360613195083009116, guid: d028c571f7775204a8318b921886c2e3,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.83921576
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360613195083009116, guid: d028c571f7775204a8318b921886c2e3,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.9490197
+      objectReference: {fileID: 0}
+    - target: {fileID: 7360613195083009116, guid: d028c571f7775204a8318b921886c2e3,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.98823535
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d028c571f7775204a8318b921886c2e3, type: 3}
@@ -1348,6 +1373,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1787377386}
     m_Modifications:
+    - target: {fileID: 1753281227383224542, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753281227383224542, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753281227383224542, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753281227383224542, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4527799750313788441, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
         type: 3}
       propertyPath: GoToScene

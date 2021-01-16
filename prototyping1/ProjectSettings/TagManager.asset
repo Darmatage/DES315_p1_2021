@@ -11,9 +11,12 @@ TagManager:
   - monsterShooter
   - Sludge
   - togglebutton
+  - Collectible
   - box
   - Fire
   - Water
+  - Enemy
+  - GuideTorch
   layers:
   - Default
   - TransparentFX

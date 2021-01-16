@@ -38,6 +38,7 @@
             <e p="DustinKeplingerScripts" t="Include">
               <e p="Burning_Dustin_Keplinger.cs" t="Include" />
             </e>
+<<<<<<< HEAD
             <e p="EthanVillasin" t="Include">
               <e p="LeverFunction.cs" t="Include" />
               <e p="WallDoor.cs" t="Include" />
@@ -47,14 +48,22 @@
             </e>
             <e p="JiwonJung" t="Include">
               <e p="JiwonJung_Proliferation.cs" t="Include" />
+=======
+            <e p="JacobPresley" t="Include">
+              <e p="JacobPresleyAbility.cs" t="Include" />
+              <e p="JacobPresleyMailbox.cs" t="Include" />
+>>>>>>> Jacob-Presley
             </e>
             <e p="JohnPaulAbides" t="Include">
               <e p="WallSwitch.cs" t="Include" />
             </e>
+<<<<<<< HEAD
             <e p="JWymer" t="Include">
               <e p="CollectibleJW.cs" t="Include" />
               <e p="InventoryHandlerJW.cs" t="Include" />
             </e>
+=======
+>>>>>>> Jacob-Presley
             <e p="LorenzoDeMaineScripts" t="Include">
               <e p="lorenzoFireDebuff.cs" t="Include" />
               <e p="lorenzoLavaScript.cs" t="Include" />

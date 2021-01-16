@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class JacobPresleyAbility : MonoBehaviour
@@ -18,6 +19,7 @@ public class JacobPresleyAbility : MonoBehaviour
   public int tempWallMax;
   public TileBase wallTile;
   public TempWall[] tempWalls = new TempWall[3]; //public to test in editor
+  public GameObject wallUI;
 
   private Tilemap tileGameMap;
   private int oldestTile = 0;
@@ -26,24 +28,34 @@ public class JacobPresleyAbility : MonoBehaviour
   {
     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     Vector3Int hoveredTile = tileGameMap.WorldToCell(mousePos);
+    Text wallText = wallUI.GetComponent<Text>();
+
+    //dont place walls on preexisting walls
+    if (tileGameMap.GetTile(hoveredTile) != null)
+    {
+      return;
+    }
     
     tileGameMap.SetTile(hoveredTile, wallTile);
     TileBase newTempWall = tileGameMap.GetTile(hoveredTile);
-
+    
     if (tempWalls[0].wall == null)
     {
       tempWalls[0].wall = newTempWall;
       tempWalls[0].position = hoveredTile;
+      wallText.text = "WALLS: 1 / 3";
     }
     else if (tempWalls[1].wall == null)
     {
       tempWalls[1].wall = newTempWall;
       tempWalls[1].position = hoveredTile;
+      wallText.text = "WALLS: 2 / 3";
     }
     else if (tempWalls[2].wall == null)
     {
       tempWalls[2].wall = newTempWall;
       tempWalls[2].position = hoveredTile;
+      wallText.text = "WALLS: 3 / 3";
     }
     else
     {

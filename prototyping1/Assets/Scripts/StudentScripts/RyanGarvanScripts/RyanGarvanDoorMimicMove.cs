@@ -33,7 +33,7 @@ public class RyanGarvanDoorMimicMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 vec_to_player = m_player.transform.position - transform.position; // Vector from door to player
+        Vector2 vec_to_player = m_player.transform.position - (transform.position + new Vector3(0, 1, 0)); // Vector from door to player
         float dist_from_player = vec_to_player.magnitude;                         // Distance from door to player
 
         List<RaycastHit2D> results = new List<RaycastHit2D>(); // List of raycast hits
@@ -49,7 +49,7 @@ public class RyanGarvanDoorMimicMove : MonoBehaviour
         if (!m_isAwakened)
         {
             // If the door is open, the player is close, and the door has a line of sight to the player, wake up
-            if (m_childCollider.enabled && dist_from_player <= 3 && can_see_player)
+            if (m_childCollider.enabled && dist_from_player <= 2 && can_see_player)
             {
                 m_eyeSprite.enabled = true; // Make eye sprite visible
                 m_isAwakened = true;        // Enable movement

@@ -20,10 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2807b824-211b-4825-8c41-b9035f51e944" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Media/StudentMedia.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StudentScenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TeacherScenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TeacherScenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentScripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/Student_DavidDasky_DoorSwitch.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/Student_DavidDasky_DoorSwitch/StudentDoor_David.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/Student_DavidDasky_DoorSwitch/StudentDoor_David.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/Student_DavidDasky_DoorSwitch/StudentSwitch_David.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/Student_DavidDasky_DoorSwitch/StudentSwitch_David.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Student_DavidDaskyScene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Student_DavidDaskyScene/DavidDasky.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Student_DavidDaskyScene/DavidDasky.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentDoor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentDoor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentSwitch.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentSwitch.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +97,7 @@
       <workItem from="1610484462384" duration="866000" />
       <workItem from="1610489639314" duration="5324000" />
       <workItem from="1610500964575" duration="41000" />
+      <workItem from="1610920904724" duration="43000" />
     </task>
     <servers />
   </component>
@@ -176,6 +186,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1877" height="379" key="GridCell.Tab.3.right/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610496915663" />
+    <state x="623" y="227" key="search.everywhere.popup" timestamp="1610920945369">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" key="search.everywhere.popup/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610920945369" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -12,6 +12,7 @@ public class DashSlimeScript_cendejas : MonoBehaviour
 	private GameHandler gameHandlerObj;
 	private Animator anim;
 	private Rigidbody2D body;
+	private Color col_;
 	private float timer = 5.0f;
 	private float staticTime = 5.0f;
 
@@ -24,6 +25,7 @@ public class DashSlimeScript_cendejas : MonoBehaviour
 		body = gameObject.GetComponent<Rigidbody2D>();
 		anim = gameObject.GetComponentInChildren<Animator>();
 		rend = GetComponentInChildren<Renderer>();
+		col_ = rend.material.color;
 
 		if (GameObject.FindGameObjectWithTag("Player") != null)
 		{
@@ -50,8 +52,11 @@ public class DashSlimeScript_cendejas : MonoBehaviour
 			{
 				transform.position = Vector2.MoveTowards(transform.position, target.position, 1f * Time.deltaTime);
 
-				if(timer <= 0)
+				rend.material.SetColor("_Color", col_);
+
+				if (timer <= 0)
                 {
+					rend.material.SetColor("_Color", Color.red);
 					StartCoroutine("Dash");
                 }
 			}

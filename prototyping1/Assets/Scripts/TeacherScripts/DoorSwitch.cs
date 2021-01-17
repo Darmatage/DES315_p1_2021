@@ -14,7 +14,7 @@ public class DoorSwitch : MonoBehaviour
     {
 		SwitchOffArt.SetActive(true);
 		SwitchOnArt.SetActive(false);
-		DoorObj = GameObject.FindGameObjectWithTag("Door");
+		DoorObj = GameObject.FindGameObjectWithTag("door");
     }
 
 	void OnTriggerEnter2D(Collider2D other){

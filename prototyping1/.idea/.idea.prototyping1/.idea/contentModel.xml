@@ -27,6 +27,7 @@
               <e p="AustinSteadEnemyBounce.cs" t="Include" />
             </e>
             <e p="DevinCavness" t="Include">
+              <e p="MonsterMoveHitStop_DRC.cs" t="Include" />
               <e p="NewDoor_DRC.cs" t="Include" />
               <e p="NewDoorSwitch_DRC.cs" t="Include" />
             </e>
@@ -37,6 +38,7 @@
             <e p="DustinKeplingerScripts" t="Include">
               <e p="Burning_Dustin_Keplinger.cs" t="Include" />
             </e>
+<<<<<<< HEAD
             <e p="EthanVillasin" t="Include">
               <e p="LeverFunction.cs" t="Include" />
               <e p="WallDoor.cs" t="Include" />
@@ -46,14 +48,22 @@
             </e>
             <e p="JiwonJung" t="Include">
               <e p="JiwonJung_Proliferation.cs" t="Include" />
+=======
+            <e p="JacobPresley" t="Include">
+              <e p="JacobPresleyAbility.cs" t="Include" />
+              <e p="JacobPresleyMailbox.cs" t="Include" />
+>>>>>>> Jacob-Presley
             </e>
             <e p="JohnPaulAbides" t="Include">
               <e p="WallSwitch.cs" t="Include" />
             </e>
+<<<<<<< HEAD
             <e p="JWymer" t="Include">
               <e p="CollectibleJW.cs" t="Include" />
               <e p="InventoryHandlerJW.cs" t="Include" />
             </e>
+=======
+>>>>>>> Jacob-Presley
             <e p="LorenzoDeMaineScripts" t="Include">
               <e p="lorenzoFireDebuff.cs" t="Include" />
               <e p="lorenzoLavaScript.cs" t="Include" />
@@ -72,8 +82,10 @@
               <e p="PatrolRS.cs" t="Include" />
               <e p="PlayerMoveRS.cs" t="Include" />
               <e p="PlayerStunRS.cs" t="Include" />
+              <e p="TorchlightRS.cs" t="Include" />
             </e>
             <e p="RyanGarvanScripts" t="Include">
+              <e p="RyanGarvanAStarPather.cs" t="Include" />
               <e p="RyanGarvanDoorMimicMove.cs" t="Include" />
             </e>
             <e p="RyanHeath" t="Include">

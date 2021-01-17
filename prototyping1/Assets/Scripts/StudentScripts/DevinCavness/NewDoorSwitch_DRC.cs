@@ -9,11 +9,14 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 	public GameObject DoorObj;
 	public GameObject ChangeableWalls;
 
+	public bool isActive;
+
     // Start is called before the first frame update
     void Start()
     {
 		SwitchOffArt.SetActive(true);
 		SwitchOnArt.SetActive(false);
+		isActive = false;
 		DoorObj = GameObject.FindGameObjectWithTag("Door");
     }
 
@@ -21,15 +24,25 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 		if (other.gameObject.tag == "Player"){
 			if (!SwitchOffArt.activeSelf)
 			{
-				SwitchOffArt.SetActive(true);
-				SwitchOnArt.SetActive(false);
+				GameObject[] a = GameObject.FindGameObjectsWithTag("togglebutton");
+				for(int i = 0; i < a.Length; ++i)
+                {
+					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOffArt.SetActive(true);
+					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(false);
+					a[i].GetComponent<NewDoorSwitch_DRC>().isActive = false;
+				}
 				DoorObj.GetComponent<NewDoor_DRC>().DoorClose();
 				ChangeableWalls.SetActive(true);
 			}
 			else
             {
-				SwitchOffArt.SetActive(false);
-				SwitchOnArt.SetActive(true);
+				GameObject[] a = GameObject.FindGameObjectsWithTag("togglebutton");
+				for (int i = 0; i < a.Length; ++i)
+				{
+					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOffArt.SetActive(false);
+					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(true);
+					a[i].GetComponent<NewDoorSwitch_DRC>().isActive = true;
+				}
 				DoorObj.GetComponent<NewDoor_DRC>().DoorOpen();
 				ChangeableWalls.SetActive(false);
 			}

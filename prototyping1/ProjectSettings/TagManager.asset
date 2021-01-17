@@ -16,6 +16,7 @@ TagManager:
   - Fire
   - Water
   - Enemy
+  - GuideTorch
   layers:
   - Default
   - TransparentFX

@@ -198,5 +198,8 @@ MonoBehaviour:
   speed: 1
   damage: 1
   EnemyLives: 2
+  explosionObj: {fileID: 828083053115005703, guid: a2476c01643b8704eb52aa8c08d539a5,
+    type: 3}
+  grid: {fileID: 0}
   explodeRange: 2
   damageAmount: 10

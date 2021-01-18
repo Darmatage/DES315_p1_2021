@@ -8,10 +8,14 @@ public class ExplodingEnemy_AS : MonoBehaviour
     private Transform target; // the player target
     public int damage = 1; // how much damage it deals to player
     public int EnemyLives = 2;
+
+    public GameObject explosionObj;
+
     private Renderer rend;
     private SpriteRenderer spriteRenderer;
     private GameHandler gameHandlerObj;
     private Animator anim;
+    public Grid grid;
 
     public static float strobeDelay = .15f;
     float strobeDelayTimer = strobeDelay;
@@ -21,6 +25,7 @@ public class ExplodingEnemy_AS : MonoBehaviour
     bool bExplode = false;
     private bool attackPlayer = false;
     public int damageAmount = 10;
+    AStarPather pather;
 
     // Start is called before the first frame update
     void Start()
@@ -38,11 +43,21 @@ public class ExplodingEnemy_AS : MonoBehaviour
         {
             gameHandlerObj = gameHandlerLocation.GetComponent<GameHandler>();
         }
+
+        pather = new AStarPather();
+        grid = FindObjectOfType<Grid>();
+        pather.setGrid(grid);
+        pather.setObject(explosionObj);
+        pather.init(grid);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //pather.DrawDebug();
+
+
+        //Debug.DrawLine(new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 10000.0f, 0.0f), Color.red, 0f,false);
         if (target != null)
         {
             // if the player is within range, then blow up

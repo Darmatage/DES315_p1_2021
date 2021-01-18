@@ -6440,7 +6440,7 @@ PrefabInstance:
     - target: {fileID: 7966546244797052718, guid: e4baca7e26d51c240bc6571d098eea25,
         type: 3}
       propertyPath: m_TagString
-      value: door
+      value: Door
       objectReference: {fileID: 0}
     - target: {fileID: 8767647797348065643, guid: e4baca7e26d51c240bc6571d098eea25,
         type: 3}

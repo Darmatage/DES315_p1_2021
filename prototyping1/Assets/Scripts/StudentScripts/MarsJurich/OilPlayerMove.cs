@@ -11,8 +11,8 @@ public class OilPlayerMove : MonoBehaviour
 {
     // OilPlayerMove variables
     public bool isTouchingOil = false;
-    private GameHandler gameHandlerObj;
-    private Vector3 lastChange;
+    private Vector3 lastChange; // last player movement direction
+    private Vector2 lastPosition; // last player position
 
     // PlayerMove variables
     public float speed = 3f; // player movement speed
@@ -25,7 +25,7 @@ public class OilPlayerMove : MonoBehaviour
 
     // Start is called before the first frame update
     void Start(){
-        gameHandlerObj = GameObject.FindGameObjectWithTag("GameHandler").GetComponent<GameHandler>();
+        lastPosition = rb2d.position;
 
         anim = gameObject.GetComponentInChildren<Animator>();
 		rend = GetComponentInChildren<Renderer> ();
@@ -40,10 +40,14 @@ public class OilPlayerMove : MonoBehaviour
 
         if (isAlive == true){
 
-            if (isTouchingOil == false)
+            if (lastPosition == rb2d.position)
             {
-                // TODO: check if hitting a wall
+                isTouchingOil = false;
+            }
 
+            // if touching oil or hit a wall
+            if (isTouchingOil == false || change == Vector3.zero)
+            {
                 change = Vector3.zero;
                 change.x = Input.GetAxisRaw("Horizontal");
                 change.y = Input.GetAxisRaw("Vertical");
@@ -90,13 +94,17 @@ public class OilPlayerMove : MonoBehaviour
     }
 
 
-	void UpdateAnimationAndMove() {
+    void UpdateAnimationAndMove() {
 		if (isAlive == true){
 			if (change!=Vector3.zero) {
-				rb2d.MovePosition(transform.position + change * speed * Time.deltaTime);
+
+                lastPosition = rb2d.position;
+
+                rb2d.MovePosition(transform.position + change * speed * Time.deltaTime);
 				//MoveCharacter();
 				//anim.SetFloat("moveX", change.x);
 				//anim.SetFloat("moveY", change.y);
+
 				anim.SetBool("Walk", true);
 			} else {
 				anim.SetBool("Walk", false);
@@ -131,5 +139,4 @@ public class OilPlayerMove : MonoBehaviour
 		yield return new WaitForSeconds(0.5f);
 		rend.material.color = Color.white;
 	}
-    // </OLD STUFF>
 }

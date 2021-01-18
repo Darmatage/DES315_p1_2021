@@ -6,6 +6,9 @@ using UnityEngine;
 public class RyanGarvanDoorMimicMove : MonoBehaviour
 {
     SpriteRenderer m_eyeSprite;      // Eye sprite component
+    SpriteRenderer m_pupilSprite;    // Pupil sprite component
+    Vector3 m_pupilInitPos;          // Initial position of the door's pupil relative to the door
+    SpriteRenderer m_outlineSprite;  // Eye outline sprite component
     Collider2D m_childCollider;      // Collider component of child object (the door itself)
     RyanGarvanAStarPather m_pather;  // Pathfinding component
     GameObject m_player;             // Player character
@@ -16,6 +19,7 @@ public class RyanGarvanDoorMimicMove : MonoBehaviour
     float m_pathCountdown = 0;
     public int m_maxFleeDistance = 10;
     List<Vector3> m_path;
+    float m_lookAngle = 0; // The angle at which the door is looking
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +27,7 @@ public class RyanGarvanDoorMimicMove : MonoBehaviour
         m_eyeSprite = GetComponent<SpriteRenderer>(); // Get eye sprite
         m_eyeSprite.enabled = false;                  // Eye sprite starts hidden
 
-        m_childCollider = transform.GetChild(0).GetComponent<Collider2D>();
+        m_childCollider = transform.GetChild(2).GetComponent<Collider2D>();
 
         m_pather = GetComponent<RyanGarvanAStarPather>();
 
@@ -58,6 +62,8 @@ public class RyanGarvanDoorMimicMove : MonoBehaviour
         // If the door is awake, run away from the player if they're close
         else
         {
+            //m_lookAngle += Mathf.PI / 8 * Time.deltaTime;
+            //m_pupilSprite.transform.position
             // Raycast in the direction of the player to see if they're hiding behind anything
 
             if (m_pathCountdown > 0)

@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//
+// INSTRUCTIONS:
+//
+// Create a Tilemap with a Rigidbody 2D, Tilemap Collider 2D,
+// and a Composite Collider 2D. Then add the Oil script to it.
+//
+
 public class Oil : MonoBehaviour
 {
-    private bool isTouchingOil = false;
 	private GameHandler gameHandlerObj;
 
 	void Start()
@@ -17,17 +23,15 @@ public class Oil : MonoBehaviour
 
 	void FixedUpdate()
     {
-        if (isTouchingOil)
-        {
-            // gameHandlerObj.TakeDamage(damage);
-        }
+        
     }
 
 	void OnTriggerStay2D(Collider2D other)
     {
 		if (other.gameObject.tag == "Player")
         {
-            isTouchingOil = true;
+            OilPlayerMove oilPlayerMove = other.gameObject.GetComponent<OilPlayerMove>();
+            oilPlayerMove.isTouchingOil = true;
 
             Debug.Log("Is touching oil");
 		}
@@ -37,8 +41,9 @@ public class Oil : MonoBehaviour
     {
 		if (other.gameObject.tag == "Player")
         {
-            isTouchingOil = false;
-
+            OilPlayerMove oilPlayerMove = other.gameObject.GetComponent<OilPlayerMove>();
+            oilPlayerMove.isTouchingOil = false;
+        
             Debug.Log("Stopped touching oil");
 		}
 	}

@@ -72,17 +72,6 @@ public class OilPlayerMove : MonoBehaviour
             }
             else if (isTouchingOil == true)
             {
-                // check if trying to go diagonal
-                if (change.x != 0 && change.y != 0)
-                {
-                    // check if pressing against wall
-                    if (Mathf.Approximately(lastPosition.x, rb2d.position.x) !=
-                        Mathf.Approximately(lastPosition.y, rb2d.position.y))
-                    {
-                        change = Vector3.zero;
-                    }
-                }
-
                 UpdateAnimationAndMove();
 
                 if (change.x > 0)
@@ -111,15 +100,50 @@ public class OilPlayerMove : MonoBehaviour
     void UpdateAnimationAndMove() {
 		if (isAlive == true){
 			if (change!=Vector3.zero) {
-
+                // set old position
                 lastPosition = rb2d.position;
 
-                rb2d.MovePosition(transform.position + change * speed * Time.deltaTime);
-				//MoveCharacter();
-				//anim.SetFloat("moveX", change.x);
-				//anim.SetFloat("moveY", change.y);
+                // get new position to attempt to move to
+                Vector2 newPos = transform.position + change * speed * Time.deltaTime;
+                
+                // check if trying to go diagonal
+                if (isTouchingOil && change.x != 0 && change.y != 0)
+                {
+                    BoxCollider2D bc2d = GetComponentInParent<BoxCollider2D>();
 
-				anim.SetBool("Walk", true);
+                    Vector3 scale = bc2d.size + bc2d.offset;
+                    ContactFilter2D filter = new ContactFilter2D();
+                    Collider2D[] results = new Collider2D[64];
+
+                    Physics2D.OverlapBox(newPos, scale, 0.0f, filter, results);
+
+                    foreach (var col in results)
+                    {
+                        if (col == null)
+                        {
+                            break;
+                        }
+
+                        if (col.gameObject.name == "TilemapWalls")
+                        {
+                            change = Vector3.zero;
+                            newPos = transform.position;
+                        }
+                    }
+
+                    rb2d.MovePosition(newPos);
+
+                    anim.SetBool("Walk", false);
+                }
+                else
+                {
+                    rb2d.MovePosition(newPos);
+                    //MoveCharacter();
+                    //anim.SetFloat("moveX", change.x);
+                    //anim.SetFloat("moveY", change.y);
+
+                    anim.SetBool("Walk", true);
+                }
 			} else {
 				anim.SetBool("Walk", false);
 			}

@@ -6,13 +6,21 @@ using UnityEngine;
 // the same with modifications to work with oil. Simply copy
 // the regular Player and replace the Player script with this one
 // in a level that uses the Oil script.
+//
+// You will also need to set the oil slip sound, which can be
+// found in "Assets/StudentMedia/MarsJurich/oil_slip.wav", as
+// well as add an AudioSource component to the Player object.
 
 public class OilPlayerMove : MonoBehaviour
 {
     // OilPlayerMove variables
-    public bool isTouchingOil = false;
+    private bool isTouchingOil = false;
+    private bool wasTouchingOil = false;
     private Vector3 lastChange; // last player movement direction
     private Vector2 lastPosition; // last player position
+
+    public AudioClip slip;
+    AudioSource audioSource;
 
     // PlayerMove variables
     public float speed = 3f; // player movement speed
@@ -27,6 +35,8 @@ public class OilPlayerMove : MonoBehaviour
     void Start(){
         lastPosition = new Vector2();
 
+        audioSource = GetComponent<AudioSource>();
+
         anim = gameObject.GetComponentInChildren<Animator>();
 		rend = GetComponentInChildren<Renderer> ();
 
@@ -37,6 +47,10 @@ public class OilPlayerMove : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate(){
+        if (isTouchingOil == true && wasTouchingOil == false)
+        {
+            audioSource.PlayOneShot(slip);
+        }
 
         if (isAlive == true){
 
@@ -69,6 +83,11 @@ public class OilPlayerMove : MonoBehaviour
                     newScale.x = -1.0f;
                     transform.localScale = newScale;
                 }
+
+                if (isTouchingOil == true && lastChange == Vector3.zero && change != Vector3.zero)
+                {
+                    audioSource.PlayOneShot(slip);
+                }
             }
             else if (isTouchingOil == true)
             {
@@ -94,6 +113,8 @@ public class OilPlayerMove : MonoBehaviour
             }
 
         } //else playerDie();
+
+        wasTouchingOil = isTouchingOil;
     }
 
 
@@ -169,6 +190,12 @@ public class OilPlayerMove : MonoBehaviour
 			//gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
 		}
 	}
+
+
+    public void SetTouchingOil(bool state)
+    {
+        isTouchingOil = state;
+    }
 
 
 	IEnumerator ChangeColor(){

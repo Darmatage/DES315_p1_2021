@@ -7,33 +7,28 @@ using UnityEngine;
 //
 // Create a Tilemap with a Rigidbody 2D, Tilemap Collider 2D,
 // and a Composite Collider 2D. Then add the Oil script to it.
-//
 
 public class Oil : MonoBehaviour
 {
-	private GameHandler gameHandlerObj;
 
 	void Start()
     {
-		if (GameObject.FindGameObjectWithTag("GameHandler") != null)
-        {
-			gameHandlerObj = GameObject.FindGameObjectWithTag("GameHandler").GetComponent<GameHandler>();
-		}
-	}
+        
+    }
 
 	void FixedUpdate()
     {
         
     }
 
-	void OnTriggerStay2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
 		if (other.gameObject.tag == "Player")
         {
             OilPlayerMove oilPlayerMove = other.gameObject.GetComponent<OilPlayerMove>();
-            oilPlayerMove.isTouchingOil = true;
+            oilPlayerMove.SetTouchingOil(true);
 
-            Debug.Log("Is touching oil");
+            //Debug.Log("Is touching oil");
 		}
 	}
 
@@ -42,9 +37,9 @@ public class Oil : MonoBehaviour
 		if (other.gameObject.tag == "Player")
         {
             OilPlayerMove oilPlayerMove = other.gameObject.GetComponent<OilPlayerMove>();
-            oilPlayerMove.isTouchingOil = false;
+            oilPlayerMove.SetTouchingOil(false);
         
-            Debug.Log("Stopped touching oil");
+            //Debug.Log("Stopped touching oil");
 		}
 	}
 }

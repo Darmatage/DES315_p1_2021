@@ -20,44 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9b2b7116-ade0-4fd8-8fa4-37f17ee7df59" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/Audio/Sound Effects/sf-bone-neck-break-05.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/Audio/Sound Effects/sf-bone-neck-break-05.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/Audio/Sound Effects/sf_bones_break_01.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/Audio/Sound Effects/sf_bones_break_01.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/Audio/Sound Effects/sf_bones_break_02.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/Audio/Sound Effects/sf_bones_break_02.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/Audio/Sound Effects/sf_bones_break_03.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/Audio/Sound Effects/sf_bones_break_03.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/Audio/Sound Effects/sf_bones_break_04.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/Audio/Sound Effects/sf_bones_break_04.mp3.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/Sprites/ExclamationPoint.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/Sprites/ExclamationPoint.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/Sprites/JustACircle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/Sprites/JustACircle.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/RobertSeiver/AlertRS.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/RobertSeiver/AlertRS.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/RobertSeiver/ExclamationPoint.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/RobertSeiver/ExclamationPoint.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/AlertPopUpRS.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/AlertPopUpRS.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/CameraFollowRS.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/CameraFollowRS.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PlayerMoveRS.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/JustACircle.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Media/StudentMedia/RobertSeiver/JustACircle.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/RobertSeiver/CrunchRS.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/RobertSeiver/CrunchRS.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/RobertSeiver/PatrolRS Fast.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/RobertSeiver/PatrolRS Fast.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/RobertSeiver/PatrolRS Limp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/RobertSeiver/PatrolRS Limp.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/RobertSeiver/PatrolRS.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/RobertSeiver/PatrolRS.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/StudentScenes/RobertSeiver.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StudentScenes/RobertSeiver.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolChompRS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolChompRS.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PlayerStunRS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PlayerStunRS.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,12 +41,17 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/MonsterFieldOfViewMoveRS.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/MonsterPatrollingGuardRS.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/JacobPresley/JacobPresleyAbility.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/CameraFollowRS.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PlayerMoveRS.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PlayerStunRS.cs" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/AlertPopUpRS.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolChompRS.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PlayerMoveRS.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/TorchlightRS.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/CameraFollowRS.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PlayerStunRS.cs" />
+=======
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/JacobPresley/JacobPresleyMailbox.cs" />
+>>>>>>> Jacob-Presley
       </list>
     </option>
   </component>
@@ -123,10 +92,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="16696">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="16696" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -145,8 +114,15 @@
       <workItem from="1610406318801" duration="5186000" />
       <workItem from="1610518225932" duration="6297000" />
       <workItem from="1610557970818" duration="779000" />
+<<<<<<< HEAD
       <workItem from="1610588479188" duration="1106000" />
-      <workItem from="1610646463445" duration="10322000" />
+      <workItem from="1610646463445" duration="17555000" />
+=======
+      <workItem from="1610588033104" duration="3842000" />
+      <workItem from="1610677563433" duration="1435000" />
+      <workItem from="1610679314343" duration="1170000" />
+      <workItem from="1610778694542" duration="2901000" />
+>>>>>>> Jacob-Presley
     </task>
     <servers />
   </component>
@@ -176,70 +152,70 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="397" height="464" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1610395792617" />
-    <state width="1877" height="205" key="GridCell.Tab.0.bottom" timestamp="1610658096976">
+    <state width="1877" height="205" key="GridCell.Tab.0.bottom" timestamp="1610691403040">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="205" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610658096976" />
-    <state width="1877" height="205" key="GridCell.Tab.0.center" timestamp="1610658096976">
+    <state width="1877" height="205" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610691403040" />
+    <state width="1877" height="205" key="GridCell.Tab.0.center" timestamp="1610691403040">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="205" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610658096976" />
-    <state width="1877" height="205" key="GridCell.Tab.0.left" timestamp="1610658096976">
+    <state width="1877" height="205" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610691403040" />
+    <state width="1877" height="205" key="GridCell.Tab.0.left" timestamp="1610691403040">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="205" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610658096976" />
-    <state width="1877" height="205" key="GridCell.Tab.0.right" timestamp="1610658096976">
+    <state width="1877" height="205" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610691403040" />
+    <state width="1877" height="205" key="GridCell.Tab.0.right" timestamp="1610691403040">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="205" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610658096976" />
-    <state width="1877" height="205" key="GridCell.Tab.1.bottom" timestamp="1610658132951">
+    <state width="1877" height="205" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610691403040" />
+    <state width="1877" height="205" key="GridCell.Tab.1.bottom" timestamp="1610691403774">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="205" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610658132951" />
-    <state width="1877" height="205" key="GridCell.Tab.1.center" timestamp="1610658132951">
+    <state width="1877" height="205" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610691403774" />
+    <state width="1877" height="205" key="GridCell.Tab.1.center" timestamp="1610691403774">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="205" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610658132951" />
-    <state width="1877" height="205" key="GridCell.Tab.1.left" timestamp="1610658132951">
+    <state width="1877" height="205" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610691403774" />
+    <state width="1877" height="205" key="GridCell.Tab.1.left" timestamp="1610691403774">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="205" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610658132951" />
-    <state width="1877" height="205" key="GridCell.Tab.1.right" timestamp="1610658132951">
+    <state width="1877" height="205" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610691403774" />
+    <state width="1877" height="205" key="GridCell.Tab.1.right" timestamp="1610691403774">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="205" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610658132951" />
-    <state width="1877" height="205" key="GridCell.Tab.2.bottom" timestamp="1610400903352">
+    <state width="1877" height="205" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610691403774" />
+    <state width="1877" height="205" key="GridCell.Tab.2.bottom" timestamp="1610691402951">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="205" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610400903352" />
-    <state width="1877" height="205" key="GridCell.Tab.2.center" timestamp="1610400903352">
+    <state width="1877" height="205" key="GridCell.Tab.2.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610691402951" />
+    <state width="1877" height="205" key="GridCell.Tab.2.center" timestamp="1610691402951">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="205" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610400903352" />
-    <state width="1877" height="205" key="GridCell.Tab.2.left" timestamp="1610400903352">
+    <state width="1877" height="205" key="GridCell.Tab.2.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610691402951" />
+    <state width="1877" height="205" key="GridCell.Tab.2.left" timestamp="1610691402951">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="205" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610400903352" />
-    <state width="1877" height="205" key="GridCell.Tab.2.right" timestamp="1610400903352">
+    <state width="1877" height="205" key="GridCell.Tab.2.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610691402951" />
+    <state width="1877" height="205" key="GridCell.Tab.2.right" timestamp="1610691402951">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="205" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610400903352" />
-    <state width="1877" height="205" key="GridCell.Tab.3.bottom" timestamp="1610400903352">
+    <state width="1877" height="205" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610691402951" />
+    <state width="1877" height="205" key="GridCell.Tab.3.bottom" timestamp="1610691402952">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="205" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610400903352" />
-    <state width="1877" height="205" key="GridCell.Tab.3.center" timestamp="1610400903352">
+    <state width="1877" height="205" key="GridCell.Tab.3.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610691402952" />
+    <state width="1877" height="205" key="GridCell.Tab.3.center" timestamp="1610691402951">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="205" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610400903352" />
-    <state width="1877" height="205" key="GridCell.Tab.3.left" timestamp="1610400903352">
+    <state width="1877" height="205" key="GridCell.Tab.3.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610691402951" />
+    <state width="1877" height="205" key="GridCell.Tab.3.left" timestamp="1610691402951">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="205" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610400903352" />
-    <state width="1877" height="205" key="GridCell.Tab.3.right" timestamp="1610400903352">
+    <state width="1877" height="205" key="GridCell.Tab.3.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610691402951" />
+    <state width="1877" height="205" key="GridCell.Tab.3.right" timestamp="1610691402952">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="205" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610400903352" />
+    <state width="1877" height="205" key="GridCell.Tab.3.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610691402952" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1610655965053">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

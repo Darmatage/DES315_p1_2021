@@ -17553,6 +17553,18 @@ CompositeCollider2D:
         Y: -60000000
       - X: 130000000
         Y: -50000000
+      - X: -39999900
+        Y: -50000000
+      - X: -39999900
+        Y: -50000041
+      - X: -39999959
+        Y: -50000100
+      - X: -50000041
+        Y: -50000100
+      - X: -50000100
+        Y: -50000041
+      - X: -50000100
+        Y: -50000000
       - X: -110000000
         Y: -50000000
       - X: -110000000
@@ -18934,6 +18946,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f81cec92f62272849bb9648f9f67f8dc, type: 3}
+--- !u!1 &1597069694
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1597069697}
+  - component: {fileID: 1597069696}
+  - component: {fileID: 1597069695}
+  m_Layer: 0
+  m_Name: MK_AttackObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1597069695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597069694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6c5fe23a3e62e0478058565ea3af9c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  speed: 10
+  hitEffectAnim: {fileID: 0}
+  projectileLife: 3
+--- !u!61 &1597069696
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597069694}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1597069697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597069694}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.12549883, y: 3.067525, z: -2.5039062}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1895520292
 GameObject:
   m_ObjectHideFlags: 0
@@ -19299,6 +19385,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2022400781 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2941690181798594214, guid: 01ce78b543062b74aa62c01428b1378f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2524122717273255139}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2131349616
 GameObject:
   m_ObjectHideFlags: 0
@@ -19384,6 +19476,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2524122716090918644, guid: 01ce78b543062b74aa62c01428b1378f,
+        type: 3}
+      propertyPath: Distance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2524122716090918645, guid: 01ce78b543062b74aa62c01428b1378f,
         type: 3}
       propertyPath: m_Name
@@ -19443,6 +19540,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2524122716090918651, guid: 01ce78b543062b74aa62c01428b1378f,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2022400781}
+    - target: {fileID: 2524122716090918651, guid: 01ce78b543062b74aa62c01428b1378f,
+        type: 3}
+      propertyPath: dash
+      value: 304
+      objectReference: {fileID: 0}
+    - target: {fileID: 2524122716090918651, guid: 01ce78b543062b74aa62c01428b1378f,
+        type: 3}
+      propertyPath: attack
+      value: 324
       objectReference: {fileID: 0}
     - target: {fileID: 7262458464333086481, guid: 01ce78b543062b74aa62c01428b1378f,
         type: 3}

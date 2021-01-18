@@ -14,9 +14,7 @@ public class ChaseGraves_ProjectileScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        direction.x = 1.0f;
-        direction.y = 0.0f;
-        direction.z = 0.0f;
+
     }
 
     // Update is called once per frame
@@ -29,5 +27,23 @@ public class ChaseGraves_ProjectileScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+        }
+
+        if (collision.gameObject.tag != "Player")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void ChaseGraves_SetDirection(Vector3 dir)
+    {
+        direction = dir.normalized;
     }
 }

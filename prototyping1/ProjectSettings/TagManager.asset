@@ -16,6 +16,7 @@ TagManager:
   - Fire
   - Water
   - Enemy
+  - bullet
   layers:
   - Default
   - TransparentFX

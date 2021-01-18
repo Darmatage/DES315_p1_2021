@@ -25,7 +25,7 @@ public class OilPlayerMove : MonoBehaviour
 
     // Start is called before the first frame update
     void Start(){
-        lastPosition = rb2d.position;
+        lastPosition = new Vector2();
 
         anim = gameObject.GetComponentInChildren<Animator>();
 		rend = GetComponentInChildren<Renderer> ();
@@ -40,9 +40,12 @@ public class OilPlayerMove : MonoBehaviour
 
         if (isAlive == true){
 
+            lastChange = change;
+
+            // set change if hit wall so player can change direction
             if (lastPosition == rb2d.position)
             {
-                isTouchingOil = false;
+                change = Vector3.zero;
             }
 
             // if touching oil or hit a wall
@@ -51,6 +54,7 @@ public class OilPlayerMove : MonoBehaviour
                 change = Vector3.zero;
                 change.x = Input.GetAxisRaw("Horizontal");
                 change.y = Input.GetAxisRaw("Vertical");
+
                 UpdateAnimationAndMove();
 
                 if (Input.GetAxis("Horizontal") > 0)
@@ -68,6 +72,17 @@ public class OilPlayerMove : MonoBehaviour
             }
             else if (isTouchingOil == true)
             {
+                // check if trying to go diagonal
+                if (change.x != 0 && change.y != 0)
+                {
+                    // check if pressing against wall
+                    if (Mathf.Approximately(lastPosition.x, rb2d.position.x) !=
+                        Mathf.Approximately(lastPosition.y, rb2d.position.y))
+                    {
+                        change = Vector3.zero;
+                    }
+                }
+
                 UpdateAnimationAndMove();
 
                 if (change.x > 0)
@@ -83,7 +98,6 @@ public class OilPlayerMove : MonoBehaviour
                     transform.localScale = newScale;
                 }
             }
-
 
             if (Input.GetKey(KeyCode.Space))
             {

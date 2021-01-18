@@ -10,6 +10,13 @@ TagManager:
   - door
   - monsterShooter
   - Sludge
+  - togglebutton
+  - Collectible
+  - box
+  - Fire
+  - Water
+  - Enemy
+  - GuideTorch
   layers:
   - Default
   - TransparentFX
@@ -19,8 +26,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Bridge
+  - Lava
   - 
   - 
   - 

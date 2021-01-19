@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DashLogic : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class DashLogic : MonoBehaviour
     public float DashDistance = 2.0f;
     public float CoolDown = 1.0f;
     private float CoolDownStart = 1.0f;
+    public Slider CoolDownSlider;
 
     // Start is called before the first frame update
     void Start()
@@ -21,8 +23,12 @@ public class DashLogic : MonoBehaviour
     void Update()
     {
         CoolDown -= Time.deltaTime;
+        if (CoolDown < 0.0f)
+            CoolDown = 0.0f;
 
-        if(Input.GetKeyDown(KeyCode.LeftShift) && CoolDown <= 0.0f)
+        CoolDownSlider.value = 1 - (CoolDown / CoolDownStart);
+
+        if(Input.GetKeyDown(KeyCode.LeftShift) && CoolDown == 0.0f)
         {
             Vector2 pos = player.GetComponent<PlayerMove>().transform.position;
 

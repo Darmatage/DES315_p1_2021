@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 936662114210584143}
   - component: {fileID: 3577822061350760046}
   - component: {fileID: -5300876546850576070}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ChaseGraves_Projectile
   m_TagString: bullet
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 7942596985354070013}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a99e665d503a3014999f720423a94ee9, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -154,9 +154,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbaf0c8da8d0564696dd47d14702c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Explosion: {fileID: 6407389735118789687, guid: b570e36eb75e6084aa1e634fa50a240e,
+    type: 3}
   damage: 1
-  speed: 0.02
+  speed: 10
   life: 1
+  explosionDuration: 0.7
 --- !u!50 &-5300876546850576070
 Rigidbody2D:
   serializedVersion: 4

@@ -6,6 +6,10 @@ public class ChaseGraves_PlayerAttack : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Projectile;
+    public float AttackSpeed;
+
+    private float attackTimer = 0.0f;
+    private bool canAttack = true;
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +20,18 @@ public class ChaseGraves_PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(!canAttack)
+        {
+            attackTimer += Time.deltaTime;
+
+            if(attackTimer >= AttackSpeed)
+            {
+                attackTimer = 0.0f;
+                canAttack = true;
+            }
+        }
+
+        if(canAttack && Input.GetMouseButtonDown(0))
         {
             Vector3 direction;
             var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -25,6 +40,8 @@ public class ChaseGraves_PlayerAttack : MonoBehaviour
             direction.z = 0.0f;
             GameObject projectile = Instantiate(Projectile, Player.transform.position, Quaternion.identity);
             projectile.GetComponent<ChaseGraves_ProjectileScript>().ChaseGraves_SetDirection(direction);
+
+            canAttack = false;
         }
     }
 }

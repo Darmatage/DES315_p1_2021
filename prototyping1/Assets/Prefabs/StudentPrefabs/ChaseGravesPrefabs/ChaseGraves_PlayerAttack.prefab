@@ -46,3 +46,4 @@ MonoBehaviour:
   Player: {fileID: 852736819979555607, guid: f15318afe2a4d8741a715281e186ed04, type: 3}
   Projectile: {fileID: 7942596985354070013, guid: cdfc87df15518a4418510c791d1fb392,
     type: 3}
+  AttackSpeed: 1

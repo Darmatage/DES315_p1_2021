@@ -249,6 +249,9 @@ public class RyanGarvanAStarPather : MonoBehaviour
                         if ((playerCellPos - adjacentCellPos).magnitude <= 3 && (playerCellPos - nextCellPos).magnitude > 3)
                             continue;
 
+                        if ((playerCellPos - adjacentCellPos).magnitude <= 2.0f)
+                            continue;
+
                         AddNodeToOpenList(adjacentCellPos, nextCellPos, Mathf.Sqrt(x * x + y * y), openList, -(adjacentCellPos - playerCellPos).sqrMagnitude);
                     }
                 }

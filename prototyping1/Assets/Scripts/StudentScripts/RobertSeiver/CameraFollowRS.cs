@@ -1,21 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class CameraFollowRS : MonoBehaviour
 {
-    private Transform player;
+    private Transform player, door, lever;
     private List<Transform> enemies;
+    private List<Transform> torches;
     List<Transform> notInList;
     
     [Range(0.1f, 10.0f)] public float TrackingSpeed = 1.0f;
-    [Range(1.0f, 50.0f)] public float TargetingRadius = 10.0f;
+    [Range(1.0f, 50.0f)] public float EnemyTargetingRadius = 16.0f;
+    [Range(1.0f, 50.0f)] public float TorchTargetingRadius = 10.0f;
 
-    [Range(0.0f, 1.0f)] public float PlayerWeight = 1.0f;
-    [Range(0.0f, 1.0f)] public float EnemyBehindWeight = 0.4f;
-    [Range(0.0f, 1.0f)] public float EnemyAheadWeight = 0.6f;
+    [Range(0.01f, 1.0f)] public float PlayerWeight = 1.0f;
+    [Range(0.01f, 1.0f)] public float EnemyBehindWeight = 0.4f;
+    [Range(0.01f, 1.0f)] public float EnemyAheadWeight = 0.6f;
+    [Range(0.01f, 1.0f)] public float TorchWeight = 0.6f;
 
     [Range(0.0f, 5.0f)] public float FadeInTime; 
     [Range(0.0f, 5.0f)] public float GoalShowcaseTime; 
@@ -33,16 +35,21 @@ public class CameraFollowRS : MonoBehaviour
 
     public SpriteRenderer Fade;
 
-    private Camera camera;
+    private Camera cam;
     
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
-        enemies = new List<Transform>();
+        door   = GameObject.Find("Door").transform;
+        lever  = GameObject.Find("Switch").transform;
         notInList = new List<Transform>();
+        enemies = new List<Transform>();
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Enemy"))
             enemies.Add(obj.transform);
+        torches = new List<Transform>();
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("GuideTorch"))
+            torches.Add(obj.transform);
 
         fadeInTimer = FadeInTime;
         goalTimer = GoalShowcaseTime;
@@ -52,7 +59,7 @@ public class CameraFollowRS : MonoBehaviour
         originalPosition = transform.position;
         Fade.color = Color.black;
 
-        camera = GetComponent<Camera>();
+        cam = GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -75,12 +82,12 @@ public class CameraFollowRS : MonoBehaviour
             newPos.z = transform.position.z;
             transform.position = newPos;
 
-            camera.orthographicSize = Mathf.Lerp(6.0f, 8.0f, 1.0f - panTimer / LevelPanTime);
+            cam.orthographicSize = Mathf.Lerp(6.0f, 8.0f, 1.0f - panTimer / LevelPanTime);
         }
         else if (startShowcaseTimer > 0.0f)
         {
             startShowcaseTimer -= Time.deltaTime;
-            camera.orthographicSize = Mathf.Lerp(8.0f, 6.0f, Mathf.Pow(1.0f - startShowcaseTimer / StartShowcaseTime, 2.0f));
+            cam.orthographicSize = Mathf.Lerp(8.0f, 6.0f, Mathf.Pow(1.0f - startShowcaseTimer / StartShowcaseTime, 2.0f));
         }
         else
         {
@@ -101,10 +108,22 @@ public class CameraFollowRS : MonoBehaviour
     private void CameraFollow()
     {
         Vector3 target = player.position * PlayerWeight;
+
+        bool doorVisible = false;
+        bool leverVisible = false;
+        if (Vector2.Distance(player.position, door.position) < TorchTargetingRadius)
+        {
+            target += door.position * PlayerWeight / 2.0f;
+            doorVisible = true;
+        }
+        if (Vector2.Distance(player.position, lever.position) < TorchTargetingRadius)
+        {
+            target += lever.position * PlayerWeight / 2.0f;
+            leverVisible = true;
+        }
         
         int numNearbyEnemiesBehind = 0;
         int numNearbyEnemiesAhead = 0;
-        
         foreach (Transform enemy in enemies)
         {
             if (enemy == null)
@@ -113,7 +132,7 @@ public class CameraFollowRS : MonoBehaviour
                 continue;
             }
 
-            if (Vector2.Distance(player.position, enemy.position) < TargetingRadius)
+            if (Vector2.Distance(player.position, enemy.position) < EnemyTargetingRadius)
             {
                 if (enemy.position.x > player.position.x)
                 {
@@ -128,7 +147,22 @@ public class CameraFollowRS : MonoBehaviour
             }
         }
 
-        target /= PlayerWeight + EnemyBehindWeight * numNearbyEnemiesBehind + EnemyAheadWeight * numNearbyEnemiesAhead;
+        int numTorchesNearby = 0;
+        foreach (Transform torch in torches)
+        {
+            if (Vector2.Distance(player.position, torch.position) < TorchTargetingRadius)
+            {
+                target += torch.position * TorchWeight;
+                numTorchesNearby++;
+            }
+        }
+
+        target /= PlayerWeight +
+                  EnemyBehindWeight * numNearbyEnemiesBehind +
+                  EnemyAheadWeight  * numNearbyEnemiesAhead + 
+                  TorchWeight       * numTorchesNearby +
+                  (doorVisible  ? PlayerWeight / 2.0f : 0.0f) +
+                  (leverVisible ? PlayerWeight / 2.0f : 0.0f);
         target.z = transform.position.z;
 
         transform.position = Vector3.Lerp(transform.position, target, TrackingSpeed * Time.deltaTime);

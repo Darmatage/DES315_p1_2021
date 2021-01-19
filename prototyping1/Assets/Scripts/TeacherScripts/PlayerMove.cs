@@ -24,7 +24,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update(){
+    void FixedUpdate(){
 
 		if (isAlive == true){
 			change = Vector3.zero;

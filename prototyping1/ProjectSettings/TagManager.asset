@@ -16,6 +16,8 @@ TagManager:
   - Fire
   - Water
   - Enemy
+  - GuideTorch
+  - WallDoor
   layers:
   - Default
   - TransparentFX

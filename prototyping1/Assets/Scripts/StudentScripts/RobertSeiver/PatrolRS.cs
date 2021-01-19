@@ -162,10 +162,7 @@ public class PatrolRS : MonoBehaviour
 	// Chase the player
 	private void ChasePlayer()
 	{
-		float distance = Vector3.Distance(target, player.transform.position);
-		if (distance > ViewDistance)
-			detectedPlayer = false;
-		else if (distance > 0.1f)
+		if (Vector3.Distance(target, player.transform.position) > 0.1f)
 			target = Vector3.Lerp(target, player.transform.position, TargetingSpeed * Time.deltaTime);
 		else
 			target = player.transform.position;

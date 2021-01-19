@@ -180,12 +180,12 @@ PrefabInstance:
     - target: {fileID: 3471438388775674640, guid: b9e1d01b56d403942b6474217c3b2767,
         type: 3}
       propertyPath: WalkingSpeed
-      value: 2
+      value: 2.75
       objectReference: {fileID: 0}
     - target: {fileID: 3471438388775674640, guid: b9e1d01b56d403942b6474217c3b2767,
         type: 3}
       propertyPath: ChasingSpeed
-      value: 3.01
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 3471438388775674640, guid: b9e1d01b56d403942b6474217c3b2767,
         type: 3}

@@ -8,59 +8,89 @@ namespace Amogh
     {
         public GameObject bridgePrefab;
 
-        public Transform lastBridge;
+        private GameObject lastBridge;
 
         private Vector3 mousePos;
 
         private GameObject currentBridge;
 
         private Camera cam;
+
         // Start is called before the first frame update
         void Start()
         {
             cam = Camera.main;
             Debug.Assert(cam != null, "No camera found");
             
-            currentBridge = Instantiate(bridgePrefab, Vector3.zero, Quaternion.identity);
         }
 
         private void PlaceBridge(Vector3 position)
         {
-            lastBridge = currentBridge.transform;
-            currentBridge = Instantiate(bridgePrefab, position, Quaternion.identity);
+            position.z = 0;
+            
+            if (currentBridge)
+            {
+                lastBridge = currentBridge;
+                currentBridge = Instantiate(bridgePrefab, position, Quaternion.identity);
+            }
+            else
+            {
+                currentBridge = Instantiate(bridgePrefab, position, Quaternion.identity);
+                PlaceBridge(position);
+            }
+
+            lastBridge.GetComponent<Bridge>().enabled = true;
         }
 
         private void MoveCurrentBridge()
         {
+            if (lastBridge == null)
+            {
+                currentBridge.transform.position = new Vector3(mousePos.x, mousePos.y, 0f);
+                return;
+            }
+            
             Vector3 lastBridgePos = lastBridge.transform.position;
             Vector3 currPos = lastBridgePos;
             Vector3 scale = bridgePrefab.transform.localScale;
 
-            float angle = Vector2.SignedAngle(lastBridge.position, mousePos);
-            //Debug.Log(angle);
-            
-            if (angle < 45 && angle > 0)
-            {
-                // To the right
-                currPos.x += scale.x;
-            }
-            else if (angle > 45)
-            {
-                // To the top
-                currPos.y += scale.y;
-            }
-
-            if (angle < -45)
+            if (lastBridgePos.y < mousePos.y)
             {
                 // To the left
-                currPos.x -= scale.x;
+                if (lastBridgePos.x - scale.x > mousePos.x)
+                {
+                    currPos.x -= scale.x;
+                }
+                else if (lastBridgePos.x + scale.x < mousePos.x)
+                {
+                    // To the right
+                    currPos.x += scale.x;
+                }
+                else
+                {
+                    // To the top
+                    currPos.y += scale.y;
+                }
             }
-            else if (angle < 0)
+            else
             {
-                // To the bottom
-                currPos.y -= scale.y;
+                // To the left
+                if (lastBridgePos.x - scale.x > mousePos.x)
+                {
+                    currPos.x -= scale.x;
+                }
+                else if (lastBridgePos.x + scale.x < mousePos.x)
+                {
+                    // To the right
+                    currPos.x += scale.x;
+                }
+                else
+                {
+                    // To the bottom
+                    currPos.y -= scale.y;
+                }
             }
-
+            
             currentBridge.transform.position = currPos;
         }
         
@@ -69,10 +99,16 @@ namespace Amogh
         {
             mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             
-            MoveCurrentBridge();
+            if (currentBridge)
+                MoveCurrentBridge();
+            
             if (Input.GetMouseButtonDown(0))
             {
                 PlaceBridge(mousePos);
+            }
+            else if (Input.GetMouseButtonDown(1))
+            {
+                Destroy(currentBridge);
             }
         }
     }

@@ -20,6 +20,7 @@ TagManager:
   - bullet
   - WallDoor
   - ExplodeEnemy
+  - CrabWalkBoss
   layers:
   - Default
   - TransparentFX

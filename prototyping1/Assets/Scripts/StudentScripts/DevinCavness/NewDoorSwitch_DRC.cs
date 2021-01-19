@@ -8,6 +8,7 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 	public GameObject SwitchOnArt;
 	public GameObject DoorObj;
 	public GameObject ChangeableWalls;
+	public GameObject ChangeableLava;
 
 	public bool isActive;
 
@@ -18,7 +19,8 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 		SwitchOnArt.SetActive(false);
 		isActive = false;
 		DoorObj = GameObject.FindGameObjectWithTag("Door");
-    }
+		ChangeableLava.SetActive(false);
+	}
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "Player"){
@@ -33,6 +35,7 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 				}
 				DoorObj.GetComponent<NewDoor_DRC>().DoorClose();
 				ChangeableWalls.SetActive(true);
+				ChangeableLava.SetActive(false);
 			}
 			else
             {
@@ -45,6 +48,7 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 				}
 				DoorObj.GetComponent<NewDoor_DRC>().DoorOpen();
 				ChangeableWalls.SetActive(false);
+				ChangeableLava.SetActive(true);
 			}
 		}
 	}

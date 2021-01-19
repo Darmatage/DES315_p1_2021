@@ -18,6 +18,7 @@ TagManager:
   - Enemy
   - GuideTorch
   - bullet
+  - WallDoor
   layers:
   - Default
   - TransparentFX

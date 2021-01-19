@@ -26,6 +26,7 @@ public class ExplodingEnemy_AS : MonoBehaviour
     private bool attackPlayer = false;
     public int damageAmount = 10;
     AStarPather pather;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -49,13 +50,38 @@ public class ExplodingEnemy_AS : MonoBehaviour
         pather.setGrid(grid);
         pather.setObject(explosionObj);
         pather.init(grid);
+
+
+
+        //if(path.Count > 0)
+        //{
+        //    foreach (Vector3 pos in path)
+        //    {
+        //        Debug.Log("Position: " + pos.ToString());
+        //    }
+        //}
+
+        //List<Vector3> path = pather.computePath(transform.position, target.position);
+
+        //if (path != null)
+        //{
+        //    foreach (Vector3 pos in path)
+        //    {
+        //        Debug.Log("Position: " + pos.ToString());
+        //    }
+        //}
+        //else
+        //{
+        //    Debug.Log("PATH IS NULL");
+        //}
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
         //pather.DrawDebug();
-
 
         //Debug.DrawLine(new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 10000.0f, 0.0f), Color.red, 0f,false);
         if (target != null)
@@ -74,7 +100,7 @@ public class ExplodingEnemy_AS : MonoBehaviour
             {
                 attackPlayer = false;
 
-                Debug.Log("Explode");
+               // Debug.Log("Explode");
 
                 if (detonateTimer >= 0)
                 {
@@ -98,7 +124,19 @@ public class ExplodingEnemy_AS : MonoBehaviour
 
             if (attackPlayer == true)
             {
-                transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+                //transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+
+                //pather.computePath(this.transform.position, target.position);
+
+                List<Vector3> path = pather.computePath(transform.position, target.position);
+
+                if (path != null)
+                {
+                    for (int i = 0; i < path.Count - 1; ++i)
+                    {
+                        transform.position = Vector2.MoveTowards(transform.position, path[i], speed * Time.deltaTime);
+                    }
+                }
             }
             else if (attackPlayer == false)
             {

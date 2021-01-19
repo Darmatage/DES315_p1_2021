@@ -11,15 +11,6 @@ TagManager:
   - monsterShooter
   - Sludge
   - togglebutton
-  - Collectible
-  - box
-  - Fire
-  - Water
-  - Enemy
-  - GuideTorch
-  - bullet
-  - WallDoor
-  - ExplodeEnemy
   layers:
   - Default
   - TransparentFX
@@ -29,9 +20,9 @@ TagManager:
   - UI
   - 
   - 
-  - Bridge
-  - Lava
-  - DestructableWall
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -56,7 +47,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: UI Particles
-    uniqueID: 3652372635
     locked: 0

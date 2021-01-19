@@ -24,7 +24,7 @@ public class PlayerMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate(){
+    void Update(){
 
 		if (isAlive == true){
 			change = Vector3.zero;
@@ -52,7 +52,7 @@ public class PlayerMove : MonoBehaviour
 
 	void UpdateAnimationAndMove() {
 		if (isAlive == true){
-			if (change!=Vector3.zero && speed != 0) {
+			if (change!=Vector3.zero) {
 				rb2d.MovePosition(transform.position + change * speed * Time.deltaTime);
 				//MoveCharacter();
 				//anim.SetFloat("moveX", change.x);

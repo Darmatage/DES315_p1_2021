@@ -5,29 +5,13 @@ using UnityEngine;
 public class AustinSteadBounce : MonoBehaviour
 {
 
+	public float speed = 3f; // player movement speed
+	private Vector3 change; // player movement direction
 	private Rigidbody2D rb2d;
 	private Animator anim;
+	private bool isAlive = true;
 
 	private Renderer rend;
-
-
-	private List<GameObject> enemies = new List<GameObject>();
-	private bool charging = false;
-
-	private LineRenderer circle;
-
-	public Color circleIdleColor;
-	public Color circleInRangeColor;
-	public Color circleChargingColor;
-
-	public float bounceDuration = 1.0f;
-	private float bounceTimer = 0.0f;
-
-	private PlayerMove playerMove;
-	private float playerMoveSpeed;
-
-	private Vector2 bounceDirection = new Vector2();
-	public float bounceSpeed = 10;
 
 	// Start is called before the first frame update
 	void Start()
@@ -39,85 +23,56 @@ public class AustinSteadBounce : MonoBehaviour
 		{
 			rb2d = GetComponent<Rigidbody2D>();
 		}
-
-		circle = GetComponentInChildren<LineRenderer>();
-		playerMove = GetComponent<PlayerMove>();
-		playerMoveSpeed = playerMove.speed;
-
-
-		circle.startColor = circleIdleColor;
-		circle.endColor = circleIdleColor;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		if(bounceTimer > 0)
-        {
-			bounceTimer -= Time.deltaTime;
-			if (bounceTimer <= 0)
-            {
-				bounceTimer = 0;
-				playerMove.speed = playerMoveSpeed;
-			}
-			else
-            {
-				rb2d.MovePosition((Vector2)transform.position + bounceDirection * bounceSpeed * Time.deltaTime);
-				return;
-			}
-		}
 
-
-		//Check all surrounding colliders 
-		Collider2D[] colliders = Physics2D.OverlapCircleAll(gameObject.transform.position, 2);
-		enemies.Clear();
-		foreach (Collider2D collider in colliders)
+		if (isAlive == true)
 		{
-			if (canBounce(collider.gameObject))
-			{
-				enemies.Add(collider.gameObject);
-			}
-		}
+			change = Vector3.zero;
+			change.x = Input.GetAxisRaw("Horizontal");
+			change.y = Input.GetAxisRaw("Vertical");
 
-		if(enemies.Count > 0)
-        {
-			circle.startColor = circleInRangeColor;
-			circle.endColor = circleInRangeColor;
 
-			if (Input.GetKeyDown(KeyCode.LeftShift))
-			{
-				GameObject enemy = enemies[0].gameObject;
-
-				circle.startColor = circleChargingColor;
-				circle.endColor = circleChargingColor;
-				playerMove.speed = 0;
-				
-				bounceDirection = playerMove.transform.position - enemy.transform.position;
-				bounceDirection.Normalize();
-
-				bounceTimer = bounceDuration;
-
-				AustinSteadEnemyBounce enemyBounce = enemy.GetComponent<AustinSteadEnemyBounce>();
-				AustinSteadProjectileBounce projectileBounce = enemy.GetComponent<AustinSteadProjectileBounce>();
-
-				if (enemyBounce != null)
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+				//Check all surrounding colliders 
+				Collider2D[] colliders = Physics2D.OverlapCircleAll(gameObject.transform.position, 10);
+				List<GameObject> enemies = new List<GameObject>();
+                foreach (Collider2D collider in colliders)
                 {
-					enemyBounce.GetBounced(-bounceDirection, bounceSpeed, bounceDuration);
+					if(isEnemy(collider.gameObject))
+                    {
+						enemies.Add(collider.gameObject);
+                    }
                 }
-				if(projectileBounce != null)
-                {
-					projectileBounce.GetBounced(-bounceDirection, bounceSpeed, bounceDuration);
-				}
 
+
+            }
+
+
+			UpdateAnimationAndMove();
+
+			if (Input.GetAxis("Horizontal") > 0)
+			{
+				Vector3 newScale = transform.localScale;
+				newScale.x = 1.0f;
+				transform.localScale = newScale;
+			}
+			else if (Input.GetAxis("Horizontal") < 0)
+			{
+				Vector3 newScale = transform.localScale;
+				newScale.x = -1.0f;
+				transform.localScale = newScale;
 			}
 
-		}
-		else
-        {
-			circle.startColor = circleIdleColor;
-			circle.endColor = circleIdleColor;
-		}
-
+			if (Input.GetKey(KeyCode.Space))
+			{
+				anim.SetTrigger("Attack");
+			}
+		} //else playerDie();
 	}
 
 
@@ -126,15 +81,66 @@ public class AustinSteadBounce : MonoBehaviour
 
 
 
-	private bool canBounce(GameObject possibleEnemy)
+	private bool isEnemy(GameObject possibleEnemy)
     {
-		if (possibleEnemy.GetComponent<AustinSteadEnemyBounce>() != null)
-			return true;
-		if (possibleEnemy.GetComponent<AustinSteadProjectileBounce>() != null)
-			return true;
-
 		return false;
     }
+
+
+
+
+	void UpdateAnimationAndMove()
+	{
+		if (isAlive == true)
+		{
+			if (change != Vector3.zero)
+			{
+				rb2d.MovePosition(transform.position + change * speed * Time.deltaTime);
+				//MoveCharacter();
+				//anim.SetFloat("moveX", change.x);
+				//anim.SetFloat("moveY", change.y);
+				anim.SetBool("Walk", true);
+			}
+			else
+			{
+				anim.SetBool("Walk", false);
+			}
+		}
+	}
+
+	public void playerHit()
+	{
+		if (isAlive == true)
+		{
+			anim.SetTrigger("Hurt");
+			StopCoroutine(ChangeColor());
+			StartCoroutine(ChangeColor());
+		}
+	}
+
+	public void playerDie()
+	{
+		anim.SetTrigger("Dead");
+		if (isAlive == false)
+		{
+			//Debug.Log("I'm already dead");
+		}
+		else if (isAlive == true)
+		{
+			isAlive = false;
+			gameObject.GetComponent<Collider2D>().enabled = false;
+			//gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+		}
+	}
+
+
+	IEnumerator ChangeColor()
+	{
+		// color values are R, G, B, and alpha, each 0-255 divided by 100
+		rend.material.color = new Color(2.0f, 1.0f, 0.0f, 0.5f);
+		yield return new WaitForSeconds(0.5f);
+		rend.material.color = Color.white;
+	}
 
 }
 

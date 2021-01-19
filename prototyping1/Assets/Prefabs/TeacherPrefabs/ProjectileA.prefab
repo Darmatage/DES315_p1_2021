@@ -137,7 +137,7 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 1
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.4}
   m_EdgeRadius: 0
@@ -153,8 +153,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c5fe23a3e62e0478058565ea3af9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  speed: 10
   hitEffectAnim: {fileID: 828083053115005703, guid: aa76d2cc38d0394459bca1bd5e7e54cb,
     type: 3}
-  projectileLife: 3

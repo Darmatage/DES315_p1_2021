@@ -19,6 +19,7 @@ TagManager:
   - GuideTorch
   - bullet
   - WallDoor
+  - ExplodeEnemy
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - 
   - Bridge
   - Lava
-  - 
+  - DestructableWall
   - 
   - 
   - 

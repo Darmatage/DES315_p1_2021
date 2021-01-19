@@ -79,7 +79,7 @@ public class ExplodingEnemy_AS : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //pather.DrawDebug();
 
@@ -116,9 +116,7 @@ public class ExplodingEnemy_AS : MonoBehaviour
                     if(Vector2.Distance(target.position, transform.position) <= explodeRange)
                         gameHandlerObj.TakeDamage(damageAmount);
 
-                     // resets values
                     detonateTimer = 3f;
-                    bExplode = false;
                 }
             }
 
@@ -132,10 +130,15 @@ public class ExplodingEnemy_AS : MonoBehaviour
 
                 if (path != null)
                 {
-                    for (int i = 0; i < path.Count - 1; ++i)
-                    {
-                        transform.position = Vector2.MoveTowards(transform.position, path[i], speed * Time.deltaTime);
-                    }
+                    //for (int i = 0; i < path.Count - 1; ++i)
+                    //{
+                    //    transform.position = Vector2.MoveTowards(transform.position, path[i], speed * Time.deltaTime);
+
+                    //    //GameObject.Instantiate(explosionObj, path[i], Quaternion.identity);
+                    //}
+
+                    transform.position = Vector2.MoveTowards(transform.position, path[0], speed * Time.deltaTime);
+
                 }
             }
             else if (attackPlayer == false)
@@ -165,7 +168,15 @@ public class ExplodingEnemy_AS : MonoBehaviour
     IEnumerator Explode()
     {
         spriteRenderer.color = new Color(2.0f, 1.0f, 0.0f, 0.5f); // changes color of enemy to yellow
+        GameObject.Instantiate(explosionObj, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(.5f); // waits so that the color can actually change before it is destroyed
+        
         Destroy(gameObject);
+        
+        bExplode = false;
+
+       // yield return new WaitForSeconds(1f);
+
+       // Destroy(explosionObj);
     }
 }

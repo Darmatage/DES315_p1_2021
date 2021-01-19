@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SludgeLogic : MonoBehaviour
 {
-    public float slowRate = 0.3f;
+    public float slowRate = 0.15f;
     float slowTime = 0.5f;
     private bool isSlowing = false;
     private float slowTimer = 0f;

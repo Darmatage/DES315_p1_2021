@@ -132,11 +132,14 @@ public class OilPlayerMove : MonoBehaviour
                 {
                     BoxCollider2D bc2d = GetComponentInParent<BoxCollider2D>();
 
+                    Vector2 offset = new Vector2(bc2d.offset.x, bc2d.offset.y);
+                    offset.x *= (Input.GetAxis("Horizontal") < 0) ? -1 : 1;
                     Vector3 scale = bc2d.size;
                     ContactFilter2D filter = new ContactFilter2D();
                     Collider2D[] results = new Collider2D[64];
 
-                    Physics2D.OverlapBox(newPos + bc2d.offset, scale, 0.0f, filter, results);
+                    // thanks to Ryan Garvan for helping fix this bit c:
+                    Physics2D.OverlapBox(newPos + offset, scale, 0.0f, filter, results);
 
                     foreach (var col in results)
                     {

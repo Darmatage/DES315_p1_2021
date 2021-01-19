@@ -15,14 +15,17 @@ EditorBuildSettings:
     path: Assets/Scenes/TeacherScenes/EndWin.unity
     guid: 60c9e5ad1f519974cb1b603b75ba067b
   - enabled: 1
-    path: Assets/Scenes/StudentScenes/KeeganTompkinsScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/TeacherScenes/TeacherSampleScene.unity
+    guid: 23fe6c7a21e0b7d469bf3feda13f2734
   - enabled: 1
     path: Assets/Scenes/TeacherScenes/StudentSampleScene.unity
     guid: 505721ee2d56b5549ba095945e303ebd
   - enabled: 1
-    path: Assets/Scenes/StudentScenes/ChaseGraves.unity
-    guid: fa8412e1079246141a8d59fb1b391188
+    path: Assets/Scenes/StudentScenes/JasonWiser.unity
+    guid: 3e686bd0ec4e088489151aa14e3ef978
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/KeeganTompkinsScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/Scenes/StudentScenes/RobertSeiver.unity
     guid: 9bef4b3306f8c094980c693851d5e44d
@@ -77,9 +80,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StudentScenes/AloraNewburyScene.unity
     guid: 6b81563a30b2ad14b8a3a4ca3ea77e45
-  - enabled: 1
-    path: Assets/Scenes/StudentScenes/JasonWiser.unity
-    guid: 3e686bd0ec4e088489151aa14e3ef978
   - enabled: 1
     path: Assets/Scenes/StudentScenes/JWymerScene.unity
     guid: a35ebaa9d4f5d014298bfd3f83a5e67f

@@ -8,18 +8,25 @@ public class ExplodingEnemy_AS : MonoBehaviour
     private Transform target; // the player target
     public int damage = 1; // how much damage it deals to player
     public int EnemyLives = 2;
+
+    public GameObject explosionObj;
+
     private Renderer rend;
     private SpriteRenderer spriteRenderer;
     private GameHandler gameHandlerObj;
     private Animator anim;
+    public Grid grid;
 
     public static float strobeDelay = .15f;
     float strobeDelayTimer = strobeDelay;
-    public float explodeRange = 100.0f;
+    public float explodeRange = 2.0f;
     bool toggle = false;
     float detonateTimer = 2f; // in seconds
     bool bExplode = false;
     private bool attackPlayer = false;
+    public int damageAmount = 10;
+    AStarPather pather;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,32 +43,26 @@ public class ExplodingEnemy_AS : MonoBehaviour
         {
             gameHandlerObj = gameHandlerLocation.GetComponent<GameHandler>();
         }
+
+        pather = new AStarPather();
+        grid = FindObjectOfType<Grid>();
+        pather.setGrid(grid);
+        pather.setObject(explosionObj);
+        pather.init(grid);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //pather.DrawDebug();
+
+
+        //Debug.DrawLine(new Vector3(0.0f, 0.0f, 0.0f), new Vector3(0.0f, 10000.0f, 0.0f), Color.red, 0f,false);
         if (target != null)
         {
             // if the player is within range, then blow up
             if(Vector2.Distance(target.position, transform.position) <= explodeRange)
             {
-                //attackPlayer = false;
-
-                //Debug.Log("Explode");
-
-                //if (detonateTimer >= 0)
-                //{
-
-                //    Strobe();
-                //    detonateTimer -= Time.deltaTime;
-                //}
-                //else
-                //{
-                //    StopCoroutine("GetHit");
-                //    StartCoroutine("GetHit");
-                //}
-
                 bExplode = true;
             }
             else if(Vector2.Distance(target.position, transform.position) > explodeRange && !bExplode)
@@ -83,12 +84,13 @@ public class ExplodingEnemy_AS : MonoBehaviour
                 }
                 else
                 {
-                    // StartCoroutine(Wait());
-                    // Destroy(gameObject);
                     StartCoroutine(Explode());
 
+                     // if the player is in range when the enemy explodes, they take damage
                     if(Vector2.Distance(target.position, transform.position) <= explodeRange)
-                        gameHandlerObj.TakeDamage(10);
+                        gameHandlerObj.TakeDamage(damageAmount);
+
+                     // resets values
                     detonateTimer = 3f;
                     bExplode = false;
                 }
@@ -124,22 +126,8 @@ public class ExplodingEnemy_AS : MonoBehaviour
 
     IEnumerator Explode()
     {
-        //anim.SetTrigger("Hurt");
-        //EnemyLives -= 1;
-        //// color values are R, G, B, and alpha, each divided by 100
-        //rend.material.color = new Color(2.4f, 0.9f, 0.9f, 0.5f);
-        //if (EnemyLives < 1)
-        //{
-        //    //gameHandlerObj.AddScore (1);
-        //    Destroy(gameObject);
-        //}
-
-        spriteRenderer.color = new Color(2.0f, 1.0f, 0.0f, 0.5f);
-
-
-        yield return new WaitForSeconds(.5f);
-        //rend.material.color = Color.white;
-
+        spriteRenderer.color = new Color(2.0f, 1.0f, 0.0f, 0.5f); // changes color of enemy to yellow
+        yield return new WaitForSeconds(.5f); // waits so that the color can actually change before it is destroyed
         Destroy(gameObject);
     }
 }

@@ -1,9 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class ExplodingEnemy_AS : MonoBehaviour
 {
+    public Tilemap destructableTilemap;
+    private List<Vector3> tileWorldLocations;
+
     public float speed = 1f; // speed of enemy
     private Transform target; // the player target
     public int damage = 1; // how much damage it deals to player
@@ -25,8 +29,9 @@ public class ExplodingEnemy_AS : MonoBehaviour
     bool bExplode = false;
     private bool attackPlayer = false;
     public int damageAmount = 10;
-    AStarPather pather;
+    static AStarPather pather;
     CircleCollider2D circleCollider;
+    private SpriteRenderer circleRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +39,23 @@ public class ExplodingEnemy_AS : MonoBehaviour
         anim = gameObject.GetComponentInChildren<Animator>();
         rend = GetComponentInChildren<Renderer>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        
+        foreach(Transform child in transform)
+        {
+            if(child.name == "circle_art")
+            {
+                circleRenderer = child.GetComponent<SpriteRenderer>();
+            }
+        }
+
+        //circleRenderer.enabled = false;
+
+        destructableTilemap = GameObject.Find("TilemapDestructables").GetComponent<Tilemap>();
+
+        if (destructableTilemap != null)
+        {
+            print("GOT TILEMAP");
+        }
 
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
@@ -45,9 +67,7 @@ public class ExplodingEnemy_AS : MonoBehaviour
             gameHandlerObj = gameHandlerLocation.GetComponent<GameHandler>();
         }
 
-        circleCollider = GetComponent<CircleCollider2D>();
-
-        circleCollider.enabled = false;
+        tileMapInit();
 
 
         pather = new AStarPather();
@@ -55,31 +75,6 @@ public class ExplodingEnemy_AS : MonoBehaviour
         pather.setGrid(grid);
         pather.setObject(explosionObj);
         pather.init(grid);
-
-
-
-        //if(path.Count > 0)
-        //{
-        //    foreach (Vector3 pos in path)
-        //    {
-        //        Debug.Log("Position: " + pos.ToString());
-        //    }
-        //}
-
-        //List<Vector3> path = pather.computePath(transform.position, target.position);
-
-        //if (path != null)
-        //{
-        //    foreach (Vector3 pos in path)
-        //    {
-        //        Debug.Log("Position: " + pos.ToString());
-        //    }
-        //}
-        //else
-        //{
-        //    Debug.Log("PATH IS NULL");
-        //}
-
 
     }
 
@@ -104,7 +99,7 @@ public class ExplodingEnemy_AS : MonoBehaviour
             if(bExplode)
             {
                 attackPlayer = false;
-
+                //circleRenderer.enabled = true;
                // Debug.Log("Explode");
 
                 if (detonateTimer >= 0)
@@ -115,9 +110,26 @@ public class ExplodingEnemy_AS : MonoBehaviour
                 }
                 else
                 {
-                    circleCollider.enabled = true;
-
                     StartCoroutine(Explode());
+
+                    foreach(Vector3 tile in tileWorldLocations)
+                    {
+                        if(Vector2.Distance(tile, transform.position) <= explodeRange)
+                        {
+                            //Debug.Log("in range");
+
+                            Vector3Int localPlace = destructableTilemap.WorldToCell(tile);
+
+                            if (destructableTilemap.HasTile(localPlace))
+                            {
+                                StartCoroutine(WallBreak(tile));
+                                destructableTilemap.SetTile(destructableTilemap.WorldToCell(tile), null);
+
+                                pather.updateNodeGrid(tile);
+                            }
+                            //tileWorldLocations.Remove(tile);
+                        }
+                    }
 
                      // if the player is in range when the enemy explodes, they take damage
                     if(Vector2.Distance(target.position, transform.position) <= explodeRange)
@@ -129,28 +141,35 @@ public class ExplodingEnemy_AS : MonoBehaviour
 
             if (attackPlayer == true)
             {
-                //transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-
-                //pather.computePath(this.transform.position, target.position);
-
                 List<Vector3> path = pather.computePath(transform.position, target.position);
 
                 if (path != null)
                 {
-                    //for (int i = 0; i < path.Count - 1; ++i)
-                    //{
-                    //    transform.position = Vector2.MoveTowards(transform.position, path[i], speed * Time.deltaTime);
-
-                    //    //GameObject.Instantiate(explosionObj, path[i], Quaternion.identity);
-                    //}
-
                     transform.position = Vector2.MoveTowards(transform.position, path[0], speed * Time.deltaTime);
-
                 }
             }
             else if (attackPlayer == false)
             {
                 transform.position = Vector2.MoveTowards(transform.position, target.position, speed * 0.0f * Time.deltaTime);
+            }
+        }
+
+
+    }
+
+    private void tileMapInit()
+    {
+        tileWorldLocations = new List<Vector3>();
+
+        foreach (var pos in destructableTilemap.cellBounds.allPositionsWithin)
+        {
+            Vector3Int localPlace = new Vector3Int(pos.x, pos.y, pos.z);
+            Vector3 place = destructableTilemap.CellToWorld(localPlace) + new Vector3(.5f, .5f, 0.0f);
+            
+            
+            if (destructableTilemap.HasTile(localPlace))
+            {
+                tileWorldLocations.Add(place);
             }
         }
     }
@@ -188,5 +207,13 @@ public class ExplodingEnemy_AS : MonoBehaviour
        // yield return new WaitForSeconds(1f);
 
        Destroy(test);
+    }
+
+    IEnumerator WallBreak(Vector3 tilePos)
+    {
+        GameObject test = Instantiate(explosionObj.gameObject, tilePos, Quaternion.identity);
+        yield return new WaitForSeconds(.5f); // waits so that the color can actually change before it is destroyed
+
+        Destroy(test);
     }
 }

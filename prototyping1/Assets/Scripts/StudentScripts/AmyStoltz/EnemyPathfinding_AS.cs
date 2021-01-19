@@ -198,11 +198,12 @@ public class AStarPather
         //Vector3 cell_world_pos1 = gridToWorld(new Vector2Int(startPos.x, startPos.y)) + new Vector3(0, 0, 10);
         //testObj.transform.position = cell_world_pos1;
         //GameObject.Instantiate(testObj, cell_world_pos1, Quaternion.identity);
-        
+
         //Vector3 cell_world_pos2 = gridToWorld(new Vector2Int(goalPos.x, goalPos.y)) + new Vector3(0, 0, 10);
         //testObj.transform.position = cell_world_pos2;
         //GameObject.Instantiate(testObj, cell_world_pos2, Quaternion.identity);
-
+        if (nodeGrid[goalPos.y][goalPos.x].isObstacle)
+            return null;
 
         // will hold the final path
         List<Vector3> path = new List<Vector3>();
@@ -448,6 +449,12 @@ public class AStarPather
         return cheapest;
     }
 
+    public void updateNodeGrid(Vector3 pos)
+    {
+        Vector2Int local = worldToGrid(pos);
+        nodeGrid[local.y][local.x].isObstacle = false;
+    }
+
     public float calculateHeuristic(Vector2Int startPos, Vector2Int goalPos)
     {
         float cost = 0.0f;
@@ -464,4 +471,6 @@ public class AStarPather
          // returns octile heuristic
         return cost;
     }
+
+    
 }

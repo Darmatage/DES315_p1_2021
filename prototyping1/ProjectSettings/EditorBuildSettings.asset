@@ -116,4 +116,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StudentScenes/MarsJurichScene.unity
     guid: 656a7871a48119a4883999e82c3423d3
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/DevonPetersonScene.unity
+    guid: e4040f3b57fde364aa65b394bd962df1
   m_configObjects: {}

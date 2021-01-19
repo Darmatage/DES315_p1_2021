@@ -55,6 +55,7 @@ public class AStarPather
         }
 
         setObstacles(grid, rowCount, colCount);
+
     }
 
      // gets the dimensions of the grid that's in use
@@ -401,6 +402,8 @@ public class AStarPather
          // if either of those are walls then they aren't valid
         if (nodeGrid[pos1.y][pos1.x].isObstacle || nodeGrid[pos2.y][pos2.x].isObstacle)
             return false;
+
+
 
         return true;
     }

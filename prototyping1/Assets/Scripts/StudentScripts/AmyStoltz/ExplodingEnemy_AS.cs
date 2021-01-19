@@ -26,7 +26,7 @@ public class ExplodingEnemy_AS : MonoBehaviour
     private bool attackPlayer = false;
     public int damageAmount = 10;
     AStarPather pather;
-    
+    CircleCollider2D circleCollider;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +44,11 @@ public class ExplodingEnemy_AS : MonoBehaviour
         {
             gameHandlerObj = gameHandlerLocation.GetComponent<GameHandler>();
         }
+
+        circleCollider = GetComponent<CircleCollider2D>();
+
+        circleCollider.enabled = false;
+
 
         pather = new AStarPather();
         grid = FindObjectOfType<Grid>();
@@ -110,6 +115,8 @@ public class ExplodingEnemy_AS : MonoBehaviour
                 }
                 else
                 {
+                    circleCollider.enabled = true;
+
                     StartCoroutine(Explode());
 
                      // if the player is in range when the enemy explodes, they take damage
@@ -168,15 +175,18 @@ public class ExplodingEnemy_AS : MonoBehaviour
     IEnumerator Explode()
     {
         spriteRenderer.color = new Color(2.0f, 1.0f, 0.0f, 0.5f); // changes color of enemy to yellow
-        GameObject.Instantiate(explosionObj, transform.position, Quaternion.identity);
+       GameObject test =  Instantiate(explosionObj.gameObject, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(.5f); // waits so that the color can actually change before it is destroyed
         
+        
+        
         Destroy(gameObject);
+
         
         bExplode = false;
 
        // yield return new WaitForSeconds(1f);
 
-       // Destroy(explosionObj);
+       Destroy(test);
     }
 }

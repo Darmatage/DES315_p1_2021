@@ -2,17 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Post : MonoBehaviour
+public class KT_Post : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Variables
+    public Color HoverColor;
+    public Color NormalColor;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // In case I need any post specific behavior.
 }

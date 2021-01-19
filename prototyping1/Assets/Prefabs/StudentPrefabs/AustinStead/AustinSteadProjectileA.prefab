@@ -92,9 +92,10 @@ GameObject:
   m_Component:
   - component: {fileID: 434860589915221254}
   - component: {fileID: 5400653998030641458}
-  - component: {fileID: 4119919182264432032}
+  - component: {fileID: 840412383516129838}
+  - component: {fileID: -8864407234587000760}
   m_Layer: 0
-  m_Name: ProjectileA
+  m_Name: AustinSteadProjectileA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,11 +138,11 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 1
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.4}
   m_EdgeRadius: 0
---- !u!114 &4119919182264432032
+--- !u!114 &840412383516129838
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,11 +151,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 2897097587681159296}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6c5fe23a3e62e0478058565ea3af9c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 228b9e22377473f46aa34670169b8765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 10
+  speed: 4
   hitEffectAnim: {fileID: 828083053115005703, guid: aa76d2cc38d0394459bca1bd5e7e54cb,
     type: 3}
-  projectileLife: 3
+  projectileLife: 20
+--- !u!114 &-8864407234587000760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897097587681159296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2857d026615eac438fb5298694775ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

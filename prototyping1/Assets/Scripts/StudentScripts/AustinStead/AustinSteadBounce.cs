@@ -73,7 +73,7 @@ public class AustinSteadBounce : MonoBehaviour
 		enemies.Clear();
 		foreach (Collider2D collider in colliders)
 		{
-			if (isEnemy(collider.gameObject))
+			if (canBounce(collider.gameObject))
 			{
 				enemies.Add(collider.gameObject);
 			}
@@ -98,11 +98,16 @@ public class AustinSteadBounce : MonoBehaviour
 				bounceTimer = bounceDuration;
 
 				AustinSteadEnemyBounce enemyBounce = enemy.GetComponent<AustinSteadEnemyBounce>();
+				AustinSteadProjectileBounce projectileBounce = enemy.GetComponent<AustinSteadProjectileBounce>();
 
 				if (enemyBounce != null)
                 {
 					enemyBounce.GetBounced(-bounceDirection, bounceSpeed, bounceDuration);
                 }
+				if(projectileBounce != null)
+                {
+					projectileBounce.GetBounced(-bounceDirection, bounceSpeed, bounceDuration);
+				}
 
 			}
 
@@ -121,9 +126,11 @@ public class AustinSteadBounce : MonoBehaviour
 
 
 
-	private bool isEnemy(GameObject possibleEnemy)
+	private bool canBounce(GameObject possibleEnemy)
     {
-		if (possibleEnemy.GetComponent<MonsterMoveHit>() != null)
+		if (possibleEnemy.GetComponent<AustinSteadEnemyBounce>() != null)
+			return true;
+		if (possibleEnemy.GetComponent<AustinSteadProjectileBounce>() != null)
 			return true;
 
 		return false;

@@ -228,6 +228,5 @@ public class KT_Rope : MonoBehaviour
         UpdateGrabPoints();
         UpdatePosition();
         UpdateUI();
-        Debug.Log("IsGrabbed: " + grabPoints[KT_BOT].IsGrabbed + "," + grabPoints[KT_TOP].IsGrabbed);
     }
 }

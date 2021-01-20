@@ -19,7 +19,8 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 		SwitchOnArt.SetActive(false);
 		isActive = false;
 		//DoorObj = GameObject.FindGameObjectWithTag("Door");
-		ChangeableGridOff.SetActive(false);
+		if (ChangeableGridOff)
+			ChangeableGridOff.SetActive(false);
 	}
 
 	void OnTriggerEnter2D(Collider2D other){

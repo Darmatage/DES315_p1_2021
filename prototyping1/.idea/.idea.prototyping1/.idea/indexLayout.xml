@@ -22,12 +22,7 @@
     </explicitIncludes>
     <explicitExcludes>
       <Path>.idea</Path>
-      <Path>Build</Path>
       <Path>Library</Path>
-<<<<<<< HEAD
-      <Path>Logs</Path>
-=======
->>>>>>> Jacob-Presley
       <Path>Temp</Path>
       <Path>obj</Path>
     </explicitExcludes>

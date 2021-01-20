@@ -65,16 +65,41 @@
               <e p="AustinSteadProjectile.cs" t="Include" />
               <e p="AustinSteadProjectileBounce.cs" t="Include" />
             </e>
+            <e p="CarlosGarciaPerez" t="Include">
+              <e p="Block_CEGP.cs" t="Include" />
+              <e p="PushBlock_CEGP.cs" t="Include" />
+              <e p="Sensor_GarciaPerez.cs" t="Include" />
+              <e p="StopBlock_CEGP.cs" t="Include" />
+              <e p="Water_CEGP.cs" t="Include" />
+            </e>
             <e p="ChaseGravesScripts" t="Include">
               <e p="ChaseGraves_GrenadeSwitch.cs" t="Include" />
               <e p="ChaseGraves_MonsterMoveShoot.cs" t="Include" />
               <e p="ChaseGraves_PlayerAttack.cs" t="Include" />
               <e p="ChaseGraves_ProjectileScript.cs" t="Include" />
             </e>
+            <e p="DavidDasky" t="Include">
+              <e p="RadialProgress.cs" t="Include" />
+              <e p="StudentDoor.cs" t="Include" />
+              <e p="StudentSwitch.cs" t="Include" />
+            </e>
             <e p="DevinCavness" t="Include">
               <e p="MonsterMoveHitStop_DRC.cs" t="Include" />
               <e p="NewDoor_DRC.cs" t="Include" />
               <e p="NewDoorSwitch_DRC.cs" t="Include" />
+            </e>
+            <e p="DevonPetersonScripts" t="Include">
+              <e p="BreakableDoor.cs" t="Include" />
+              <e p="BrokenDoorSwitch.cs" t="Include" />
+              <e p="Crab_Fireball.cs" t="Include" />
+              <e p="CrabBossBreakDoor.cs" t="Include" />
+              <e p="CrabBossFireball.cs" t="Include" />
+              <e p="CrabWalkBoss.cs" t="Include" />
+              <e p="DoorManager.cs" t="Include" />
+            </e>
+            <e p="DieterVoegels" t="Include">
+              <e p="DieterVoegels_Skeleton.cs" t="Include" />
+              <e p="DieterVoegels_SkeletonSpawner.cs" t="Include" />
             </e>
             <e p="DillonHahn" t="Include">
               <e p="ToggleButtonLogicDH.cs" t="Include" />
@@ -99,13 +124,17 @@
               <e p="WallSwitch.cs" t="Include" />
             </e>
             <e p="JWymer" t="Include">
+              <e p="CoinJW.cs" t="Include" />
               <e p="CollectibleJW.cs" t="Include" />
               <e p="InventoryHandlerJW.cs" t="Include" />
+              <e p="JW_PlayerAttack_ChaseGraves_Iteration.cs" t="Include" />
             </e>
             <e p="KeanuCendejasScripts" t="Include">
               <e p="DashSlimeScript_cendejas.cs" t="Include" />
             </e>
             <e p="KeeganTompkins" t="Include">
+              <e p="KT_Hover.cs" t="Include" />
+              <e p="KT_PlayerRope.cs" t="Include" />
               <e p="KT_Post.cs" t="Include" />
               <e p="KT_Rope.cs" t="Include" />
             </e>
@@ -114,12 +143,23 @@
               <e p="lorenzoLavaScript.cs" t="Include" />
               <e p="lorenzoWaterScript.cs" t="Include" />
             </e>
+            <e p="LowellNovitch" t="Include">
+              <e p="LJNBoulderScript.cs" t="Include" />
+              <e p="LJNBoulderTrapScript.cs" t="Include" />
+            </e>
+            <e p="MarkCulp" t="Include">
+              <e p="TeleportAbility.cs" t="Include" />
+              <e p="TeleportAbilityMarker.cs" t="Include" />
+            </e>
             <e p="MarsJurich" t="Include">
               <e p="Oil.cs" t="Include" />
               <e p="OilPlayerMove.cs" t="Include" />
             </e>
             <e p="MatthewKlingman" t="Include">
               <e p="mklingmanPlayerWrapper.cs" t="Include" />
+            </e>
+            <e p="OussamaKhalaf" t="Include">
+              <e p="OussamaSlime.cs" t="Include" />
             </e>
             <e p="RhiannaPinkerton" t="Include">
               <e p="HintTextPinkerton.cs" t="Include" />
@@ -145,6 +185,7 @@
             <e p="RyanGarvanScripts" t="Include">
               <e p="RyanGarvanAStarPather.cs" t="Include" />
               <e p="RyanGarvanDoorMimicMove.cs" t="Include" />
+              <e p="RyanGarvanMimicWallTrigger.cs" t="Include" />
             </e>
             <e p="RyanHeath" t="Include">
               <e p="EnemyMovementPattern.cs" t="Include" />
@@ -155,12 +196,17 @@
             </e>
             <e p="WillMielke" t="Include">
               <e p="BoxMove_Mielke.cs" t="Include" />
+              <e p="EasyRestart_Mielke.cs" t="Include" />
+              <e p="LaserController_Mielke.cs" t="Include" />
             </e>
             <e p="ZacaryBrown" t="Include">
               <e p="ZacaryBrown_BouncyBullet.cs" t="Include" />
               <e p="ZacaryBrown_FollowMouse.cs" t="Include" />
+              <e p="ZacaryBrown_MonsterShootMove.cs" t="Include" />
               <e p="ZacaryBrown_Shield.cs" t="Include" />
+              <e p="ZacaryBrown_Spawner.cs" t="Include" />
               <e p="ZacaryBrown_Surface.cs" t="Include" />
+              <e p="ZMB_NewDoorSwitch_DRC.cs" t="Include" />
             </e>
           </e>
           <e p="TeacherScripts" t="Include">

@@ -20,19 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2807b824-211b-4825-8c41-b9035f51e944" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/Student_DavidDasky_DoorSwitch.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/Student_DavidDasky_DoorSwitch/StudentDoor_David.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/Student_DavidDasky_DoorSwitch/StudentDoor_David.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/Student_DavidDasky_DoorSwitch/StudentSwitch_David.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/Student_DavidDasky_DoorSwitch/StudentSwitch_David.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Student_DavidDaskyScene.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Student_DavidDaskyScene/DavidDasky.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Student_DavidDaskyScene/DavidDasky.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentDoor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentDoor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentSwitch.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentSwitch.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StudentScenes/RobertSeiver.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StudentScenes/RobertSeiver.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +40,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentSwitch.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TeacherScripts/Door.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentDoor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" />
       </list>
     </option>
   </component>
@@ -66,6 +59,14 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Build/prototyping_DungeonCrawl.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Robert\Desktop\School\DES 315\Project 1\DES315_p1_2021\prototyping1\Build" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -98,6 +99,7 @@
       <workItem from="1610489639314" duration="5324000" />
       <workItem from="1610500964575" duration="41000" />
       <workItem from="1610920904724" duration="43000" />
+      <workItem from="1611170262360" duration="1169000" />
     </task>
     <servers />
   </component>
@@ -197,14 +199,7 @@
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentDoor.cs</url>
           <line>33</line>
-          <properties documentPath="D:\DigiPen\DES315\DES315_p1_2021\prototyping1\Assets\Scripts\StudentDavidDaskyScripts\StudentDoor.cs" initialLine="38">
-            <startOffsets>
-              <option value="879" />
-            </startOffsets>
-            <endOffsets>
-              <option value="912" />
-            </endOffsets>
-          </properties>
+          <properties documentPath="D:\DigiPen\DES315\DES315_p1_2021\prototyping1\Assets\Scripts\StudentDavidDaskyScripts\StudentDoor.cs" initialLine="38" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

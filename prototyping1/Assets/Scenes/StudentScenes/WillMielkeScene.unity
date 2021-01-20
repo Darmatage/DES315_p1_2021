@@ -37107,7 +37107,7 @@ PrefabInstance:
     - target: {fileID: 6551937145445057747, guid: 401a933dbd2195744a4fb43f251707d7,
         type: 3}
       propertyPath: NextScene
-      value: TeacherSampleScene
+      value: DillonHahnScene
       objectReference: {fileID: 0}
     - target: {fileID: 7932778659117802276, guid: 401a933dbd2195744a4fb43f251707d7,
         type: 3}

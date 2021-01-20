@@ -61,10 +61,10 @@ public class ExplodingEnemy_AS : MonoBehaviour
 
         destructableTilemap = GameObject.Find("TilemapDestructables").GetComponent<Tilemap>();
 
-        if (destructableTilemap != null)
-        {
-            print("GOT TILEMAP");
-        }
+        //if (destructableTilemap != null)
+        //{
+        //    print("GOT TILEMAP");
+        //}
 
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {

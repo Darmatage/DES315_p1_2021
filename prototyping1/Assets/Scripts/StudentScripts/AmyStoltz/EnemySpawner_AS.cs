@@ -37,7 +37,7 @@ public class EnemySpawner_AS : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("ON TRIGGER");
+            //Debug.Log("ON TRIGGER");
 
             spawnEnemy = true;
 

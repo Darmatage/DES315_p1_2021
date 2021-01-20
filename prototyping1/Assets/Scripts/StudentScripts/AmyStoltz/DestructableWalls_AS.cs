@@ -5,31 +5,31 @@ using UnityEngine.Tilemaps;
 
 public class DestructableWalls_AS : MonoBehaviour
 {
-    public Tilemap destructableTilemap;
-    public GameObject explosion;
-    List<Transform> enemies;
+    //public Tilemap destructableTilemap;
+    //public GameObject explosion;
+    //List<Transform> enemies;
     // Start is called before the first frame update
-    private void Start()
-    {
+    //private void Start()
+    //{
 
-        enemies = new List<Transform>();
-        destructableTilemap = GetComponent<Tilemap>();
+    //    enemies = new List<Transform>();
+    //    destructableTilemap = GetComponent<Tilemap>();
 
-        GameObject[] enemyObj = GameObject.FindGameObjectsWithTag("ExplodeEnemy");
+    //    GameObject[] enemyObj = GameObject.FindGameObjectsWithTag("ExplodeEnemy");
 
-        if (enemyObj.Length > 0)
-        {
-            foreach(GameObject obj in enemyObj)
-            {
-                if(obj.GetComponent<Transform>() != null)
-                {
-                    enemies.Add(obj.GetComponent<Transform>());
-                }
-            }
-        }
+    //    if (enemyObj.Length > 0)
+    //    {
+    //        foreach(GameObject obj in enemyObj)
+    //        {
+    //            if(obj.GetComponent<Transform>() != null)
+    //            {
+    //                enemies.Add(obj.GetComponent<Transform>());
+    //            }
+    //        }
+    //    }
 
-        Debug.Log("Num of enemies: " + enemies.Count.ToString());
-    }
+    //    Debug.Log("Num of enemies: " + enemies.Count.ToString());
+    //}
 
     private void FixedUpdate()
     {

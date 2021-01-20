@@ -52,10 +52,13 @@ public class LJNBoulderTrapScript : MonoBehaviour
                 GameObject bould = Instantiate(BoulderPrefab, spawnpos, Quaternion.identity);
 
                 LJNBoulderScript bs = bould.GetComponent<LJNBoulderScript>();
-                bs.speed = speed;
-                bs.dir = spawn_distance * -1.0f;
-                bs.EnemyDamage = EnemyDamage;
-                bs.PlayerDamage = PlayerDamage;
+                if (bs != null)
+                {
+                    bs.speed = speed;
+                    bs.dir = spawn_distance * -1.0f;
+                    bs.EnemyDamage = EnemyDamage;
+                    bs.PlayerDamage = PlayerDamage;
+                }
 
                 GetComponent<SpriteRenderer>().sprite = triggered;
                 activated = true;

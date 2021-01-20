@@ -18,8 +18,9 @@ public class BoxMove_Mielke : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D colExt)
     {
-        if (colExt.gameObject.tag == "Player")
-            gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        if(colExt.gameObject.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
+            colExt.gameObject.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
 
     }
 

@@ -613,41 +613,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonA16
       objectReference: {fileID: 0}
-    - target: {fileID: 6654663669661147028, guid: 56c860b7f8a973346a21033e9e3ae220,
-        type: 3}
-      propertyPath: GoToScene
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7942948826064923285, guid: 56c860b7f8a973346a21033e9e3ae220,
-        type: 3}
-      propertyPath: m_Colors.m_NormalColor.g
-      value: 0.81960785
-      objectReference: {fileID: 0}
-    - target: {fileID: 7942948826064923285, guid: 56c860b7f8a973346a21033e9e3ae220,
-        type: 3}
-      propertyPath: m_Colors.m_NormalColor.b
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7942948826064923285, guid: 56c860b7f8a973346a21033e9e3ae220,
-        type: 3}
-      propertyPath: m_Colors.m_NormalColor.r
-      value: 0.6862745
-      objectReference: {fileID: 0}
-    - target: {fileID: 7942948826064923285, guid: 56c860b7f8a973346a21033e9e3ae220,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.9529412
-      objectReference: {fileID: 0}
-    - target: {fileID: 7942948826064923285, guid: 56c860b7f8a973346a21033e9e3ae220,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.77254903
-      objectReference: {fileID: 0}
-    - target: {fileID: 7942948826064923285, guid: 56c860b7f8a973346a21033e9e3ae220,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.60784316
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56c860b7f8a973346a21033e9e3ae220, type: 3}
 --- !u!1001 &194133127

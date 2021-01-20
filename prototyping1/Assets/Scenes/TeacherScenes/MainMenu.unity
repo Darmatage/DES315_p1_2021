@@ -2970,6 +2970,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3624300986296904096, guid: 9b9a96cc30d056349acd41194cd66b4c,
+        type: 3}
+      propertyPath: m_Text
+      value: KeanuC
+      objectReference: {fileID: 0}
     - target: {fileID: 8004016788331300129, guid: 9b9a96cc30d056349acd41194cd66b4c,
         type: 3}
       propertyPath: m_Name
@@ -4837,6 +4842,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonA5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462816570336731820, guid: 181a2b3b692949347876e9f6024237df,
+        type: 3}
+      propertyPath: m_Text
+      value: AloraN
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462816570336731820, guid: 181a2b3b692949347876e9f6024237df,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462816570336731820, guid: 181a2b3b692949347876e9f6024237df,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462816570336731820, guid: 181a2b3b692949347876e9f6024237df,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462816570336731820, guid: 181a2b3b692949347876e9f6024237df,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 181a2b3b692949347876e9f6024237df, type: 3}

@@ -49,8 +49,8 @@ public class AustinSteadBounce : MonoBehaviour
 		circle.endColor = circleIdleColor;
 	}
 
-	// Update is called once per frame
-	void Update()
+    // Update is called once per frame
+    void Update()
 	{
 		if(bounceTimer > 0)
         {

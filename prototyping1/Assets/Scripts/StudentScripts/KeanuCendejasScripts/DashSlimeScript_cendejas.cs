@@ -13,8 +13,8 @@ public class DashSlimeScript_cendejas : MonoBehaviour
 	private Animator anim;
 	private Rigidbody2D body;
 	private Color col_;
-	private float timer = 5.0f;
-	private float staticTime = 5.0f;
+	private float timer = 3.5f;
+	private float staticTime = 3.5f;
 
 	private float retreatTimer;
 	public float retreatTime = 3.0f;

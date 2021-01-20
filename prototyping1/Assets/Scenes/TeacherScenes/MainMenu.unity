@@ -1796,6 +1796,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1787377386}
     m_Modifications:
+    - target: {fileID: 397485671005681826, guid: f487a08bf40bf0640b78a8d69535aa81,
+        type: 3}
+      propertyPath: m_Text
+      value: "\u2605Devin C\u2605"
+      objectReference: {fileID: 0}
     - target: {fileID: 587730677955809561, guid: f487a08bf40bf0640b78a8d69535aa81,
         type: 3}
       propertyPath: m_LocalPosition.x

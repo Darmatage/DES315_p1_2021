@@ -13,6 +13,14 @@ public class AustinSteadProjectile : MonoBehaviour
 	public float projectileLife = 3.0f;
 	private float projectileTimer;
 
+
+    public enum Team
+    {
+		Enemy,
+		Player
+    }
+	private Team team;
+
 	void Start() {
 		//transform gets location, but we need Vector2 to get direction, so we can moveTowards.
 		playerTrans = GameObject.FindGameObjectWithTag("Player").transform;
@@ -25,6 +33,8 @@ public class AustinSteadProjectile : MonoBehaviour
 		if (gameHandlerLocation != null) {
 			gameHandlerObj = gameHandlerLocation.GetComponent<GameHandler> ();
 		}
+
+		team = Team.Enemy;
 	}
 
 	void Update () {
@@ -33,14 +43,37 @@ public class AustinSteadProjectile : MonoBehaviour
 
 	//if bullet hits a collider, play explosion animation, then destroy effect and bullet
 	void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.tag != "monsterShooter") {
-			if (other.gameObject.tag == "Player"){
-				gameHandlerObj.TakeDamage(damage);
+
+        if (team == Team.Enemy)
+        {
+			if (other.gameObject.tag != "monsterShooter")
+			{
+				if (other.gameObject.tag == "Player")
+				{
+					gameHandlerObj.TakeDamage(damage);
+				}
+				GameObject animEffect = Instantiate(hitEffectAnim, transform.position, Quaternion.identity);
+				Destroy(animEffect, 0.5f);
+				Destroy(gameObject);
 			}
-			GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
-			Destroy (animEffect, 0.5f);
-			Destroy (gameObject);
 		}
+		else
+        {
+			if (other.gameObject.tag != "Player")
+			{
+				if (other.gameObject.tag == "monsterShooter")
+				{
+					//gameHandlerObj.TakeDamage(damage);
+				}
+
+
+				GameObject animEffect = Instantiate(hitEffectAnim, transform.position, Quaternion.identity);
+				Destroy(animEffect, 0.5f);
+				Destroy(gameObject);
+			}
+		}
+
+		
 	}
 
 	void FixedUpdate(){
@@ -55,8 +88,16 @@ public class AustinSteadProjectile : MonoBehaviour
     {
 		target = new Vector2(transform.position.x + bounceDirection.x * speed * projectileLife, transform.position.y + bounceDirection.y * speed * projectileLife);
 		projectileTimer = 0;
+
+		team = Team.Player;
     }
 
+
+
+	public Team GetTeam()
+    {
+		return team;
+    }
 
 }
 

@@ -258,8 +258,8 @@ MonoBehaviour:
   circleIdleColor: {r: 0, g: 0.8909936, b: 1, a: 1}
   circleInRangeColor: {r: 0, g: 1, b: 0.10920811, a: 1}
   circleChargingColor: {r: 1, g: 0, b: 0, a: 1}
-  bounceDuration: 0.225
-  bounceSpeed: 60
+  bounceDuration: 0.4
+  bounceSpeed: 80
 --- !u!61 &1115450830
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -272,7 +272,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: -0.08059144, y: -0.28137112}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}

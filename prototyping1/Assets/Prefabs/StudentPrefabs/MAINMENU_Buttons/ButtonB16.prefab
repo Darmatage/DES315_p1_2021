@@ -77,7 +77,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: B-16
+  m_Text: 'Chase G
+
+'
 --- !u!1 &8421671199105237590
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9716981, g: 0.7837753, b: 0.9482823, a: 1}
+  m_Color: {r: 0.101122975, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -221,4 +223,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 416fef9a3c48a9140b58169f4f8dce8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoToScene: 
+  GoToScene: ChaseGraves

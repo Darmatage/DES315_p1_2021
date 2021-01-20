@@ -179,7 +179,7 @@ public class RyanGarvanDoorMimicMove : MonoBehaviour
 
                         foreach (Collider2D collider in results2)
                         {
-                            if (!collider.isTrigger)
+                            if (!collider.isTrigger || collider.name.Contains("MimicWall"))
                             {
                                 Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
 

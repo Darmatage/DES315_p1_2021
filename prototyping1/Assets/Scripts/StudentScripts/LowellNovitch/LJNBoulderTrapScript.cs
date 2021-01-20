@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//IMPORTANT NOTE: this only works on enemies with the Enemy tag and the IEnumerator GetHit() function else it just pushes the enemy back a bit
 public class LJNBoulderTrapScript : MonoBehaviour
 {
     public Vector2 spawn_distance;
@@ -10,6 +10,8 @@ public class LJNBoulderTrapScript : MonoBehaviour
     public Sprite triggered;
     public int EnemyDamage = 3;
     public int PlayerDamage = 10;
+
+    public bool visible = true;
 
 
     private bool activated = false;
@@ -21,6 +23,11 @@ public class LJNBoulderTrapScript : MonoBehaviour
         if (gameHandlerLocation != null)
         {
             gameHandlerObj = gameHandlerLocation.GetComponent<GameHandler>();
+        }
+
+        if(!visible)
+        {
+            GetComponent<SpriteRenderer>().sprite = null;
         }
     }
 

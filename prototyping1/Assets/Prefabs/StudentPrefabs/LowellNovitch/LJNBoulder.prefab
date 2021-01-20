@@ -48,6 +48,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   dir: {x: 0, y: 0}
+  EnemyDamage: 3
+  PlayerDamage: 10
 --- !u!212 &-5179643271588943911
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -113,7 +115,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.4
 --- !u!50 &5087917638436860667
 Rigidbody2D:
   serializedVersion: 4

@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 875250436745597445}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.5074615, y: 2.7256422, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -50,6 +50,8 @@ MonoBehaviour:
     type: 3}
   speed: 1
   triggered: {fileID: 21300000, guid: 7f2c6740b17753f479c485bc0f7ffe66, type: 3}
+  EnemyDamage: 3
+  PlayerDamage: 10
 --- !u!61 &-8984912400493943575
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -67,7 +69,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

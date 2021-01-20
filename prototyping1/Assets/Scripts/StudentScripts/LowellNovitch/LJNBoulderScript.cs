@@ -28,7 +28,7 @@ public class LJNBoulderScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //GetComponent<Rigidbody2D>().velocity = dir * speed;
+      
 
     }
 

@@ -7,8 +7,8 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 	public GameObject SwitchOffArt;
 	public GameObject SwitchOnArt;
 	public GameObject DoorObj;
-	public GameObject ChangeableWalls;
-	public GameObject ChangeableLava;
+	public GameObject ChangeableGridOn;
+	public GameObject ChangeableGridOff;
 
 	public bool isActive;
 
@@ -18,8 +18,9 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 		SwitchOffArt.SetActive(true);
 		SwitchOnArt.SetActive(false);
 		isActive = false;
-		DoorObj = GameObject.FindGameObjectWithTag("Door");
-		ChangeableLava.SetActive(false);
+		//DoorObj = GameObject.FindGameObjectWithTag("Door");
+		if (ChangeableGridOff)
+			ChangeableGridOff.SetActive(false);
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
@@ -33,9 +34,15 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(false);
 					a[i].GetComponent<NewDoorSwitch_DRC>().isActive = false;
 				}
-				DoorObj.GetComponent<NewDoor_DRC>().DoorClose();
-				ChangeableWalls.SetActive(true);
-				ChangeableLava.SetActive(false);
+				if (DoorObj)
+				{
+					if(DoorObj.GetComponent<NewDoor_DRC>())
+						DoorObj.GetComponent<NewDoor_DRC>().DoorClose();
+				}
+				if(ChangeableGridOn)
+					ChangeableGridOn.SetActive(true);
+				if (ChangeableGridOff)
+					ChangeableGridOff.SetActive(false);
 			}
 			else
             {
@@ -46,9 +53,17 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(true);
 					a[i].GetComponent<NewDoorSwitch_DRC>().isActive = true;
 				}
-				DoorObj.GetComponent<NewDoor_DRC>().DoorOpen();
-				ChangeableWalls.SetActive(false);
-				ChangeableLava.SetActive(true);
+				if (DoorObj)
+				{
+					if (DoorObj.GetComponent<NewDoor_DRC>())
+						DoorObj.GetComponent<NewDoor_DRC>().DoorOpen();
+					else if (DoorObj.GetComponent<Door>())
+						DoorObj.GetComponent<Door>().DoorOpen();
+				}
+				if (ChangeableGridOn)
+					ChangeableGridOn.SetActive(false);
+				if (ChangeableGridOff)
+					ChangeableGridOff.SetActive(true);
 			}
 		}
 	}

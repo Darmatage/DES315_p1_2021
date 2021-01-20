@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/TeacherScenes/StudentSampleScene.unity
     guid: 505721ee2d56b5549ba095945e303ebd
   - enabled: 1
+    path: Assets/Scenes/StudentScenes/ChaseGraves.unity
+    guid: fa8412e1079246141a8d59fb1b391188
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/MarsJurichScene.unity
+    guid: 656a7871a48119a4883999e82c3423d3
+  - enabled: 1
     path: Assets/Scenes/StudentScenes/JasonWiser.unity
     guid: 3e686bd0ec4e088489151aa14e3ef978
   - enabled: 1
@@ -111,9 +117,15 @@ EditorBuildSettings:
     path: Assets/Scenes/StudentScenes/SkylerPowers.unity
     guid: 342384bbd3655ac408713be3700541f4
   - enabled: 1
+    path: Assets/Scenes/StudentScenes/KeanuCendejasScene.unity
+    guid: f7162c708638d084f891f888c2c16bd3
+  - enabled: 1
     path: Assets/Scenes/StudentScenes/AdamDoolittleScene.unity
     guid: 8e172293088d52843b424d48d10f6f3c
   - enabled: 1
     path: Assets/Scenes/StudentScenes/MarsJurichScene.unity
     guid: 656a7871a48119a4883999e82c3423d3
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/DevonPetersonScene.unity
+    guid: e4040f3b57fde364aa65b394bd962df1
   m_configObjects: {}

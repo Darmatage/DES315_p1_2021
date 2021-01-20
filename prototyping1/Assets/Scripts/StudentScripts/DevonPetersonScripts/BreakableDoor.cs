@@ -35,7 +35,7 @@ public class BreakableDoor : MonoBehaviour
 		
 		if (other.gameObject.tag == "Player")
 		{
-			if (open) 
+			if (open && !destroyed) 
 			{
 				SceneManager.LoadScene(NextScene);
 			}
@@ -43,7 +43,7 @@ public class BreakableDoor : MonoBehaviour
 
 		if (other.gameObject.tag == "CrabWalkBoss")
 		{
-			Debug.Log("collide");
+			//Debug.Log("collide");
 			DoorBrokenArt.SetActive(true);
 			DoorOpenArt.SetActive(false);
 			DoorClosedArt.SetActive(false);

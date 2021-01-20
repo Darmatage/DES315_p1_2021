@@ -7,14 +7,15 @@ public class BrokenDoorSwitch : MonoBehaviour
 	public GameObject SwitchOffArt;
 	public GameObject SwitchOnArt;
 	public GameObject DoorObj;
-
+	public CrabWalkBoss Crab;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		SwitchOffArt.SetActive(true);
 		SwitchOnArt.SetActive(false);
-		DoorObj = GameObject.FindGameObjectWithTag("Door");
+		//DoorObj = GameObject.FindGameObjectWithTag("Door");
+
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -24,6 +25,12 @@ public class BrokenDoorSwitch : MonoBehaviour
 			SwitchOffArt.SetActive(false);
 			SwitchOnArt.SetActive(true);
 			DoorObj.GetComponent<BreakableDoor>().BrokenDoorOpen();
+
+			if (Crab) 
+			{
+				Crab.KillCrab();
+			}
+
 		}
 	}
 }

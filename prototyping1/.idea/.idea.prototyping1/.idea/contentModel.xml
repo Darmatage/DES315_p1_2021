@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Matthew Klingman\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Matthew Klingman\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_prototyping1.414924017.00" t="ExcludeRecursive" />
-    <e p="D:\Downloads\School\SPRING2021\DES315\DES315_p1_2021\prototyping1" t="IncludeRecursive">
+    <e p="C:\Users\Robert\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Robert\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_prototyping1.132115489.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Robert\Desktop\School\DES 315\Project 1\DES315_p1_2021\prototyping1" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Media" t="Include">
@@ -76,15 +76,6 @@
               <e p="NewDoor_DRC.cs" t="Include" />
               <e p="NewDoorSwitch_DRC.cs" t="Include" />
             </e>
-            <e p="DevonPetersonScripts" t="Include">
-              <e p="BreakableDoor.cs" t="Include" />
-              <e p="BrokenDoorSwitch.cs" t="Include" />
-              <e p="Crab_Fireball.cs" t="Include" />
-              <e p="CrabBossBreakDoor.cs" t="Include" />
-              <e p="CrabBossFireball.cs" t="Include" />
-              <e p="CrabWalkBoss.cs" t="Include" />
-              <e p="DoorManager.cs" t="Include" />
-            </e>
             <e p="DillonHahn" t="Include">
               <e p="ToggleButtonLogicDH.cs" t="Include" />
               <e p="ToggleWallLogicDH.cs" t="Include" />
@@ -154,7 +145,6 @@
             <e p="RyanGarvanScripts" t="Include">
               <e p="RyanGarvanAStarPather.cs" t="Include" />
               <e p="RyanGarvanDoorMimicMove.cs" t="Include" />
-              <e p="RyanGarvanMimicWallTrigger.cs" t="Include" />
             </e>
             <e p="RyanHeath" t="Include">
               <e p="EnemyMovementPattern.cs" t="Include" />
@@ -165,8 +155,6 @@
             </e>
             <e p="WillMielke" t="Include">
               <e p="BoxMove_Mielke.cs" t="Include" />
-              <e p="EasyRestart_Mielke.cs" t="Include" />
-              <e p="LaserController_Mielke.cs" t="Include" />
             </e>
             <e p="ZacaryBrown" t="Include">
               <e p="ZacaryBrown_BouncyBullet.cs" t="Include" />

@@ -48,4 +48,16 @@ public class InventoryHandlerJW : MonoBehaviour
 		Time.timeScale = 1f;
 		InventoryIsOpen = false;
 	}
+
+	public bool Store(CollectibleJW collectible) // returns whether storage was successful
+	{
+		switch (collectible.type)
+		{
+			case "Coin":
+				coinCount++;
+				return true;
+		}
+
+		return false;
+	}
 }

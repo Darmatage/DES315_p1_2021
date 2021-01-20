@@ -18,7 +18,7 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 		SwitchOffArt.SetActive(true);
 		SwitchOnArt.SetActive(false);
 		isActive = false;
-		DoorObj = GameObject.FindGameObjectWithTag("Door");
+		//DoorObj = GameObject.FindGameObjectWithTag("Door");
 		ChangeableGridOff.SetActive(false);
 	}
 
@@ -33,7 +33,8 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(false);
 					a[i].GetComponent<NewDoorSwitch_DRC>().isActive = false;
 				}
-				DoorObj.GetComponent<NewDoor_DRC>().DoorClose();
+				if(DoorObj)
+					DoorObj.GetComponent<NewDoor_DRC>().DoorClose();
 				ChangeableGridOn.SetActive(true);
 				ChangeableGridOff.SetActive(false);
 			}
@@ -46,7 +47,8 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(true);
 					a[i].GetComponent<NewDoorSwitch_DRC>().isActive = true;
 				}
-				DoorObj.GetComponent<NewDoor_DRC>().DoorOpen();
+				if (DoorObj)
+					DoorObj.GetComponent<NewDoor_DRC>().DoorOpen();
 				ChangeableGridOn.SetActive(false);
 				ChangeableGridOff.SetActive(true);
 			}

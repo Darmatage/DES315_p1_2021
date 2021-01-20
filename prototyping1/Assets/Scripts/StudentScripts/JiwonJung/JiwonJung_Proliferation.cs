@@ -19,7 +19,6 @@ public class JiwonJung_Proliferation : MonoBehaviour
             GameObject new_monster = GameObject.Instantiate(monster);
             new_x = transform.position.x - 2.0f;
             new_monster.transform.position = new Vector3(new_x, transform.position.y, transform.position.z);
-            
         }
     }
 }

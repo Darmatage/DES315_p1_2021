@@ -7,8 +7,8 @@ public class AustinSteadEnemyBounce : MonoBehaviour
     private Rigidbody2D rb2d;
 
 
-    private MonsterMoveHit moveScript;
-    private MonsterShootMove shootMoveScript;
+    private AustinSteadMonsterMoveHit moveScript;
+    private AustinSteadMonsterShootMove shootMoveScript;
 
     private Vector2 bounceDirection = new Vector2();
     private float bounceSpeed;
@@ -19,8 +19,8 @@ public class AustinSteadEnemyBounce : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        moveScript = GetComponent<MonsterMoveHit>();
-        shootMoveScript = GetComponent<MonsterShootMove>();
+        moveScript = GetComponent<AustinSteadMonsterMoveHit>();
+        shootMoveScript = GetComponent<AustinSteadMonsterShootMove>();
     }
 
     // Update is called once per frame

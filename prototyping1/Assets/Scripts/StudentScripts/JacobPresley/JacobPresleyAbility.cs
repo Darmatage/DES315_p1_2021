@@ -13,25 +13,38 @@ public class JacobPresleyAbility : MonoBehaviour
   {
     public Vector3Int position;
     public TileBase wall;
+    public float timer;
   }
   
   public GameObject gameMap;
-  public int tempWallMax;
   public TileBase wallTile;
   public TempWall[] tempWalls = new TempWall[3]; //public to test in editor
   public GameObject wallUI;
 
   private Tilemap tileGameMap;
   private int oldestTile = 0;
-
+  private int placedTiles = 0; 
+  private Text wallText;
+  
+  
+  
+  
+  
   private void PlaceWall()
   {
     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     Vector3Int hoveredTile = tileGameMap.WorldToCell(mousePos);
-    Text wallText = wallUI.GetComponent<Text>();
 
     //dont place walls on preexisting walls
     if (tileGameMap.GetTile(hoveredTile) != null)
+    {
+      return;
+    }
+
+    Vector3Int playerPosition =
+      tileGameMap.WorldToCell(GameObject.FindWithTag("Player").GetComponent<RectTransform>().position);
+    //dont place walls on top of player
+    if (hoveredTile == playerPosition)
     {
       return;
     }
@@ -41,30 +54,38 @@ public class JacobPresleyAbility : MonoBehaviour
     
     if (tempWalls[0].wall == null)
     {
-      tempWalls[0].wall = newTempWall;
-      tempWalls[0].position = hoveredTile;
-      wallText.text = "WALLS: 1 / 3";
+      replaceTile(0, newTempWall, hoveredTile);
     }
     else if (tempWalls[1].wall == null)
     {
-      tempWalls[1].wall = newTempWall;
-      tempWalls[1].position = hoveredTile;
-      wallText.text = "WALLS: 2 / 3";
+      replaceTile(1, newTempWall, hoveredTile);
     }
     else if (tempWalls[2].wall == null)
     {
-      tempWalls[2].wall = newTempWall;
-      tempWalls[2].position = hoveredTile;
-      wallText.text = "WALLS: 3 / 3";
+      replaceTile(2, newTempWall, hoveredTile);
     }
     else
     {
       tileGameMap.SetTile(tempWalls[oldestTile].position, null);
-      tempWalls[oldestTile].position = hoveredTile;
-      tempWalls[oldestTile].wall = newTempWall;
+      replaceTile(oldestTile, newTempWall, hoveredTile);
       oldestTile++;
       if (oldestTile > 2)
         oldestTile = 0;
+    }
+  }
+
+  private void replaceTile(int tileNumber, TileBase newWall, Vector3Int newWallPosition)
+  {
+    tempWalls[tileNumber].wall = newWall;
+    tempWalls[tileNumber].position = newWallPosition;
+    tempWalls[tileNumber].timer = 4.0f;
+    if (placedTiles < 3)
+    {
+      placedTiles++;
+    }
+    else if (placedTiles < 0)
+    {
+      placedTiles = 0;
     }
   }
 
@@ -72,6 +93,11 @@ public class JacobPresleyAbility : MonoBehaviour
   void Start()
   {
     tileGameMap = gameMap.GetComponent<Tilemap>();
+    wallText = wallUI.GetComponent<Text>();
+    for (int i = 0; i < tempWalls.Length; ++i)
+    {
+      tempWalls[i].timer = 4.0f;
+    }
   }
 
   // Update is called once per frame
@@ -81,5 +107,24 @@ public class JacobPresleyAbility : MonoBehaviour
     {
       PlaceWall();
     }
+    
+    for (int i = 0; i < tempWalls.Length; ++i)
+    {
+      if (tempWalls[i].wall != null)
+      {
+        wallText.text = "WALLS: ";
+        wallText.text += placedTiles.ToString();
+        wallText.text += " / 3";
+        tempWalls[i].timer -= Time.deltaTime;
+        
+        if (tempWalls[i].timer <= 0.0f)
+        {
+          tileGameMap.SetTile(tempWalls[i].position, null);
+          tempWalls[i].timer = 4.0f;
+          placedTiles--;
+        }
+      }
+    }
+    
   }
 }

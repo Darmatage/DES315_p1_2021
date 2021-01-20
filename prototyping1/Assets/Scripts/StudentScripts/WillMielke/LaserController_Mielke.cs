@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// NOTE:: if laser does not hit anything then will throw null exception. Make sure laser is enclosed
 public class LaserController_Mielke : MonoBehaviour
 {
     public bool activated; // determines if laser box should be on or off
@@ -48,7 +50,7 @@ public class LaserController_Mielke : MonoBehaviour
             leftLaser.SetPosition(0, leftTrans.position);
             leftLaser.SetPosition(1, leftHit.position);
             // laser kills enemies and does constant damage to player, by a lot
-            if(hit.transform.CompareTag("Player"))
+            if(hit.transform.CompareTag("Player") && laserDamage > 0)
             {
                 gameHandlerObj.TakeDamage(laserDamage);
             }
@@ -73,7 +75,7 @@ public class LaserController_Mielke : MonoBehaviour
             rightLaser.SetPosition(0, rightTrans.position);
             rightLaser.SetPosition(1, rightHit.position);
             // laser kills enemies and does constant damage to player, by a lot
-            if (hit.transform.CompareTag("Player"))
+            if (hit.transform.CompareTag("Player") && laserDamage > 0)
             {
                 gameHandlerObj.TakeDamage(laserDamage);
             }
@@ -97,7 +99,7 @@ public class LaserController_Mielke : MonoBehaviour
             topLaser.SetPosition(0, topTrans.position);
             topLaser.SetPosition(1, topHit.position);
             // laser kills enemies and does constant damage to player, by a lot
-            if (hit.transform.CompareTag("Player"))
+            if (hit.transform.CompareTag("Player") && laserDamage > 0)
             {
                 gameHandlerObj.TakeDamage(laserDamage);
             }
@@ -121,7 +123,7 @@ public class LaserController_Mielke : MonoBehaviour
             botLaser.SetPosition(0, botTrans.position);
             botLaser.SetPosition(1, botHit.position);
             // laser kills enemies and does constant damage to player, by a lot
-            if (hit.transform.CompareTag("Player"))
+            if (hit.transform.CompareTag("Player") && laserDamage > 0)
             {
                 gameHandlerObj.TakeDamage(laserDamage);
             }

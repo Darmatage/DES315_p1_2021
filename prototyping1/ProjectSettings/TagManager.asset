@@ -19,6 +19,10 @@ TagManager:
   - GuideTorch
   - WallDoor
   - bullet
+  - Block_CEGP
+  - Border_CEGP
+  - ExplodeEnemy
+  - Trap
   layers:
   - Default
   - TransparentFX
@@ -37,6 +41,8 @@ TagManager:
   - 
   - 
   - 
+  - BorderLayer_CEGP
+  - BlockLayer_CEGP
   - 
   - 
   - 

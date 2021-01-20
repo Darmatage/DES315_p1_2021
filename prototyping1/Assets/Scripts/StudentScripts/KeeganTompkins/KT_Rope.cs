@@ -27,6 +27,12 @@ public class KT_Rope : MonoBehaviour
     public GameObject PostTop;
     public GameObject PostBot;
 
+    public GameObject HighlightedPost = null;
+
+    public KT_PlayerRope Player = null;
+
+    public bool Slideable = true;
+
     GrabPoint[] grabPoints = new GrabPoint[2];
 
     Vector3 GetMousePos()
@@ -53,6 +59,29 @@ public class KT_Rope : MonoBehaviour
         return retVal;
     }
 
+    bool InPlayerRange(Vector3 Pos, float range = 0.0f)
+    {
+        return Vector2.Distance(Pos, Player.transform.position) <= Player.PlayerRange + range;
+    }
+    bool InPlayerRange(int grabPoint, float range = 0.0f)
+    {
+        return Vector2.Distance(grabPoints[grabPoint].AttachedPost.transform.position, Player.transform.position) <= Player.PlayerRange + range;
+    }
+
+    int CurrentGrabbed()
+    {
+        if (grabPoints[KT_BOT].IsGrabbed) return KT_BOT;
+        else if (grabPoints[KT_BOT].IsGrabbed) return KT_TOP;
+        else return -1;
+    }
+
+    int NotGrabbed()
+    {
+        if (grabPoints[KT_BOT].IsGrabbed) return KT_TOP;
+        else if (grabPoints[KT_BOT].IsGrabbed) return KT_BOT;
+        else return -1;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,14 +105,28 @@ public class KT_Rope : MonoBehaviour
 
         grabPoints[KT_TOP].AttachedPost = PostTop;
         grabPoints[KT_BOT].AttachedPost = PostBot;
+        PostTop.GetComponent<KT_Post>().IsAttached = true;
+        PostBot.GetComponent<KT_Post>().IsAttached = true;
+        PostTop.GetComponent<KT_Post>().AttachedRope = this;
+        PostBot.GetComponent<KT_Post>().AttachedRope = this;
+
+        if (Player == null)
+        {
+            Player = GameObject.FindGameObjectWithTag("Player").GetComponent<KT_PlayerRope>();
+        }
     }
     void UpdateUI()
     {
+        if (HighlightedPost && HighlightedPost != ClosestPost())
+        {
+            HighlightedPost.GetComponent<SpriteRenderer>().color = HighlightedPost.GetComponent<KT_Post>().NormalColor;
+        }
+
         for (int i = 0; i < grabPoints.Length; ++i)
         {
             GameObject UI = grabPoints[i].UI_Object;
 
-            if (!Input.GetMouseButtonDown(0) && GetMouseDistances()[i] < GrabRadius)
+            if (!Input.GetMouseButtonDown(0) && GetMouseDistances()[i] < GrabRadius && InPlayerRange(i, GrabRadius))
             {
                 UI.GetComponent<SpriteRenderer>().color = HoverColor;
             }
@@ -96,6 +139,15 @@ public class KT_Rope : MonoBehaviour
             Position.z = -1.0f;
             UI.transform.position = Position;
             
+            if (grabPoints[i].IsGrabbed)
+            {
+                if (ClosestPost())
+                {
+                    HighlightedPost = ClosestPost();
+                    HighlightedPost.GetComponent<SpriteRenderer>().color = HighlightedPost.GetComponent<KT_Post>().HoverColor;
+                }
+            }
+
         }
     }
 
@@ -137,7 +189,7 @@ public class KT_Rope : MonoBehaviour
     {
         float[] dists = GetMouseDistances();
 
-        if (dists[KT_BOT] <= GrabRadius || dists[KT_TOP] <= GrabRadius)
+        if (InPlayerRange(GetMousePos(), GrabRadius) && (dists[KT_BOT] <= GrabRadius || dists[KT_TOP] <= GrabRadius))
         {
             if (dists[KT_BOT] <= dists[KT_TOP])
             {
@@ -164,7 +216,10 @@ public class KT_Rope : MonoBehaviour
         foreach (var post in Posts)
         {
             float dist = Vector2.Distance(post.transform.position, MousePos);
-            if (dist <= GrabRadius && (dist <= MinDist || MinDist < 0.0f))
+            if (dist <= GrabRadius &&
+                InPlayerRange(post.transform.position, GrabRadius) && 
+                (dist <= MinDist || MinDist < 0.0f) &&
+                !post.IsAttached)
             {
                 MinDist = dist;
                 MinPost = post.gameObject;
@@ -180,6 +235,8 @@ public class KT_Rope : MonoBehaviour
 
         float[] Distances = GetMouseDistances();
 
+        var closest = ClosestPost();
+
         // Release mouse
         if (Input.GetMouseButtonUp(0))
         {
@@ -187,18 +244,26 @@ public class KT_Rope : MonoBehaviour
             {
                 grabPoints[KT_BOT].IsGrabbed = false;
 
-                if (ClosestPost() != null)
+                if (closest != null)
                 {
+                    grabPoints[KT_BOT].AttachedPost.GetComponent<KT_Post>().IsAttached = false;
+                    grabPoints[KT_BOT].AttachedPost.GetComponent<KT_Post>().AttachedRope = null;
                     grabPoints[KT_BOT].AttachedPost = ClosestPost();
+                    closest.GetComponent<KT_Post>().IsAttached = true;
+                    closest.GetComponent<KT_Post>().AttachedRope = this;
                 }
             }
             if (grabPoints[KT_TOP].IsGrabbed)
             {
                 grabPoints[KT_TOP].IsGrabbed = false;
 
-                if (ClosestPost() != null)
+                if (closest != null)
                 {
+                    grabPoints[KT_TOP].AttachedPost.GetComponent<KT_Post>().IsAttached = false;
+                    grabPoints[KT_TOP].AttachedPost.GetComponent<KT_Post>().AttachedRope = null;
                     grabPoints[KT_TOP].AttachedPost = ClosestPost();
+                    closest.GetComponent<KT_Post>().IsAttached = true;
+                    closest.GetComponent<KT_Post>().AttachedRope = this;
                 }
             }
         }
@@ -222,11 +287,49 @@ public class KT_Rope : MonoBehaviour
         }
     }
 
+    public Vector3 PointOnRope(float DistanceAlongRope, KT_Post startingPost)
+    {
+        Vector3 Start = Vector3.zero;
+        Vector3 End = Vector3.zero;
+
+        if (grabPoints[KT_BOT].AttachedPost == startingPost.gameObject)
+        {
+            Start = grabPoints[KT_BOT].AttachedPost.transform.position;
+            End   = grabPoints[KT_TOP].AttachedPost.transform.position;
+        }
+        else
+        {
+            Start = grabPoints[KT_TOP].AttachedPost.transform.position;
+            End   = grabPoints[KT_BOT].AttachedPost.transform.position;
+        }
+
+        // Return the interpolation from start to end.
+        return (1.0f - DistanceAlongRope) * Start + DistanceAlongRope * End;
+    }
+
+    public float RopeLength()
+    {
+        return Vector2.Distance(grabPoints[KT_BOT].AttachedPost.transform.position, 
+                                grabPoints[KT_TOP].AttachedPost.transform.position);
+    }
+
     // Update is called once per frame
     void Update()
     {
         UpdateGrabPoints();
         UpdatePosition();
         UpdateUI();
+
+        if (GetComponent<BoxCollider2D>() != null)
+        {
+            if (CurrentGrabbed() != -1)
+            {
+                GetComponent<BoxCollider2D>().enabled = false;
+            }
+            else
+            {
+                GetComponent<BoxCollider2D>().enabled = true;
+            }
+        }
     }
 }

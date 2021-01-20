@@ -76,6 +76,15 @@
               <e p="NewDoor_DRC.cs" t="Include" />
               <e p="NewDoorSwitch_DRC.cs" t="Include" />
             </e>
+            <e p="DevonPetersonScripts" t="Include">
+              <e p="BreakableDoor.cs" t="Include" />
+              <e p="BrokenDoorSwitch.cs" t="Include" />
+              <e p="Crab_Fireball.cs" t="Include" />
+              <e p="CrabBossBreakDoor.cs" t="Include" />
+              <e p="CrabBossFireball.cs" t="Include" />
+              <e p="CrabWalkBoss.cs" t="Include" />
+              <e p="DoorManager.cs" t="Include" />
+            </e>
             <e p="DillonHahn" t="Include">
               <e p="ToggleButtonLogicDH.cs" t="Include" />
               <e p="ToggleWallLogicDH.cs" t="Include" />
@@ -145,6 +154,7 @@
             <e p="RyanGarvanScripts" t="Include">
               <e p="RyanGarvanAStarPather.cs" t="Include" />
               <e p="RyanGarvanDoorMimicMove.cs" t="Include" />
+              <e p="RyanGarvanMimicWallTrigger.cs" t="Include" />
             </e>
             <e p="RyanHeath" t="Include">
               <e p="EnemyMovementPattern.cs" t="Include" />

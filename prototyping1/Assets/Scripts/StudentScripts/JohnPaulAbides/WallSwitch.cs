@@ -9,7 +9,8 @@ public class WallSwitch : MonoBehaviour
 	public GameObject SwitchOnArt;
 
 	public Tilemap WallMap;
-	public List<Tile> WallTiles;
+	public TileBase WallTileBase;
+	public List<Vector3Int> WallTiles;
 
 	// Start is called before the first frame update
 	void Start()
@@ -20,11 +21,19 @@ public class WallSwitch : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.gameObject.tag == "Player")
+		if (SwitchOffArt.activeSelf == true && other.gameObject.tag == "Player")
 		{
 			SwitchOffArt.SetActive(false);
 			SwitchOnArt.SetActive(true);
-			
+
+			foreach (Vector3Int pos in WallTiles)
+            {
+				// if a tile exists in pos, set it to null, spawn wall otherwise
+				if (WallMap.GetTile(pos) != null)
+					WallMap.SetTile(pos, null);
+				else
+					WallMap.SetTile(pos, WallTileBase);
+			}
 		}
 	}
 

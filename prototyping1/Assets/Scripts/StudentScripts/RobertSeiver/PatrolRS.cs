@@ -106,16 +106,33 @@ public class PatrolRS : MonoBehaviour
 			if (DebugDraw)
 				DrawRaycast(ray);
 
-			RaycastHit2D hit = Physics2D.Raycast(transform.position, ray, ViewDistance, VisionLayers);
-			if (hit.collider != null && hit.transform.CompareTag("Player"))
+			RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, ray, ViewDistance, VisionLayers);
+			foreach (RaycastHit2D currentHit in hits)
 			{
-				detectedPlayer = true;
-				anim.Play("monsterSkull_walk");
-				GameObject popUp = Instantiate(AlertPopUpPrefab, transform);
-				popUp.transform.position += transform.lossyScale.y * Vector3.up;
-				Instantiate(AlertHandlerPrefab, transform.position, Quaternion.identity);
+				if (currentHit.collider.isTrigger)
+					continue;
+				
+				if (currentHit.transform.CompareTag("Player"))
+				{
+					detectedPlayer = true;
+					anim.Play("monsterSkull_walk");
+					GameObject popUp = Instantiate(AlertPopUpPrefab, transform);
+					popUp.transform.position += transform.lossyScale.y * Vector3.up;
+					Instantiate(AlertHandlerPrefab, transform.position, Quaternion.identity);
+				}
+				
 				break;
 			}
+			// RaycastHit2D hit = Physics2D.Raycast(transform.position, ray, ViewDistance, VisionLayers);
+			// if (hit.collider != null && !hit.collider.isTrigger && hit.transform.CompareTag("Player"))
+			// {
+			// 	detectedPlayer = true;
+			// 	anim.Play("monsterSkull_walk");
+			// 	GameObject popUp = Instantiate(AlertPopUpPrefab, transform);
+			// 	popUp.transform.position += transform.lossyScale.y * Vector3.up;
+			// 	Instantiate(AlertHandlerPrefab, transform.position, Quaternion.identity);
+			// 	break;
+			// }
 		}
 	}
 	

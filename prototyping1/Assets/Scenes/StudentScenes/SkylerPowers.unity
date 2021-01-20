@@ -14999,7 +14999,7 @@ PrefabInstance:
     - target: {fileID: 4165749982198055948, guid: c9779a708930e4a4aa998efb6e9c8b07,
         type: 3}
       propertyPath: speed
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5174094196587440800, guid: c9779a708930e4a4aa998efb6e9c8b07,
         type: 3}
@@ -15076,8 +15076,7 @@ PrefabInstance:
       propertyPath: dodgeDuration
       value: 0.25
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 4165749982198055948, guid: c9779a708930e4a4aa998efb6e9c8b07, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9779a708930e4a4aa998efb6e9c8b07, type: 3}
 --- !u!1 &1505038069
 GameObject:
@@ -18754,7 +18753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2fdb964f7a5254bbb532eb38165b43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObj: {fileID: 0}
+  playerObj: {fileID: 6759313}
 --- !u!81 &2014853436
 AudioListener:
   m_ObjectHideFlags: 0

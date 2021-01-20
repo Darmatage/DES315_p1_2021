@@ -66,11 +66,19 @@ public class JacobPresleyAbility : MonoBehaviour
     }
     else
     {
+      float temp = 10.0f;
+      for (int i = 0; i < tempWalls.Length; ++i)
+      {
+        if (tempWalls[i].timer < temp)
+        {
+          oldestTile = i;
+          temp = tempWalls[i].timer;
+        }
+      }
+      
       tileGameMap.SetTile(tempWalls[oldestTile].position, null);
+      tempWalls[oldestTile].wall = null;
       replaceTile(oldestTile, newTempWall, hoveredTile);
-      oldestTile++;
-      if (oldestTile > 2)
-        oldestTile = 0;
     }
   }
 
@@ -82,10 +90,6 @@ public class JacobPresleyAbility : MonoBehaviour
     if (placedTiles < 3)
     {
       placedTiles++;
-    }
-    else if (placedTiles < 0)
-    {
-      placedTiles = 0;
     }
   }
 
@@ -108,6 +112,11 @@ public class JacobPresleyAbility : MonoBehaviour
       PlaceWall();
     }
     
+    if (placedTiles < 0)
+    {
+      placedTiles = 0;
+    }
+    
     for (int i = 0; i < tempWalls.Length; ++i)
     {
       if (tempWalls[i].wall != null)
@@ -125,6 +134,5 @@ public class JacobPresleyAbility : MonoBehaviour
         }
       }
     }
-    
   }
 }

@@ -21387,6 +21387,21 @@ PrefabInstance:
       propertyPath: attackDuration
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2524122716090918651, guid: 01ce78b543062b74aa62c01428b1378f,
+        type: 3}
+      propertyPath: attackTint.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2524122716090918651, guid: 01ce78b543062b74aa62c01428b1378f,
+        type: 3}
+      propertyPath: attackTint.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2524122716090918651, guid: 01ce78b543062b74aa62c01428b1378f,
+        type: 3}
+      propertyPath: attackTint.b
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2705638463279554253, guid: 01ce78b543062b74aa62c01428b1378f,
         type: 3}
       propertyPath: m_Simulated

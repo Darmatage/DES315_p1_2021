@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class AkshatMadanSpawner : MonoBehaviour
 {
     public GameObject enemyPrefab;
+    public GameObject bossObj;
     public GameObject door;
     private Door doorScript;
     public GameObject waveHandlerGO;
@@ -54,16 +55,18 @@ public class AkshatMadanSpawner : MonoBehaviour
         
         if(isDone)
         {
+            waveHandler.waveNumber = waveHandler.maxWaves;
             maxEnemies = 0;
             doorScript.DoorOpen(); // Open the door
+            Destroy(bossObj);
         }
     }
 
     void SpawnEnemy()
     {
-        if(Random.Range(0, 150) < 1) // 1 % of the time, spawn an enemy
+        if(Random.Range(0, 250) < 1) // 1/250 % of the time, spawn an enemy
         {
-            GameObject enemyClone = Instantiate(enemyPrefab, new Vector3(GetComponent<Transform>().position.x, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z), new Quaternion(0, 0, 0, 0));
+            GameObject enemyClone = Instantiate(enemyPrefab, new Vector3(GetComponent<Transform>().position.x - 5.0f, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z), new Quaternion(0, 0, 0, 0));
             enemyClone.tag = "Enemy"; // Tag them as enemy
             numEnemies++; // Increment number of enemies on screen
         }

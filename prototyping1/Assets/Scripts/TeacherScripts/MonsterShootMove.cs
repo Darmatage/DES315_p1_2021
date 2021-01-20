@@ -41,7 +41,7 @@ public class MonsterShootMove : MonoBehaviour {
 
 			// approach player
 			if (Vector2.Distance (transform.position, player.position) > stoppingDistance) {
-				transform.position = Vector2.MoveTowards (transform.position, player.position, speed * Time.deltaTime);
+				transform.position = Vector2.MoveTowards (transform.position, player.position, (speed/2) * Time.deltaTime);
 				anim.SetBool("Walk", true);
 				Vector2 lookDir = PlayerVect - rb.position;
 				//float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg -90f;

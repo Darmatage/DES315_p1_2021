@@ -39,9 +39,13 @@ public class SlimeProjectileRP : MonoBehaviour
 			if (other.gameObject.tag == "Player"){
 				gameHandlerObj.TakeDamage(damage);
 			}
-			GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
-			Destroy (animEffect, 0.5f);
-			Destroy (gameObject);
+
+			if (!other.gameObject.name.Contains("Lava"))
+			{
+				GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
+				Destroy (animEffect, 0.5f);
+				Destroy (gameObject);
+			}
 		}
 	}
 
@@ -58,10 +62,10 @@ public class SlimeProjectileRP : MonoBehaviour
 		// Projectile life is over
 		if (projectileTimer >= projectileLife)
 		{
-			//// Spawn new slime
-			//GameObject slime = Instantiate(SlimePrefab, transform.position, Quaternion.identity);
-			//// Increase the time between shots by 1
-			//slime.GetComponent<SlimeMoveShootRP>().startTimeBtwShots = SlimeTimeBtwShots + 3;
+			// Spawn new slime
+			GameObject slime = Instantiate(SlimePrefab, transform.position, Quaternion.identity);
+			// Increase the time between shots by 1
+			slime.GetComponent<SlimeMoveShootRP>().startTimeBtwShots = SlimeTimeBtwShots + 3;
 			
 			Destroy (gameObject);
 		}

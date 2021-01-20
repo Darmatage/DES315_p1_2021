@@ -117,6 +117,15 @@ EditorBuildSettings:
     path: Assets/Scenes/StudentScenes/SkylerPowers.unity
     guid: 342384bbd3655ac408713be3700541f4
   - enabled: 1
+    path: Assets/Scenes/StudentScenes/KeanuCendejasScene.unity
+    guid: f7162c708638d084f891f888c2c16bd3
+  - enabled: 1
     path: Assets/Scenes/StudentScenes/AdamDoolittleScene.unity
     guid: 8e172293088d52843b424d48d10f6f3c
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/MarsJurichScene.unity
+    guid: 656a7871a48119a4883999e82c3423d3
+  - enabled: 1
+    path: Assets/Scenes/StudentScenes/DevonPetersonScene.unity
+    guid: e4040f3b57fde364aa65b394bd962df1
   m_configObjects: {}

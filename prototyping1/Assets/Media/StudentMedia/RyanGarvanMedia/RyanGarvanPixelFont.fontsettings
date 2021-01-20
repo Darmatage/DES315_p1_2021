@@ -8,7 +8,7 @@ Font:
   m_PrefabAsset: {fileID: 0}
   m_Name: RyanGarvanPixelFont
   serializedVersion: 5
-  m_LineSpacing: 0
+  m_LineSpacing: 6
   m_DefaultMaterial: {fileID: 2100000, guid: fa385e7828713924780afe5bcd2c80a2, type: 2}
   m_FontSize: 0
   m_Texture: {fileID: 0}
@@ -209,6 +209,102 @@ Font:
       width: 5
       height: -7
     advance: 3.5
+    flipped: 0
+  - serializedVersion: 2
+    index: 71
+    uv:
+      serializedVersion: 2
+      x: 0.4375
+      y: 0.5
+      width: 0.0625
+      height: 0.1666667
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 5
+      height: -7
+    advance: 4.5
+    flipped: 0
+  - serializedVersion: 2
+    index: 78
+    uv:
+      serializedVersion: 2
+      x: 0.875
+      y: 0.5
+      width: 0.0625
+      height: 0.1666667
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 5
+      height: -7
+    advance: 5
+    flipped: 0
+  - serializedVersion: 2
+    index: 82
+    uv:
+      serializedVersion: 2
+      x: 0.1875
+      y: 0.33333334
+      width: 0.0625
+      height: 0.1666667
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 5
+      height: -7
+    advance: 4.5
+    flipped: 0
+  - serializedVersion: 2
+    index: 86
+    uv:
+      serializedVersion: 2
+      x: 0.4375
+      y: 0.33333334
+      width: 0.0625
+      height: 0.1666667
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 5
+      height: -7
+    advance: 4.5
+    flipped: 0
+  - serializedVersion: 2
+    index: 89
+    uv:
+      serializedVersion: 2
+      x: 0.625
+      y: 0.33333334
+      width: 0.0625
+      height: 0.1666667
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 5
+      height: -7
+    advance: 5
+    flipped: 0
+  - serializedVersion: 2
+    index: 32
+    uv:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0.0625
+      height: 0.1666667
+    vert:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 5
+      height: -7
+    advance: 2
     flipped: 0
   m_KerningValues: []
   m_PixelScale: 0.1

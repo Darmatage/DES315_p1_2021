@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SludgeLogic : MonoBehaviour
 {
-    public float slowRate = 0.3f;
+    public float slowRate = 0.15f;
     float slowTime = 0.5f;
+    public float MinSpeed = 0.2f;
     private bool isSlowing = false;
     private float slowTimer = 0f;
     private GameHandler gameHandlerObj;
@@ -36,8 +37,8 @@ public class SludgeLogic : MonoBehaviour
             {
                 //gameHandlerObj.TakeDamage(SlowRate);
                 player.GetComponent<PlayerMove>().speed -= (slowRate / 2.0f);
-                if (player.GetComponent<PlayerMove>().speed <= 0)
-                    player.GetComponent<PlayerMove>().speed = 0;
+                if (player.GetComponent<PlayerMove>().speed <= MinSpeed)
+                    player.GetComponent<PlayerMove>().speed = MinSpeed;
 
                 slowTimer = 0f;
             }

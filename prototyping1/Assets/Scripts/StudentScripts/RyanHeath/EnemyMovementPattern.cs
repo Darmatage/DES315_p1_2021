@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
+using UnityEngine.Events;
 
 namespace RyanHeath
 {
@@ -18,6 +20,8 @@ namespace RyanHeath
             Attack
         }
 
+        [SerializeField] private SpriteRenderer visual;
+        [SerializeField] private UnityEvent onAttack;
         [SerializeField] private List<MovementOption> movementPattern;
         [Tooltip("Movement speed of the object this is attached to")]
         [SerializeField] private float speed = 1f;
@@ -28,6 +32,7 @@ namespace RyanHeath
         private void Start()
         {
             rb = GetComponent<Rigidbody2D>();
+            Assert.IsNotNull(onAttack);
             StartCoroutine(nameof(MoveInPattern));
         }
 
@@ -41,20 +46,28 @@ namespace RyanHeath
                         rb.velocity = Vector2.zero;
                         break;
                     case MovementOption.Left:
+                        visual.flipX = false;
+                        visual.flipY = false;
                         rb.velocity = Vector2.left * speed;
                         break;
                     case MovementOption.Up:
+                        visual.flipX = false;
+                        visual.flipY = false;
                         rb.velocity = Vector2.up * speed;
                         break;
                     case MovementOption.Down:
+                        visual.flipX = false;
+                        visual.flipY = true;
                         rb.velocity = Vector2.down * speed;
                         break;
                     case MovementOption.Right:
+                        visual.flipX = true;
+                        visual.flipY = false;
                         rb.velocity = Vector2.right * speed;
                         break;
                     case MovementOption.Attack:
                         rb.velocity = Vector2.zero;
-                        throw new NotImplementedException("Need to hook this up still with an event or interface");
+                        onAttack.Invoke();
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();

@@ -7,7 +7,9 @@ public class AustinSteadEnemyBounce : MonoBehaviour
     private Rigidbody2D rb2d;
 
 
-    private MonsterMoveHit moveScript;
+    private AustinSteadMonsterMoveHit moveScript;
+    private AustinSteadMonsterShootMove shootMoveScript;
+
     private Vector2 bounceDirection = new Vector2();
     private float bounceSpeed;
     private float bounceTimer = 0;
@@ -17,7 +19,8 @@ public class AustinSteadEnemyBounce : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        moveScript = GetComponent<MonsterMoveHit>();
+        moveScript = GetComponent<AustinSteadMonsterMoveHit>();
+        shootMoveScript = GetComponent<AustinSteadMonsterShootMove>();
     }
 
     // Update is called once per frame
@@ -27,11 +30,13 @@ public class AustinSteadEnemyBounce : MonoBehaviour
         {
             bounceTimer -= Time.deltaTime;
 
-            rb2d.MovePosition((Vector2)transform.position + bounceDirection * bounceSpeed * Time.deltaTime);
+            if(rb2d)
+                rb2d.MovePosition((Vector2)transform.position + bounceDirection * bounceSpeed * Time.deltaTime);
+            
             if (bounceTimer <= 0)
             {
                 bounceTimer = 0;
-                moveScript.speed = prevSpeed;
+                ResumeMovement();
             }
         }
     }
@@ -43,7 +48,34 @@ public class AustinSteadEnemyBounce : MonoBehaviour
         this.bounceDirection = bounceDirection;
         this.bounceSpeed = bounceSpeed;
         bounceTimer = bounceDuration;
-        prevSpeed = moveScript.speed;
-        moveScript.speed = 0;
+        StopMovement();
     }
+
+
+    private void StopMovement()
+    {
+        if(moveScript != null)
+        {
+            prevSpeed = moveScript.speed;
+            moveScript.speed = 0;
+        }
+        else if(shootMoveScript != null)
+        {
+            prevSpeed = shootMoveScript.speed;
+            shootMoveScript.speed = 0;
+        }
+    }
+
+    private void ResumeMovement()
+    {
+        if (moveScript != null)
+        {
+            moveScript.speed = prevSpeed;
+        }
+        else if (shootMoveScript != null)
+        {
+            shootMoveScript.speed = prevSpeed;
+        }
+    }
+
 }

@@ -52,7 +52,7 @@ public class PlayerMove : MonoBehaviour
 
 	void UpdateAnimationAndMove() {
 		if (isAlive == true){
-			if (change!=Vector3.zero) {
+			if (change!=Vector3.zero && speed != 0) {
 				rb2d.MovePosition(transform.position + change * speed * Time.deltaTime);
 				//MoveCharacter();
 				//anim.SetFloat("moveX", change.x);

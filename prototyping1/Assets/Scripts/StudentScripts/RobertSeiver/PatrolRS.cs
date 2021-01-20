@@ -38,6 +38,7 @@ public class PatrolRS : MonoBehaviour
 	public Animator Anim => anim;
 	public SpriteRenderer sensingColor;
 	public SpriteRenderer skullSprite;
+	public SpriteRenderer shadowSprite;
 
 	// Alert sound effect player
 	public GameObject AlertHandlerPrefab;
@@ -78,6 +79,10 @@ public class PatrolRS : MonoBehaviour
 		if (player == null)
 			return;
 		
+		// Force chase
+		if (path.Count == 1)
+			detectedPlayer = true;
+		
 		// Movement logic
 		if (detectedPlayer)
 			ChasePlayer();
@@ -106,16 +111,33 @@ public class PatrolRS : MonoBehaviour
 			if (DebugDraw)
 				DrawRaycast(ray);
 
-			RaycastHit2D hit = Physics2D.Raycast(transform.position, ray, ViewDistance, VisionLayers);
-			if (hit.collider != null && hit.transform.CompareTag("Player"))
+			RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, ray, ViewDistance, VisionLayers);
+			foreach (RaycastHit2D currentHit in hits)
 			{
-				detectedPlayer = true;
-				anim.Play("monsterSkull_walk");
-				GameObject popUp = Instantiate(AlertPopUpPrefab, transform);
-				popUp.transform.position += transform.lossyScale.y * Vector3.up;
-				Instantiate(AlertHandlerPrefab, transform.position, Quaternion.identity);
+				if (currentHit.collider.isTrigger)
+					continue;
+				
+				if (currentHit.transform.CompareTag("Player"))
+				{
+					detectedPlayer = true;
+					anim.Play("monsterSkull_walk");
+					GameObject popUp = Instantiate(AlertPopUpPrefab, transform);
+					popUp.transform.position += transform.lossyScale.y * Vector3.up;
+					Instantiate(AlertHandlerPrefab, transform.position, Quaternion.identity);
+				}
+				
 				break;
 			}
+			// RaycastHit2D hit = Physics2D.Raycast(transform.position, ray, ViewDistance, VisionLayers);
+			// if (hit.collider != null && !hit.collider.isTrigger && hit.transform.CompareTag("Player"))
+			// {
+			// 	detectedPlayer = true;
+			// 	anim.Play("monsterSkull_walk");
+			// 	GameObject popUp = Instantiate(AlertPopUpPrefab, transform);
+			// 	popUp.transform.position += transform.lossyScale.y * Vector3.up;
+			// 	Instantiate(AlertHandlerPrefab, transform.position, Quaternion.identity);
+			// 	break;
+			// }
 		}
 	}
 	
@@ -127,10 +149,11 @@ public class PatrolRS : MonoBehaviour
 		{
 			corneringTimer += Time.deltaTime;
 
+			// Todo: Deprecated: couldn't solve bug where it instantly reaches the target, which hurt gameplay
 			// Rotate toward new target
-			target = Vector2.Lerp(oldTarget,
-				path[(targetIndex + 1) % Path.Length],
-				corneringTimer / CornerningTime);
+			// target = Vector3.Slerp(oldTarget,
+			// 	path[(targetIndex + 1) % Path.Length],
+			// 	corneringTimer / CornerningTime);
 
 			// Update target
 			if (corneringTimer >= CornerningTime)
@@ -175,9 +198,15 @@ public class PatrolRS : MonoBehaviour
 		if (!chompScript.Chomped)
 		{
 			if (visionCone.GetPosition(1).x > visionCone.GetPosition(0).x)
+			{
 				skullSprite.flipX = true;
+				shadowSprite.flipX = true;
+			}
 			else
+			{
 				skullSprite.flipX = false;
+				shadowSprite.flipX = false;
+			}
 		}
 
 		float highLerpScale = 0.3f;

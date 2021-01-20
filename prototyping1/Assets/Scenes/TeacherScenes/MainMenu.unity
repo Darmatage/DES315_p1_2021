@@ -1106,10 +1106,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1787377386}
     m_Modifications:
+    - target: {fileID: 577314258115442696, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: m_Text
+      value: DavidDasky
+      objectReference: {fileID: 0}
+    - target: {fileID: 577314258115442696, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 577314258115442696, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8396226
+      objectReference: {fileID: 0}
+    - target: {fileID: 577314258115442696, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.8396226
+      objectReference: {fileID: 0}
+    - target: {fileID: 577314258115442696, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.8396226
+      objectReference: {fileID: 0}
     - target: {fileID: 4261250981421729665, guid: 43043ad63e6d6c741a9d7e29ab54e363,
         type: 3}
       propertyPath: m_Name
       value: ButtonA10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268522479195134151, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: GoToScene
+      value: DavidDasky
       objectReference: {fileID: 0}
     - target: {fileID: 7142760554811778893, guid: 43043ad63e6d6c741a9d7e29ab54e363,
         type: 3}
@@ -1215,6 +1245,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228107971155238977, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.59261876
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228107971155238977, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.12322002
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228107971155238977, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.6698113
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43043ad63e6d6c741a9d7e29ab54e363, type: 3}

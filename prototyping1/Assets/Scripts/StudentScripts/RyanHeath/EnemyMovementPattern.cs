@@ -20,6 +20,7 @@ namespace RyanHeath
             Attack
         }
 
+        [SerializeField] private SpriteRenderer visual;
         [SerializeField] private UnityEvent onAttack;
         [SerializeField] private List<MovementOption> movementPattern;
         [Tooltip("Movement speed of the object this is attached to")]
@@ -45,15 +46,23 @@ namespace RyanHeath
                         rb.velocity = Vector2.zero;
                         break;
                     case MovementOption.Left:
+                        visual.flipX = false;
+                        visual.flipY = false;
                         rb.velocity = Vector2.left * speed;
                         break;
                     case MovementOption.Up:
+                        visual.flipX = false;
+                        visual.flipY = false;
                         rb.velocity = Vector2.up * speed;
                         break;
                     case MovementOption.Down:
+                        visual.flipX = false;
+                        visual.flipY = true;
                         rb.velocity = Vector2.down * speed;
                         break;
                     case MovementOption.Right:
+                        visual.flipX = true;
+                        visual.flipY = false;
                         rb.velocity = Vector2.right * speed;
                         break;
                     case MovementOption.Attack:

@@ -155,10 +155,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 4
+  speed: 6
   hitEffectAnim: {fileID: 828083053115005703, guid: aa76d2cc38d0394459bca1bd5e7e54cb,
     type: 3}
-  projectileLife: 20
+  projectileLife: 5
 --- !u!114 &-8864407234587000760
 MonoBehaviour:
   m_ObjectHideFlags: 0

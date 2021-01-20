@@ -5,19 +5,20 @@ using UnityEngine.Tilemaps;
 
 public class CameraFollowRS : MonoBehaviour
 {
-    private Transform player, door, lever;
+    private Transform player, door;
+    private List<Transform> levers;
     private List<Transform> enemies;
     private List<Transform> torches;
     List<Transform> notInList;
     
     [Range(0.1f, 10.0f)] public float TrackingSpeed = 1.0f;
     [Range(1.0f, 50.0f)] public float EnemyTargetingRadius = 16.0f;
-    [Range(1.0f, 50.0f)] public float TorchTargetingRadius = 10.0f;
+    [Range(1.0f, 50.0f)] public float ObjectTargetingRadius = 10.0f;
 
     [Range(0.01f, 1.0f)] public float PlayerWeight = 1.0f;
     [Range(0.01f, 1.0f)] public float EnemyBehindWeight = 0.4f;
-    [Range(0.01f, 1.0f)] public float EnemyAheadWeight = 0.6f;
-    [Range(0.01f, 1.0f)] public float TorchWeight = 0.6f;
+    [Range(0.01f, 1.0f)] public float EnemyAheadWeight = 0.4f;
+    [Range(0.01f, 1.0f)] public float TorchWeight = 0.2f;
 
     [Range(0.0f, 5.0f)] public float FadeInTime; 
     [Range(0.0f, 5.0f)] public float GoalShowcaseTime; 
@@ -42,14 +43,16 @@ public class CameraFollowRS : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").transform;
         door   = GameObject.Find("Door").transform;
-        lever  = GameObject.Find("Switch").transform;
-        notInList = new List<Transform>();
+        levers = new List<Transform>();
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("togglebutton"))
+            levers.Add(obj.transform);
         enemies = new List<Transform>();
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Enemy"))
             enemies.Add(obj.transform);
         torches = new List<Transform>();
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("GuideTorch"))
             torches.Add(obj.transform);
+        notInList = new List<Transform>();
 
         fadeInTimer = FadeInTime;
         goalTimer = GoalShowcaseTime;
@@ -110,17 +113,22 @@ public class CameraFollowRS : MonoBehaviour
         Vector3 target = player.position * PlayerWeight;
 
         bool doorVisible = false;
-        bool leverVisible = false;
-        if (Vector2.Distance(player.position, door.position) < TorchTargetingRadius)
+        if (Vector2.Distance(player.position, door.position) < ObjectTargetingRadius)
         {
             target += door.position * PlayerWeight / 2.0f;
             doorVisible = true;
         }
-        if (Vector2.Distance(player.position, lever.position) < TorchTargetingRadius)
+
+        int numNearbyLevers = 0;
+        foreach (Transform lever in levers)
         {
-            target += lever.position * PlayerWeight / 2.0f;
-            leverVisible = true;
+            if (Vector2.Distance(player.position, lever.position) < ObjectTargetingRadius)
+            {
+                target += lever.position * PlayerWeight;
+                numNearbyLevers++;
+            }
         }
+        
         
         int numNearbyEnemiesBehind = 0;
         int numNearbyEnemiesAhead = 0;
@@ -150,7 +158,7 @@ public class CameraFollowRS : MonoBehaviour
         int numTorchesNearby = 0;
         foreach (Transform torch in torches)
         {
-            if (Vector2.Distance(player.position, torch.position) < TorchTargetingRadius)
+            if (Vector2.Distance(player.position, torch.position) < ObjectTargetingRadius)
             {
                 target += torch.position * TorchWeight;
                 numTorchesNearby++;
@@ -161,8 +169,8 @@ public class CameraFollowRS : MonoBehaviour
                   EnemyBehindWeight * numNearbyEnemiesBehind +
                   EnemyAheadWeight  * numNearbyEnemiesAhead + 
                   TorchWeight       * numTorchesNearby +
-                  (doorVisible  ? PlayerWeight / 2.0f : 0.0f) +
-                  (leverVisible ? PlayerWeight / 2.0f : 0.0f);
+                  PlayerWeight      * numNearbyLevers + 
+                  (doorVisible  ? (PlayerWeight / 2.0f) : 0.0f);
         target.z = transform.position.z;
 
         transform.position = Vector3.Lerp(transform.position, target, TrackingSpeed * Time.deltaTime);

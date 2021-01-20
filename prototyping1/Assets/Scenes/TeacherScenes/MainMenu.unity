@@ -4843,6 +4843,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonA5
       objectReference: {fileID: 0}
+    - target: {fileID: 8462816570336731820, guid: 181a2b3b692949347876e9f6024237df,
+        type: 3}
+      propertyPath: m_Text
+      value: AloraN
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462816570336731820, guid: 181a2b3b692949347876e9f6024237df,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462816570336731820, guid: 181a2b3b692949347876e9f6024237df,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462816570336731820, guid: 181a2b3b692949347876e9f6024237df,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462816570336731820, guid: 181a2b3b692949347876e9f6024237df,
+        type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 181a2b3b692949347876e9f6024237df, type: 3}
 --- !u!1 &1426353594

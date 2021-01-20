@@ -13,6 +13,7 @@ public class CrabWalkBoss : MonoBehaviour
     Vector3 secondmove;
     bool switchmoves = false;
     bool atlocation = false;
+    bool dead = false;
 
     public void set_delay(float delay) 
     {
@@ -55,7 +56,12 @@ public class CrabWalkBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (dead) 
+        {
+            transform.Rotate(0, 360 * Time.deltaTime, 0);
+        }
+
+
         if (!atlocation) 
         {
             if (delay_timer >= 0.0f)
@@ -87,7 +93,10 @@ public class CrabWalkBoss : MonoBehaviour
 
     public void KillCrab() 
     {
-        Destroy(gameObject);
+        Destroy(gameObject, 5.0f);
+        dead = true;
+        atlocation = true;
+        gameObject.GetComponent<CrabBossFireball>().switchfireballs(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -95,6 +104,10 @@ public class CrabWalkBoss : MonoBehaviour
         if (collision.gameObject == movetowards) 
         {
             gameObject.GetComponent<CrabBossFireball>().coverinlava();
+        }
+        if (collision.gameObject.tag == "Player") 
+        {
+            GameObject.FindGameObjectWithTag("GameHandler").GetComponent<GameHandler>().TakeDamage(5);
         }
     }
 }

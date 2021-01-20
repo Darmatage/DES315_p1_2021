@@ -132,7 +132,7 @@ public class mklingmanPlayerWrapper : MonoBehaviour
             }
 
             GameObject fx = Instantiate(attackEffect, player.transform.position + attackDir * 1.5f, quaternion.identity);
-            Destroy(fx, 1.0f);
+            Destroy(fx, 0.6f);
         }
     }
 

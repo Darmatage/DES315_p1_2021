@@ -155,6 +155,8 @@
             </e>
             <e p="WillMielke" t="Include">
               <e p="BoxMove_Mielke.cs" t="Include" />
+              <e p="EasyRestart_Mielke.cs" t="Include" />
+              <e p="LaserController_Mielke.cs" t="Include" />
             </e>
             <e p="ZacaryBrown" t="Include">
               <e p="ZacaryBrown_BouncyBullet.cs" t="Include" />

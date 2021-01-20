@@ -22,13 +22,16 @@ public class BrokenDoorSwitch : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			SwitchOffArt.SetActive(false);
-			SwitchOnArt.SetActive(true);
-			DoorObj.GetComponent<BreakableDoor>().BrokenDoorOpen();
-
-			if (Crab) 
+			if (DoorObj.GetComponent<BreakableDoor>().destroyed == false) 
 			{
-				Crab.KillCrab();
+				SwitchOffArt.SetActive(false);
+				SwitchOnArt.SetActive(true);
+				DoorObj.GetComponent<BreakableDoor>().BrokenDoorOpen();
+
+				if (Crab)
+				{
+					Crab.KillCrab();
+				}
 			}
 
 		}

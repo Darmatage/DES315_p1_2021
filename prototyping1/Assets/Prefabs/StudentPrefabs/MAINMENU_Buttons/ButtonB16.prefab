@@ -77,7 +77,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: B-16
+  m_Text: 'Chase G
+
+'
 --- !u!1 &8421671199105237590
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,7 +40,7 @@ public class ChaseGraves_ProjectileScript : MonoBehaviour
         {
             Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
         }
-        else if(collision.gameObject.tag == "Enemy")
+        else if(collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "monsterShooter")
         {
             GameObject explosionEffect = Instantiate(Explosion, transform.position, Quaternion.identity);
             Destroy(explosionEffect, explosionDuration);

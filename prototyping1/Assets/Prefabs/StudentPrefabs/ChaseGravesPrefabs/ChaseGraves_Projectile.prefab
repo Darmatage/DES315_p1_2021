@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 936662114210584143}
   - component: {fileID: 3577822061350760046}
   - component: {fileID: -5300876546850576070}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: ChaseGraves_Projectile
   m_TagString: bullet
   m_Icon: {fileID: 0}

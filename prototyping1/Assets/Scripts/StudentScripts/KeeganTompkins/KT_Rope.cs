@@ -71,14 +71,14 @@ public class KT_Rope : MonoBehaviour
     int CurrentGrabbed()
     {
         if (grabPoints[KT_BOT].IsGrabbed) return KT_BOT;
-        else if (grabPoints[KT_BOT].IsGrabbed) return KT_TOP;
+        else if (grabPoints[KT_TOP].IsGrabbed) return KT_TOP;
         else return -1;
     }
 
     int NotGrabbed()
     {
         if (grabPoints[KT_BOT].IsGrabbed) return KT_TOP;
-        else if (grabPoints[KT_BOT].IsGrabbed) return KT_BOT;
+        else if (grabPoints[KT_TOP].IsGrabbed) return KT_BOT;
         else return -1;
     }
 
@@ -138,7 +138,7 @@ public class KT_Rope : MonoBehaviour
             Vector3 Position = grabPoints[i].RopePoint.position;
             Position.z = -1.0f;
             UI.transform.position = Position;
-            
+
             if (grabPoints[i].IsGrabbed)
             {
                 if (ClosestPost())
@@ -217,7 +217,7 @@ public class KT_Rope : MonoBehaviour
         {
             float dist = Vector2.Distance(post.transform.position, MousePos);
             if (dist <= GrabRadius &&
-                InPlayerRange(post.transform.position, GrabRadius) && 
+                InPlayerRange(post.transform.position, GrabRadius) &&
                 (dist <= MinDist || MinDist < 0.0f) &&
                 !post.IsAttached)
             {
@@ -278,7 +278,7 @@ public class KT_Rope : MonoBehaviour
             else if (MouseClosestTo() == KT_TOP)
             {
                 grabPoints[KT_TOP].IsGrabbed = true;
-            }   
+            }
         }
 
         // Mouse is held
@@ -295,12 +295,12 @@ public class KT_Rope : MonoBehaviour
         if (grabPoints[KT_BOT].AttachedPost == startingPost.gameObject)
         {
             Start = grabPoints[KT_BOT].AttachedPost.transform.position;
-            End   = grabPoints[KT_TOP].AttachedPost.transform.position;
+            End = grabPoints[KT_TOP].AttachedPost.transform.position;
         }
         else
         {
             Start = grabPoints[KT_TOP].AttachedPost.transform.position;
-            End   = grabPoints[KT_BOT].AttachedPost.transform.position;
+            End = grabPoints[KT_BOT].AttachedPost.transform.position;
         }
 
         // Return the interpolation from start to end.
@@ -309,7 +309,7 @@ public class KT_Rope : MonoBehaviour
 
     public float RopeLength()
     {
-        return Vector2.Distance(grabPoints[KT_BOT].AttachedPost.transform.position, 
+        return Vector2.Distance(grabPoints[KT_BOT].AttachedPost.transform.position,
                                 grabPoints[KT_TOP].AttachedPost.transform.position);
     }
 

@@ -66,7 +66,7 @@ public class KT_PlayerRope : MonoBehaviour
             {
                 Destroy(E_Prompt);
             }
-            if (newClosest != null)
+            if (newClosest != null && newClosest.AttachedRope.Slideable == true)
             {
                 E_Prompt = Instantiate(E_Prompt_Prefab, newClosest.transform.position + E_Offset, Quaternion.identity);
             }
@@ -98,7 +98,7 @@ public class KT_PlayerRope : MonoBehaviour
             UpdateUI();
         }
 
-        if (E_Prompt != null && Input.GetKeyDown(KeyCode.E))
+        if (E_Prompt != null && Input.GetKeyDown(KeyCode.E) && ClosestPost.AttachedRope.Slideable == true)
         {
             if (E_Prompt) Destroy(E_Prompt);
 

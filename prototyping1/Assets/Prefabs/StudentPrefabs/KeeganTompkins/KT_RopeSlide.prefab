@@ -98,9 +98,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrabRadius: 0.5
   MaxLength: 3
-  UI_Prefab: {fileID: 2126307063996128108, guid: 63dc2e307ae2238449129d707163da3a,
+  UI_Prefab: {fileID: 2126307063996128108, guid: 0f528e2411946bc488d11bcfa32da9b9,
     type: 3}
-  HoverColor: {r: 0.9716981, g: 0.80591786, b: 0.21542363, a: 0}
+  HoverColor: {r: 0.9716981, g: 0.80591786, b: 0.21542363, a: 1}
   UIColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
   PostTop: {fileID: 0}
   PostBot: {fileID: 0}

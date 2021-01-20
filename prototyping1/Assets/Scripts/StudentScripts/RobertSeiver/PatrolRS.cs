@@ -38,6 +38,7 @@ public class PatrolRS : MonoBehaviour
 	public Animator Anim => anim;
 	public SpriteRenderer sensingColor;
 	public SpriteRenderer skullSprite;
+	public SpriteRenderer shadowSprite;
 
 	// Alert sound effect player
 	public GameObject AlertHandlerPrefab;
@@ -77,6 +78,10 @@ public class PatrolRS : MonoBehaviour
 		// Don't update if the player is dead
 		if (player == null)
 			return;
+		
+		// Force chase
+		if (path.Count == 1)
+			detectedPlayer = true;
 		
 		// Movement logic
 		if (detectedPlayer)
@@ -144,10 +149,11 @@ public class PatrolRS : MonoBehaviour
 		{
 			corneringTimer += Time.deltaTime;
 
+			// Todo: Deprecated: couldn't solve bug where it instantly reaches the target, which hurt gameplay
 			// Rotate toward new target
-			target = Vector2.Lerp(oldTarget,
-				path[(targetIndex + 1) % Path.Length],
-				corneringTimer / CornerningTime);
+			// target = Vector3.Slerp(oldTarget,
+			// 	path[(targetIndex + 1) % Path.Length],
+			// 	corneringTimer / CornerningTime);
 
 			// Update target
 			if (corneringTimer >= CornerningTime)
@@ -192,9 +198,15 @@ public class PatrolRS : MonoBehaviour
 		if (!chompScript.Chomped)
 		{
 			if (visionCone.GetPosition(1).x > visionCone.GetPosition(0).x)
+			{
 				skullSprite.flipX = true;
+				shadowSprite.flipX = true;
+			}
 			else
+			{
 				skullSprite.flipX = false;
+				shadowSprite.flipX = false;
+			}
 		}
 
 		float highLerpScale = 0.3f;

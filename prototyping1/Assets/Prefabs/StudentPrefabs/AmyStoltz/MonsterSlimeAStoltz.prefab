@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destructableTilemap: {fileID: 0}
-  speed: 1
+  speed: 2
   damage: 1
   EnemyLives: 2
   explosionObj: {fileID: 828083053115005703, guid: a2476c01643b8704eb52aa8c08d539a5,

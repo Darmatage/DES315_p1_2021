@@ -23,10 +23,16 @@ public class PatrolChompRS : MonoBehaviour
             Chomped = true;
 
             if (other.transform.position.x > transform.position.x)
+            {
                 PatrolScript.skullSprite.flipX = true;
+                PatrolScript.shadowSprite.flipX = true;
+            }
             else
+            {
                 PatrolScript.skullSprite.flipX = false;
-            
+                PatrolScript.shadowSprite.flipX = false;
+            }
+
             // Play sound effect
             Instantiate(CrunchHandlerPrefab, transform.position, Quaternion.identity);
             

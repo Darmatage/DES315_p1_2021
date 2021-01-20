@@ -1814,7 +1814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 694024721}
-  spike: {fileID: 2897097587681159296, guid: 0573994f43b58e94c98a3612cbefb2af, type: 3}
+  spike: {fileID: 0}
   speed: 10
   projectileLife: 6
   spikeCount: 0

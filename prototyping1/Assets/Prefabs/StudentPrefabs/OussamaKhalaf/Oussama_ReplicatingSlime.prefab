@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2295501902392270102}
-  - component: {fileID: 1806206819899812626}
+  - component: {fileID: 3954034288560873688}
   m_Layer: 0
   m_Name: Oussama_ReplicatingSlime
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1806206819899812626
+--- !u!114 &3954034288560873688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,10 +41,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4446678944859857232}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6f9ceb9382a6784d896c52e44f8d41e, type: 3}
+  m_Script: {fileID: 11500000, guid: 433e7e05be51f3e47a668292a1e2953f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reproductionTime: 3
+  replicationTime: 3
+  replicationLimit: 3
 --- !u!1001 &8902136724833414375
 PrefabInstance:
   m_ObjectHideFlags: 0

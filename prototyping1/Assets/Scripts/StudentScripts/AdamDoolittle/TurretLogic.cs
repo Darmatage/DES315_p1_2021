@@ -12,10 +12,13 @@ public class TurretLogic : MonoBehaviour
     public float speed = 10f;
     public float projectileLife = 3f;
     public float spikeCount = 0;
+    Vector2 targetPos;
+
     // Start is called before the first frame update
     void Start()
     {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        //playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        targetPos = new Vector2(turret.transform.position.x, turret.transform.position.y);
     }
 
     // Update is called once per frame
@@ -25,10 +28,11 @@ public class TurretLogic : MonoBehaviour
         {
             while (spikeCount != 1)
             {
-                Instantiate(spike);
+                Instantiate(spike, targetPos, Quaternion.identity);
                 spikeCount = 1;
             }
-            spike.transform.position = Vector2.MoveTowards(turret.transform.position, playerTransform.position, speed * Time.deltaTime);
+            //spike.transform.position = Vector2.MoveTowards(turret.transform.position, targetPos, speed * Time.deltaTime);
+            spike.GetComponent<Rigidbody2D>().AddForce(Vector2.right * speed, ForceMode2D.Impulse);
         }
     }
 

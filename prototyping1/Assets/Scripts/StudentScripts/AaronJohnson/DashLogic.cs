@@ -32,16 +32,16 @@ public class DashLogic : MonoBehaviour
         {
             Vector2 pos = player.GetComponent<PlayerMove>().transform.position;
 
-            if(Input.GetKey(KeyCode.W))
+            if(Input.GetAxis("Vertical") > 0)
                 pos.y += DashDistance;
 
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetAxis("Horizontal") < 0)
                 pos.x -= DashDistance;
 
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetAxis("Vertical") < 0)
                 pos.y -= DashDistance;
 
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetAxis("Horizontal") > 0)
                 pos.x += DashDistance;
 
             player.GetComponent<PlayerMove>().transform.position = pos;

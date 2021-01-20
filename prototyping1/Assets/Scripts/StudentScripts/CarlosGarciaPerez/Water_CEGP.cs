@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Water_CEGP : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Sprite watersprite;
+    public Sprite icesprite;
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if (collision.gameObject.tag == "Block_CEGP")
+        {
+            this.GetComponent<SpriteRenderer>().sprite = icesprite;
+            this.GetComponent<BoxCollider2D>().enabled = false;
+            collision.gameObject.SetActive(false);
+        }
     }
 }

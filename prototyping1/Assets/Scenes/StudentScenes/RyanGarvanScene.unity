@@ -11541,6 +11541,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 332220368317023197, guid: e4baca7e26d51c240bc6571d098eea25,
+        type: 3}
+      propertyPath: NextScene
+      value: DillonHahnScene
+      objectReference: {fileID: 0}
     - target: {fileID: 696204449829068397, guid: e4baca7e26d51c240bc6571d098eea25,
         type: 3}
       propertyPath: m_IsActive

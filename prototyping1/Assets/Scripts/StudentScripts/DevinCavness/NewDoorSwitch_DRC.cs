@@ -35,8 +35,10 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 				}
 				if(DoorObj)
 					DoorObj.GetComponent<NewDoor_DRC>().DoorClose();
-				ChangeableGridOn.SetActive(true);
-				ChangeableGridOff.SetActive(false);
+				if(ChangeableGridOn)
+					ChangeableGridOn.SetActive(true);
+				if (ChangeableGridOff)
+					ChangeableGridOff.SetActive(false);
 			}
 			else
             {
@@ -49,8 +51,10 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 				}
 				if (DoorObj)
 					DoorObj.GetComponent<NewDoor_DRC>().DoorOpen();
-				ChangeableGridOn.SetActive(false);
-				ChangeableGridOff.SetActive(true);
+				if (ChangeableGridOn)
+					ChangeableGridOn.SetActive(false);
+				if (ChangeableGridOff)
+					ChangeableGridOff.SetActive(true);
 			}
 		}
 	}

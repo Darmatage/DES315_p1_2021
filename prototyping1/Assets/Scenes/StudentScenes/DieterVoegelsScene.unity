@@ -435,6 +435,11 @@ PrefabInstance:
       propertyPath: CoolDown
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7818652338595288064, guid: 2ed462c8c8b049a45913f4e4c224f804,
+        type: 3}
+      propertyPath: DashDistance
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ed462c8c8b049a45913f4e4c224f804, type: 3}
 --- !u!1 &190450947 stripped
@@ -28384,7 +28389,7 @@ PrefabInstance:
     - target: {fileID: 7699604197402814556, guid: 43cdf09bca07a9f4684aad518d0cafed,
         type: 3}
       propertyPath: enemySpeed
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7699604197402814556, guid: 43cdf09bca07a9f4684aad518d0cafed,
         type: 3}

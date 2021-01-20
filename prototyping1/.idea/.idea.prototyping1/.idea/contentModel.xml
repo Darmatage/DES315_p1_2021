@@ -59,8 +59,16 @@
               <e p="AustinSteadBounce.cs" t="Include" />
               <e p="AustinSteadCircle.cs" t="Include" />
               <e p="AustinSteadEnemyBounce.cs" t="Include" />
+              <e p="AustinSteadMonsterMoveHit.cs" t="Include" />
+              <e p="AustinSteadMonsterShootMove.cs" t="Include" />
               <e p="AustinSteadProjectile.cs" t="Include" />
               <e p="AustinSteadProjectileBounce.cs" t="Include" />
+            </e>
+            <e p="ChaseGravesScripts" t="Include">
+              <e p="ChaseGraves_GrenadeSwitch.cs" t="Include" />
+              <e p="ChaseGraves_MonsterMoveShoot.cs" t="Include" />
+              <e p="ChaseGraves_PlayerAttack.cs" t="Include" />
+              <e p="ChaseGraves_ProjectileScript.cs" t="Include" />
             </e>
             <e p="DevinCavness" t="Include">
               <e p="MonsterMoveHitStop_DRC.cs" t="Include" />
@@ -93,13 +101,13 @@
               <e p="CollectibleJW.cs" t="Include" />
               <e p="InventoryHandlerJW.cs" t="Include" />
             </e>
-<<<<<<< HEAD
+            <e p="KeanuCendejasScripts" t="Include">
+              <e p="DashSlimeScript_cendejas.cs" t="Include" />
+            </e>
             <e p="KeeganTompkins" t="Include">
               <e p="KT_Post.cs" t="Include" />
               <e p="KT_Rope.cs" t="Include" />
             </e>
-=======
->>>>>>> Jacob-Presley
             <e p="LorenzoDeMaineScripts" t="Include">
               <e p="lorenzoFireDebuff.cs" t="Include" />
               <e p="lorenzoLavaScript.cs" t="Include" />
@@ -134,6 +142,7 @@
             </e>
             <e p="RyanHeath" t="Include">
               <e p="EnemyMovementPattern.cs" t="Include" />
+              <e p="RyanHeathBtn.cs" t="Include" />
             </e>
             <e p="SkylerPowers" t="Include">
               <e p="SPowers_Dodge.cs" t="Include" />

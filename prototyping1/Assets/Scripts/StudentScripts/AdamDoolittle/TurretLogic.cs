@@ -60,6 +60,7 @@ public class TurretLogic : MonoBehaviour
 		newSpike.GetComponent<Rigidbody2D>().AddForce(Vector2.right * speed, ForceMode2D.Impulse);
 		yield return new WaitForSeconds(projectileLife);
 		Destroy(newSpike);
+		spikeCount = 0;
 	}
 
 }

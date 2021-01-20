@@ -5784,6 +5784,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 8211849131466010717, guid: 52d62e81a16d71845ac44580b6c55c45,
+        type: 3}
+      propertyPath: GoToScene
+      value: JacobPresleyScene
+      objectReference: {fileID: 0}
     - target: {fileID: 8508847813933916503, guid: 52d62e81a16d71845ac44580b6c55c45,
         type: 3}
       propertyPath: m_Colors.m_NormalColor.r

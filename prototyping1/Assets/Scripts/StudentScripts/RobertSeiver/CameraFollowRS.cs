@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class CameraFollowRS : MonoBehaviour
 {
-    private Transform player;
+    private Transform player, door, lever;
     private List<Transform> enemies;
     private List<Transform> torches;
     List<Transform> notInList;
@@ -41,6 +41,8 @@ public class CameraFollowRS : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player").transform;
+        door   = GameObject.Find("Door").transform;
+        lever  = GameObject.Find("Switch").transform;
         notInList = new List<Transform>();
         enemies = new List<Transform>();
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Enemy"))
@@ -106,6 +108,19 @@ public class CameraFollowRS : MonoBehaviour
     private void CameraFollow()
     {
         Vector3 target = player.position * PlayerWeight;
+
+        bool doorVisible = false;
+        bool leverVisible = false;
+        if (Vector2.Distance(player.position, door.position) < TorchTargetingRadius)
+        {
+            target += door.position * PlayerWeight / 2.0f;
+            doorVisible = true;
+        }
+        if (Vector2.Distance(player.position, lever.position) < TorchTargetingRadius)
+        {
+            target += lever.position * PlayerWeight / 2.0f;
+            leverVisible = true;
+        }
         
         int numNearbyEnemiesBehind = 0;
         int numNearbyEnemiesAhead = 0;
@@ -144,8 +159,10 @@ public class CameraFollowRS : MonoBehaviour
 
         target /= PlayerWeight +
                   EnemyBehindWeight * numNearbyEnemiesBehind +
-                  EnemyAheadWeight * numNearbyEnemiesAhead + 
-                  TorchWeight * numTorchesNearby;
+                  EnemyAheadWeight  * numNearbyEnemiesAhead + 
+                  TorchWeight       * numTorchesNearby +
+                  (doorVisible  ? PlayerWeight / 2.0f : 0.0f) +
+                  (leverVisible ? PlayerWeight / 2.0f : 0.0f);
         target.z = transform.position.z;
 
         transform.position = Vector3.Lerp(transform.position, target, TrackingSpeed * Time.deltaTime);

@@ -14,7 +14,7 @@ public class InventoryHandlerJW : MonoBehaviour
 	public bool pauseOnOpen = true;
 
 	public int coinCount = 0;
-	public Text coinCounter;
+	public Text[] coinCounters;
 
     void Start()
 	{	
@@ -33,8 +33,8 @@ public class InventoryHandlerJW : MonoBehaviour
 			else{ Open(); }
 		}
 
-		if (coinCounter)
-			coinCounter.text = coinCount.ToString();
+		foreach(Text counter in coinCounters)
+			counter.text = coinCount.ToString();
 	}
 
 	void Open(){

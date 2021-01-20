@@ -1106,6 +1106,11 @@ PrefabInstance:
       propertyPath: GoToScene
       value: JiwonJungScene
       objectReference: {fileID: 0}
+    - target: {fileID: 3523529418599697421, guid: d028c571f7775204a8318b921886c2e3,
+        type: 3}
+      propertyPath: m_Text
+      value: Jiwon Jung
+      objectReference: {fileID: 0}
     - target: {fileID: 4516263217698647980, guid: d028c571f7775204a8318b921886c2e3,
         type: 3}
       propertyPath: m_Name

@@ -113,9 +113,10 @@ GameObject:
   - component: {fileID: 1752800895972075738}
   - component: {fileID: 6441616174296519306}
   - component: {fileID: 3686576375771877054}
-  - component: {fileID: 6577643807790627255}
+  - component: {fileID: -2114949020634472052}
+  - component: {fileID: -8822710938692324525}
   m_Layer: 0
-  m_Name: MonsterSlime
+  m_Name: AustinSteadMonsterSlime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -183,7 +184,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6577643807790627255
+--- !u!114 &-2114949020634472052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,10 +193,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 8795562353032092023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd8a2f9a87083244ad10fb34c7401cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a592580c7875fe45a2eef5b530cbdd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+--- !u!114 &-8822710938692324525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8795562353032092023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04b0604f21cb9044a949cec7ba84847d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
   damage: 1
   EnemyLives: 3
   retreatTime: 3

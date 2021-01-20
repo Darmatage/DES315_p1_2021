@@ -7,31 +7,63 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 	public GameObject SwitchOffArt;
 	public GameObject SwitchOnArt;
 	public GameObject DoorObj;
-	public GameObject ChangeableWalls;
+	public GameObject ChangeableGridOn;
+	public GameObject ChangeableGridOff;
+
+	public bool isActive;
 
     // Start is called before the first frame update
     void Start()
     {
 		SwitchOffArt.SetActive(true);
 		SwitchOnArt.SetActive(false);
-		DoorObj = GameObject.FindGameObjectWithTag("Door");
-    }
+		isActive = false;
+		//DoorObj = GameObject.FindGameObjectWithTag("Door");
+		if (ChangeableGridOff)
+			ChangeableGridOff.SetActive(false);
+	}
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "Player"){
 			if (!SwitchOffArt.activeSelf)
 			{
-				SwitchOffArt.SetActive(true);
-				SwitchOnArt.SetActive(false);
-				DoorObj.GetComponent<NewDoor_DRC>().DoorClose();
-				ChangeableWalls.SetActive(true);
+				GameObject[] a = GameObject.FindGameObjectsWithTag("togglebutton");
+				for(int i = 0; i < a.Length; ++i)
+                {
+					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOffArt.SetActive(true);
+					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(false);
+					a[i].GetComponent<NewDoorSwitch_DRC>().isActive = false;
+				}
+				if (DoorObj)
+				{
+					if(DoorObj.GetComponent<NewDoor_DRC>())
+						DoorObj.GetComponent<NewDoor_DRC>().DoorClose();
+				}
+				if(ChangeableGridOn)
+					ChangeableGridOn.SetActive(true);
+				if (ChangeableGridOff)
+					ChangeableGridOff.SetActive(false);
 			}
 			else
             {
-				SwitchOffArt.SetActive(false);
-				SwitchOnArt.SetActive(true);
-				DoorObj.GetComponent<NewDoor_DRC>().DoorOpen();
-				ChangeableWalls.SetActive(false);
+				GameObject[] a = GameObject.FindGameObjectsWithTag("togglebutton");
+				for (int i = 0; i < a.Length; ++i)
+				{
+					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOffArt.SetActive(false);
+					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(true);
+					a[i].GetComponent<NewDoorSwitch_DRC>().isActive = true;
+				}
+				if (DoorObj)
+				{
+					if (DoorObj.GetComponent<NewDoor_DRC>())
+						DoorObj.GetComponent<NewDoor_DRC>().DoorOpen();
+					else if (DoorObj.GetComponent<Door>())
+						DoorObj.GetComponent<Door>().DoorOpen();
+				}
+				if (ChangeableGridOn)
+					ChangeableGridOn.SetActive(false);
+				if (ChangeableGridOff)
+					ChangeableGridOff.SetActive(true);
 			}
 		}
 	}

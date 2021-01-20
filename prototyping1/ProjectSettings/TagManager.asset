@@ -15,6 +15,10 @@ TagManager:
   - box
   - Fire
   - Water
+  - Enemy
+  - GuideTorch
+  - WallDoor
+  - bullet
   layers:
   - Default
   - TransparentFX
@@ -26,8 +30,8 @@ TagManager:
   - 
   - Bridge
   - Lava
-  - 
-  - 
+  - Player
+  - Bullet
   - 
   - 
   - 

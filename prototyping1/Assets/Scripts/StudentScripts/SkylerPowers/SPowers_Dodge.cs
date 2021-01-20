@@ -51,7 +51,7 @@ public class SPowers_Dodge : MonoBehaviour
   {
     if (dodgeTimer > 0f)
     {
-      rend.color = new Color(0.3f, 0.9f, 0f);
+      rend.color = new Color(0.3f, 0f, 0.7f);
       return;
     }
 

@@ -4,9 +4,10 @@ using UnityEngine;
 public class PatrolRS : MonoBehaviour
 {
 	public bool DebugDraw = true; // Display debug drawing
-	[Range(1, 100)] public int ChompDamage = 100;  // Damage done by chomping
-	[Range(1.0f, 10.0f)] public float WalkingSpeed; // Movement speed while patroling
-	[Range(1.0f, 10.0f)] public float ChasingSpeed; // Movement speed while chasing the player
+	[Range(1, 100)] public int ChompDamage = 100;     // Damage done by chomping
+	[Range(1.0f, 10.0f)] public float TargetingSpeed; // Movement speed while patroling
+	[Range(1.0f, 10.0f)] public float WalkingSpeed;   // Movement speed while patroling
+	[Range(1.0f, 10.0f)] public float ChasingSpeed;   // Movement speed while chasing the player
 	[Range(0.1f, 5.0f)] public float CornerningTime = 1.0f; // Time it takes to rotate around corners
 	private float corneringTimer;
 
@@ -31,13 +32,23 @@ public class PatrolRS : MonoBehaviour
 
 	// Map containing nodes for monster pathing nodes
 	public GridLayout NodeMap;
-
 	private LineRenderer visionCone;
 	private Transform player;
 	private Animator anim;
 	public Animator Anim => anim;
 	public SpriteRenderer sensingColor;
+	public SpriteRenderer skullSprite;
+	public SpriteRenderer shadowSprite;
 
+	// Alert sound effect player
+	public GameObject AlertHandlerPrefab;
+	
+	// Alert pop up image
+	public GameObject AlertPopUpPrefab;
+
+	// Chomp script reference
+	private PatrolChompRS chompScript;
+	
 	private void Start()
 	{
 		player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -57,6 +68,9 @@ public class PatrolRS : MonoBehaviour
 		
 		// Grab animator component
 		anim = GetComponentInChildren<Animator>();
+		
+		// Grab chomp script
+		chompScript = GetComponentInChildren<PatrolChompRS>();
 	}
 
 	private void Update()
@@ -64,6 +78,10 @@ public class PatrolRS : MonoBehaviour
 		// Don't update if the player is dead
 		if (player == null)
 			return;
+		
+		// Force chase
+		if (path.Count == 1)
+			detectedPlayer = true;
 		
 		// Movement logic
 		if (detectedPlayer)
@@ -93,13 +111,33 @@ public class PatrolRS : MonoBehaviour
 			if (DebugDraw)
 				DrawRaycast(ray);
 
-			RaycastHit2D hit = Physics2D.Raycast(transform.position, ray, ViewDistance, VisionLayers);
-			if (hit.collider != null && hit.transform.CompareTag("Player"))
+			RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, ray, ViewDistance, VisionLayers);
+			foreach (RaycastHit2D currentHit in hits)
 			{
-				detectedPlayer = true;
-				anim.Play("monsterSkull_walk");
+				if (currentHit.collider.isTrigger)
+					continue;
+				
+				if (currentHit.transform.CompareTag("Player"))
+				{
+					detectedPlayer = true;
+					anim.Play("monsterSkull_walk");
+					GameObject popUp = Instantiate(AlertPopUpPrefab, transform);
+					popUp.transform.position += transform.lossyScale.y * Vector3.up;
+					Instantiate(AlertHandlerPrefab, transform.position, Quaternion.identity);
+				}
+				
 				break;
 			}
+			// RaycastHit2D hit = Physics2D.Raycast(transform.position, ray, ViewDistance, VisionLayers);
+			// if (hit.collider != null && !hit.collider.isTrigger && hit.transform.CompareTag("Player"))
+			// {
+			// 	detectedPlayer = true;
+			// 	anim.Play("monsterSkull_walk");
+			// 	GameObject popUp = Instantiate(AlertPopUpPrefab, transform);
+			// 	popUp.transform.position += transform.lossyScale.y * Vector3.up;
+			// 	Instantiate(AlertHandlerPrefab, transform.position, Quaternion.identity);
+			// 	break;
+			// }
 		}
 	}
 	
@@ -111,10 +149,11 @@ public class PatrolRS : MonoBehaviour
 		{
 			corneringTimer += Time.deltaTime;
 
+			// Todo: Deprecated: couldn't solve bug where it instantly reaches the target, which hurt gameplay
 			// Rotate toward new target
-			target = Vector2.Lerp(oldTarget,
-				path[(targetIndex + 1) % Path.Length],
-				corneringTimer / CornerningTime);
+			// target = Vector3.Slerp(oldTarget,
+			// 	path[(targetIndex + 1) % Path.Length],
+			// 	corneringTimer / CornerningTime);
 
 			// Update target
 			if (corneringTimer >= CornerningTime)
@@ -146,13 +185,30 @@ public class PatrolRS : MonoBehaviour
 	// Chase the player
 	private void ChasePlayer()
 	{
-		target = player.transform.position;
+		if (Vector3.Distance(target, player.transform.position) > 0.1f)
+			target = Vector3.Lerp(target, player.transform.position, TargetingSpeed * Time.deltaTime);
+		else
+			target = player.transform.position;
 		transform.position = Vector2.MoveTowards(transform.position, target, ChasingSpeed * Time.deltaTime);
 	}
 
 	// Update all vision cone data
 	private void UpdateVisionCone()
 	{
+		if (!chompScript.Chomped)
+		{
+			if (visionCone.GetPosition(1).x > visionCone.GetPosition(0).x)
+			{
+				skullSprite.flipX = true;
+				shadowSprite.flipX = true;
+			}
+			else
+			{
+				skullSprite.flipX = false;
+				shadowSprite.flipX = false;
+			}
+		}
+
 		float highLerpScale = 0.3f;
 		float lowLerpScale  = 0.05f;
 		

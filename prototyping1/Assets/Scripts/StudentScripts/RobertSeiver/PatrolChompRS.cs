@@ -7,7 +7,7 @@ public class PatrolChompRS : MonoBehaviour
     
     public PatrolRS PatrolScript;
     private GameHandler gameHandlerScript;
-    private bool chomped = false;
+    public bool Chomped { get; set; } = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,10 +18,21 @@ public class PatrolChompRS : MonoBehaviour
     // Chomp the player
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!chomped && other.transform.CompareTag("Player"))
+        if (!Chomped && other.transform.CompareTag("Player"))
         {
-            chomped = true;
-            
+            Chomped = true;
+
+            if (other.transform.position.x > transform.position.x)
+            {
+                PatrolScript.skullSprite.flipX = true;
+                PatrolScript.shadowSprite.flipX = true;
+            }
+            else
+            {
+                PatrolScript.skullSprite.flipX = false;
+                PatrolScript.shadowSprite.flipX = false;
+            }
+
             // Play sound effect
             Instantiate(CrunchHandlerPrefab, transform.position, Quaternion.identity);
             

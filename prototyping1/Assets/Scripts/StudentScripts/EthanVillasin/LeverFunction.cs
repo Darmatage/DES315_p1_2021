@@ -31,12 +31,20 @@ public class LeverFunction : MonoBehaviour
                 LeverOff.SetActive(false);
                 LeverOn.SetActive(true);
                 active = true;
+                for(int i = 0; i < Doors.Length; i++)
+                {
+                    Doors[i].GetComponent<WallDoor>().OpenDoor();
+                }
             }
             else
             {
                 LeverOn.SetActive(false);
                 LeverOff.SetActive(true);
                 active = false;
+                for (int i = 0; i < Doors.Length; i++)
+                {
+                    Doors[i].GetComponent<WallDoor>().OpenDoor();
+                }
             }
         }
     }

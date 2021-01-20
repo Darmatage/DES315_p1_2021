@@ -17,21 +17,28 @@ public class ExplodingEnemy_AS : MonoBehaviour
 
     private Renderer rend;
     private SpriteRenderer spriteRenderer;
-    private GameHandler gameHandlerObj;
+    private SpriteRenderer circleRenderer;
     private Animator anim;
+
+
+    private GameHandler gameHandlerObj;
     public Grid grid;
 
     public static float strobeDelay = .15f;
+    public static float respawnDelay = 4f;
+    float respawnTimer = respawnDelay;
     float strobeDelayTimer = strobeDelay;
     public float explodeRange = 2.0f;
     bool toggle = false;
     float detonateTimer = 2f; // in seconds
     bool bExplode = false;
+    bool respawning = false;
     private bool attackPlayer = false;
     public int damageAmount = 10;
     static AStarPather pather;
-    CircleCollider2D circleCollider;
-    private SpriteRenderer circleRenderer;
+    Color startingColor;
+    //CircleCollider2D circleCollider;
+    Vector3 startPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -48,14 +55,16 @@ public class ExplodingEnemy_AS : MonoBehaviour
             }
         }
 
+        startPosition = transform.position;
+        startingColor = spriteRenderer.color;
         //circleRenderer.enabled = false;
 
         destructableTilemap = GameObject.Find("TilemapDestructables").GetComponent<Tilemap>();
 
-        if (destructableTilemap != null)
-        {
-            print("GOT TILEMAP");
-        }
+        //if (destructableTilemap != null)
+        //{
+        //    print("GOT TILEMAP");
+        //}
 
         if (GameObject.FindGameObjectWithTag("Player") != null)
         {
@@ -87,16 +96,34 @@ public class ExplodingEnemy_AS : MonoBehaviour
         if (target != null)
         {
             // if the player is within range, then blow up
-            if(Vector2.Distance(target.position, transform.position) <= explodeRange)
+            if(Vector2.Distance(target.position, transform.position) <= explodeRange && !respawning)
             {
                 bExplode = true;
             }
-            else if(Vector2.Distance(target.position, transform.position) > explodeRange && !bExplode)
+            else if(Vector2.Distance(target.position, transform.position) > explodeRange && !bExplode && !respawning)
             {
                 attackPlayer = true;
             }
 
-            if(bExplode)
+            if(respawning)
+            {
+                if(respawnTimer >= 0f)
+                {
+                    respawnTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    spriteRenderer.enabled = true;
+                    circleRenderer.enabled = true;
+                    transform.position = startPosition;
+                    spriteRenderer.color = startingColor;
+                    attackPlayer = true;
+                    respawning = false;
+                    respawnTimer = respawnDelay;
+                }
+            }
+
+            if(bExplode && !respawning)
             {
                 attackPlayer = false;
                 //circleRenderer.enabled = true;
@@ -147,6 +174,11 @@ public class ExplodingEnemy_AS : MonoBehaviour
                 {
                     transform.position = Vector2.MoveTowards(transform.position, path[0], speed * Time.deltaTime);
                 }
+                else
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+
+                }
             }
             else if (attackPlayer == false)
             {
@@ -196,13 +228,16 @@ public class ExplodingEnemy_AS : MonoBehaviour
         spriteRenderer.color = new Color(2.0f, 1.0f, 0.0f, 0.5f); // changes color of enemy to yellow
        GameObject test =  Instantiate(explosionObj.gameObject, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(.5f); // waits so that the color can actually change before it is destroyed
-        
-        
-        
-        Destroy(gameObject);
 
+
+
+        // Destroy(gameObject);
+        spriteRenderer.enabled = false;
+        circleRenderer.enabled = false;
         
         bExplode = false;
+        attackPlayer = false;
+        respawning = true;
 
        // yield return new WaitForSeconds(1f);
 

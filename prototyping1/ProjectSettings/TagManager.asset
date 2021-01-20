@@ -17,10 +17,8 @@ TagManager:
   - Water
   - Enemy
   - GuideTorch
-  - bullet
   - WallDoor
-  - ExplodeEnemy
-  - CrabWalkBoss
+  - bullet
   layers:
   - Default
   - TransparentFX
@@ -32,8 +30,8 @@ TagManager:
   - 
   - Bridge
   - Lava
-  - DestructableWall
-  - 
+  - Player
+  - Bullet
   - 
   - 
   - 
@@ -57,7 +55,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: UI Particles
-    uniqueID: 3652372635
     locked: 0

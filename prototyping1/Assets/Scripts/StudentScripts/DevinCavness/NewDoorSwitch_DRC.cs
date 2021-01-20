@@ -18,8 +18,9 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 		SwitchOffArt.SetActive(true);
 		SwitchOnArt.SetActive(false);
 		isActive = false;
-		DoorObj = GameObject.FindGameObjectWithTag("Door");
-		ChangeableGridOff.SetActive(false);
+		//DoorObj = GameObject.FindGameObjectWithTag("Door");
+		if (ChangeableGridOff)
+			ChangeableGridOff.SetActive(false);
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
@@ -33,9 +34,15 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(false);
 					a[i].GetComponent<NewDoorSwitch_DRC>().isActive = false;
 				}
-				DoorObj.GetComponent<NewDoor_DRC>().DoorClose();
-				ChangeableGridOn.SetActive(true);
-				ChangeableGridOff.SetActive(false);
+				if (DoorObj)
+				{
+					if(DoorObj.GetComponent<NewDoor_DRC>())
+						DoorObj.GetComponent<NewDoor_DRC>().DoorClose();
+				}
+				if(ChangeableGridOn)
+					ChangeableGridOn.SetActive(true);
+				if (ChangeableGridOff)
+					ChangeableGridOff.SetActive(false);
 			}
 			else
             {
@@ -46,9 +53,17 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(true);
 					a[i].GetComponent<NewDoorSwitch_DRC>().isActive = true;
 				}
-				DoorObj.GetComponent<NewDoor_DRC>().DoorOpen();
-				ChangeableGridOn.SetActive(false);
-				ChangeableGridOff.SetActive(true);
+				if (DoorObj)
+				{
+					if (DoorObj.GetComponent<NewDoor_DRC>())
+						DoorObj.GetComponent<NewDoor_DRC>().DoorOpen();
+					else if (DoorObj.GetComponent<Door>())
+						DoorObj.GetComponent<Door>().DoorOpen();
+				}
+				if (ChangeableGridOn)
+					ChangeableGridOn.SetActive(false);
+				if (ChangeableGridOff)
+					ChangeableGridOff.SetActive(true);
 			}
 		}
 	}

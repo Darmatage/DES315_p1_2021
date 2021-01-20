@@ -1796,6 +1796,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1787377386}
     m_Modifications:
+    - target: {fileID: 397485671005681826, guid: f487a08bf40bf0640b78a8d69535aa81,
+        type: 3}
+      propertyPath: m_Text
+      value: "\u2605Devin C\u2605"
+      objectReference: {fileID: 0}
     - target: {fileID: 587730677955809561, guid: f487a08bf40bf0640b78a8d69535aa81,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5913,6 +5918,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8211849131466010717, guid: 52d62e81a16d71845ac44580b6c55c45,
+        type: 3}
+      propertyPath: GoToScene
+      value: JacobPresleyScene
       objectReference: {fileID: 0}
     - target: {fileID: 8508847813933916503, guid: 52d62e81a16d71845ac44580b6c55c45,
         type: 3}

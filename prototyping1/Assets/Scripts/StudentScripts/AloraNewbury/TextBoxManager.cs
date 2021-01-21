@@ -132,7 +132,7 @@ public class TextBoxManager : MonoBehaviour
                 else
                 {
                     playerObj.GetComponent<PlayerMove>().playerHit();
-                    handlerObj.GetComponent<GameHandler>().TakeDamage(15);
+                    handlerObj.GetComponent<GameHandler>().TakeDamage(50);
                     try_text.enabled = true;
                     answer1.enabled = false;
                     answer1.gameObject.SetActive(false);
@@ -169,7 +169,7 @@ public class TextBoxManager : MonoBehaviour
                 else 
                 {
                     playerObj.GetComponent<PlayerMove>().playerHit();
-                    handlerObj.GetComponent<GameHandler>().TakeDamage(15);
+                    handlerObj.GetComponent<GameHandler>().TakeDamage(50);
                     try_text.enabled = true;
                     answer2.enabled = false;
                     answer2.gameObject.SetActive(false);
@@ -207,7 +207,7 @@ public class TextBoxManager : MonoBehaviour
                 else 
                 {
                     playerObj.GetComponent<PlayerMove>().playerHit();
-                    handlerObj.GetComponent<GameHandler>().TakeDamage(15);
+                    handlerObj.GetComponent<GameHandler>().TakeDamage(50);
                     answer3.enabled = false;
                     answer3.gameObject.SetActive(false);
 

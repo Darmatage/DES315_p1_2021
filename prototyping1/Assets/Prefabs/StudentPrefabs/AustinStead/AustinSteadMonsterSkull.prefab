@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 1794408831066137493}
   - component: {fileID: 8622996587333277412}
   - component: {fileID: 6854189612802431479}
-  - component: {fileID: 7419966506197399658}
+  - component: {fileID: 6151673360611478315}
+  - component: {fileID: 2047651114845483858}
   m_Layer: 0
-  m_Name: MonsterSkull
+  m_Name: AustinSteadMonsterSkull
   m_TagString: monsterShooter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,13 +76,13 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7419966506197399658
+--- !u!114 &6151673360611478315
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,16 +91,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 4078256246479289528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f214400184fb9fd44b7c480366ebdf9d, type: 3}
+  m_Script: {fileID: 11500000, guid: ea876469dfad00048aa106109ab559cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
   stoppingDistance: 4
   retreatDistance: 3
   startTimeBtwShots: 2
-  projectile: {fileID: 2897097587681159296, guid: 0573994f43b58e94c98a3612cbefb2af,
+  projectile: {fileID: 2897097587681159296, guid: 465303e6590339c40bf081a79e5b00a1,
     type: 3}
-  EnemyLives: 30
+  EnemyLives: 10
+--- !u!114 &2047651114845483858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4078256246479289528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a592580c7875fe45a2eef5b530cbdd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7089100292027298927
 GameObject:
   m_ObjectHideFlags: 0

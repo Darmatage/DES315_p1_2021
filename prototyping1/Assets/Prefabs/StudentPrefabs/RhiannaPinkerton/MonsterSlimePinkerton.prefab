@@ -199,6 +199,6 @@ MonoBehaviour:
   damage: 1
   EnemyLives: 3
   retreatTime: 3
-  startTimeBtwShots: 4
+  startTimeBtwShots: 3
   projectile: {fileID: 2897097587681159296, guid: 90a2304f61b17d64d9b5828ac6d3d674,
     type: 3}

@@ -12,6 +12,7 @@ public class PatrolRS : MonoBehaviour
 	private float corneringTimer;
 
 	[Range(1.0f, 20.0f)] public float ViewDistance; // Length of vision cone
+	private float currentViewDistance;
 	[Range(1.0f, 10.0f)] public float VisionConeWidth; // Width of vision cone
 	public Gradient VisionColorNormal; // Color of the vision cone when normally pathing
 	public Gradient VisionColorSpotted; // Color of the vision cone when the player was spotted
@@ -38,6 +39,7 @@ public class PatrolRS : MonoBehaviour
 	public Animator Anim => anim;
 	public SpriteRenderer sensingColor;
 	public SpriteRenderer skullSprite;
+	public SpriteRenderer shadowSprite;
 
 	// Alert sound effect player
 	public GameObject AlertHandlerPrefab;
@@ -64,6 +66,7 @@ public class PatrolRS : MonoBehaviour
 		// Initialize vision cone
 		visionCone = GetComponent<LineRenderer>();
 		visionCone.colorGradient = VisionColorNormal;
+		currentViewDistance = ViewDistance;
 		
 		// Grab animator component
 		anim = GetComponentInChildren<Animator>();
@@ -78,6 +81,13 @@ public class PatrolRS : MonoBehaviour
 		if (player == null)
 			return;
 		
+		// Force chase
+		if (path.Count == 1)
+			detectedPlayer = true;
+		
+		// Update all vision cone data
+		UpdateVisionCone();
+		
 		// Movement logic
 		if (detectedPlayer)
 			ChasePlayer();
@@ -86,10 +96,7 @@ public class PatrolRS : MonoBehaviour
 			LookForPlayer();
 			Patrol();
 		}
-
-		// Update all vision cone data
-		UpdateVisionCone();
-
+		
 		// Draw all debugging data
 		if (DebugDraw)
 			DrawCurrentPath();
@@ -106,14 +113,21 @@ public class PatrolRS : MonoBehaviour
 			if (DebugDraw)
 				DrawRaycast(ray);
 
-			RaycastHit2D hit = Physics2D.Raycast(transform.position, ray, ViewDistance, VisionLayers);
-			if (hit.collider != null && hit.transform.CompareTag("Player"))
+			RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, ray, currentViewDistance, VisionLayers);
+			foreach (RaycastHit2D currentHit in hits)
 			{
-				detectedPlayer = true;
-				anim.Play("monsterSkull_walk");
-				GameObject popUp = Instantiate(AlertPopUpPrefab, transform);
-				popUp.transform.position += transform.lossyScale.y * Vector3.up;
-				Instantiate(AlertHandlerPrefab, transform.position, Quaternion.identity);
+				if (currentHit.collider.isTrigger)
+					continue;
+				
+				if (currentHit.transform.CompareTag("Player"))
+				{
+					detectedPlayer = true;
+					anim.Play("monsterSkull_walk");
+					GameObject popUp = Instantiate(AlertPopUpPrefab, transform);
+					popUp.transform.position += transform.lossyScale.y * Vector3.up;
+					Instantiate(AlertHandlerPrefab, transform.position, Quaternion.identity);
+				}
+				
 				break;
 			}
 		}
@@ -127,10 +141,9 @@ public class PatrolRS : MonoBehaviour
 		{
 			corneringTimer += Time.deltaTime;
 
+			// Todo: Deprecated: couldn't solve bug where it instantly reaches the target, which hurt gameplay
 			// Rotate toward new target
-			target = Vector2.Lerp(oldTarget,
-				path[(targetIndex + 1) % Path.Length],
-				corneringTimer / CornerningTime);
+			target = Vector3.Slerp(oldTarget, path[(targetIndex + 1) % Path.Length], Mathf.Pow(corneringTimer / CornerningTime, 2.0f));
 
 			// Update target
 			if (corneringTimer >= CornerningTime)
@@ -144,10 +157,11 @@ public class PatrolRS : MonoBehaviour
 		else
 		{
 			// Start rotating toward new target
-			if (Vector3.Distance(target, transform.position) < PathingEpsilon)
+			if (Vector3.Distance(target, transform.position) < PathingEpsilon * 2.0f)
 			{
 				corneringTimer = 0.0f;
 				oldTarget = transform.position + (target - transform.position).normalized * ViewDistance;
+				target = oldTarget;
 			}
 
 			// Move toward target
@@ -175,9 +189,15 @@ public class PatrolRS : MonoBehaviour
 		if (!chompScript.Chomped)
 		{
 			if (visionCone.GetPosition(1).x > visionCone.GetPosition(0).x)
+			{
 				skullSprite.flipX = true;
+				shadowSprite.flipX = true;
+			}
 			else
+			{
 				skullSprite.flipX = false;
+				shadowSprite.flipX = false;
+			}
 		}
 
 		float highLerpScale = 0.3f;
@@ -210,7 +230,10 @@ public class PatrolRS : MonoBehaviour
 		// Update cone endpoints
 		visionCone.endWidth = VisionConeWidth;
 		visionCone.SetPosition(0, transform.position);
-		visionCone.SetPosition(1, transform.position + (target - transform.position).normalized * ViewDistance);
+		currentViewDistance = ViewDistance;
+		if (corneringTimer < CornerningTime)
+			currentViewDistance = Mathf.Lerp(ViewDistance / 2.0f, ViewDistance, Mathf.Pow(corneringTimer / CornerningTime, 2.0f));
+		visionCone.SetPosition(1, transform.position + (target - transform.position).normalized * currentViewDistance);
 	}
 
 	#endregion
@@ -228,8 +251,8 @@ public class PatrolRS : MonoBehaviour
 	// Returns a random vector in the vision cone of this enemy
 	private Vector3 GetRandomVisionRay()
 	{
-		Vector3 currentPath = (target - transform.position).normalized * ViewDistance;
-		float angle = Mathf.Rad2Deg * Mathf.Atan2(VisionConeWidth / 2.0f, ViewDistance);
+		Vector3 currentPath = (target - transform.position).normalized * currentViewDistance;
+		float angle = Mathf.Rad2Deg * Mathf.Atan2(VisionConeWidth / 2.0f, currentViewDistance);
 		return Quaternion.AngleAxis(Random.Range(-angle, angle), Vector3.forward) * currentPath;
 	}
 

@@ -172,6 +172,24 @@ public class RyanGarvanDoorMimicMove : MonoBehaviour
                 if (transform.position == nextPos)
                 {
                     m_path.RemoveAt(0);
+
+                    if (m_path.Count > 0)
+                    {
+                        List<Collider2D> results2 = new List<Collider2D>(Physics2D.OverlapPointAll(m_path[0]));
+
+                        foreach (Collider2D collider in results2)
+                        {
+                            if (!collider.isTrigger || collider.name.Contains("MimicWall"))
+                            {
+                                Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
+
+                                if (rb == null || rb.bodyType == RigidbodyType2D.Static)
+                                {
+                                    m_path.Clear();
+                                }
+                            }
+                        }
+                    }
                 }
             }
             else

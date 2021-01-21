@@ -93,9 +93,10 @@ GameObject:
   - component: {fileID: 434860589915221254}
   - component: {fileID: 5400653998030641458}
   - component: {fileID: 8054769792772488484}
+  - component: {fileID: 2772163322206698682}
   m_Layer: 0
   m_Name: ProjectilePinkerton
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,3 +162,24 @@ MonoBehaviour:
   SlimePrefab: {fileID: 8795562353032092023, guid: bd836f359ed82094bb14bdf2781dfdbc,
     type: 3}
   SlimeTimeBtwShots: 0
+--- !u!50 &2772163322206698682
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2897097587681159296}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

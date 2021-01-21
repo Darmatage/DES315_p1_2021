@@ -77,7 +77,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A-02
+  m_Text: Ryan Heath
 --- !u!1 &7963868983797499132
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 8551919319724433142}
   - component: {fileID: 1421284479545421553}
   - component: {fileID: 3608176332095088603}
+  - component: {fileID: 7631858147210745999}
   m_Layer: 5
   m_Name: ButtonA2
   m_TagString: Untagged
@@ -222,3 +223,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoToScene: RyanHeathScene
+--- !u!114 &7631858147210745999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7963868983797499132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5abf154ccc0832488bdf68dc8222c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

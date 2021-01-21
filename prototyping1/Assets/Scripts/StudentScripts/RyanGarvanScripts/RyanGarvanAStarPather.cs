@@ -12,6 +12,7 @@ public class RyanGarvanAStarPather : MonoBehaviour
         public bool isOpen;       // Whether the node is on the open list
         public bool isClosed;     // Whether the node is on the closed list
         public bool isWall;       // Whether the node is impassable
+        public bool isDynamic;    // Whether the node requires collision checks to determine whether it is a wall
         public float given;       // The lowest found given cost to the node
         public float heuristic;   // The heuristic cost of the node
         public bool hasParent;    // Whether the node has a parent
@@ -22,6 +23,7 @@ public class RyanGarvanAStarPather : MonoBehaviour
             isOpen = false;
             isClosed = false;
             isWall = false;
+            isDynamic = false;
             given = 0;
             heuristic = 0;
             hasParent = false;
@@ -85,24 +87,29 @@ public class RyanGarvanAStarPather : MonoBehaviour
     int m_xMax;      // Maximum cell x index in Unity grid (used when converting between internal and external coords)
     int m_yMax;      // Maximum cell y index in Unity grid (used when converting between internal and external coords)
 
-    Grid m_mapGrid; // Infinite grid (Unity component) containing all tilemaps
+    List<Grid> m_mapGrids; // Infinite grid (Unity component) containing all tilemaps
 
     Node[,] m_map; // Internal grid of pathfinding nodes
 
     PriorityQueue openList; // Open list for pathfinding
 
+    public ContactFilter2D m_dynamicObstacleFilter; // Filter for detecting dynamic obstacles
+
     // Start is called before the first frame update
     void Start()
     {
-        m_mapGrid = FindObjectOfType<Grid>(); // Get tile grid
+        m_mapGrids = new List<Grid>(FindObjectsOfType<Grid>()); // Get tile grid
 
-        // Go through every tilemap to determine the furthest extents of the map
-        foreach (Tilemap tilemap in m_mapGrid.GetComponentsInChildren<Tilemap>())
+        foreach (Grid grid in m_mapGrids)
         {
-            m_xMin = Mathf.Min(m_xMin, tilemap.cellBounds.xMin);
-            m_yMin = Mathf.Min(m_yMin, tilemap.cellBounds.yMin);
-            m_xMax = Mathf.Max(m_xMax, tilemap.cellBounds.xMax);
-            m_yMax = Mathf.Max(m_yMax, tilemap.cellBounds.yMax);
+            // Go through every tilemap to determine the furthest extents of the map
+            foreach (Tilemap tilemap in grid.GetComponentsInChildren<Tilemap>())
+            {
+                m_xMin = Mathf.Min(m_xMin, tilemap.cellBounds.xMin);
+                m_yMin = Mathf.Min(m_yMin, tilemap.cellBounds.yMin);
+                m_xMax = Mathf.Max(m_xMax, tilemap.cellBounds.xMax);
+                m_yMax = Mathf.Max(m_yMax, tilemap.cellBounds.yMax);
+            }
         }
 
         // Set map dimensions
@@ -112,22 +119,35 @@ public class RyanGarvanAStarPather : MonoBehaviour
         InitMap(); // Initialize map nodes
 
         // Set wall flags
-        foreach (Tilemap tilemap in m_mapGrid.GetComponentsInChildren<Tilemap>())
+        foreach (Grid grid in m_mapGrids)
         {
-            // Current tilemap's collider, if any
-            CompositeCollider2D tilemapCollider = tilemap.GetComponent<CompositeCollider2D>();
-
-            // If current tilemap has a solid collider, use it to set wall flags
-            if (tilemapCollider != null && !tilemapCollider.isTrigger)
+            if (grid.name.Contains("Changing"))
             {
-                // Mark all tiles on the current tilemap as walls on the internal node map
-                for (int x = 0; x < m_mapWidth; ++x)
+                continue;
+            }
+
+            foreach (Tilemap tilemap in grid.GetComponentsInChildren<Tilemap>())
+            {
+                if (tilemap.name.Contains("Changeable"))
                 {
-                    for (int y = 0; y < m_mapHeight; ++y)
+                    continue;
+                }
+
+                // Current tilemap's collider, if any
+                CompositeCollider2D tilemapCollider = tilemap.GetComponent<CompositeCollider2D>();
+
+                // If current tilemap has a solid collider, use it to set wall flags
+                if ((tilemapCollider != null && !tilemapCollider.isTrigger) || tilemap.gameObject.name.Contains("MimicWall"))
+                {
+                    // Mark all tiles on the current tilemap as walls on the internal node map
+                    for (int x = 0; x < m_mapWidth; ++x)
                     {
-                        if (tilemap.HasTile(new Vector3Int(x + m_xMin, y + m_yMin, 0)))
+                        for (int y = 0; y < m_mapHeight; ++y)
                         {
-                            m_map[x, y].isWall = true;
+                            if (tilemap.HasTile(new Vector3Int(x + m_xMin, y + m_yMin, 0)))
+                            {
+                                m_map[x, y].isWall = true;
+                            }
                         }
                     }
                 }
@@ -240,9 +260,6 @@ public class RyanGarvanAStarPather : MonoBehaviour
 
                     if ((x != 0 || y != 0) && IsCellWalkable(adjacentCellPos))
                     {
-                        if (x != 0 && y != 0 && (!IsCellWalkable(nextCellPos + new Vector2Int(x, 0)) || !IsCellWalkable(nextCellPos + new Vector2Int(0, y))))
-                            continue;
-
                         if ((startCellPos - adjacentCellPos).magnitude >= 15)
                             continue;
 
@@ -250,6 +267,9 @@ public class RyanGarvanAStarPather : MonoBehaviour
                             continue;
 
                         if ((playerCellPos - adjacentCellPos).magnitude <= 2.0f)
+                            continue;
+
+                        if (x != 0 && y != 0 && (!IsCellWalkable(nextCellPos + new Vector2Int(x, 0)) || !IsCellWalkable(nextCellPos + new Vector2Int(0, y))))
                             continue;
 
                         AddNodeToOpenList(adjacentCellPos, nextCellPos, Mathf.Sqrt(x * x + y * y), openList, -(adjacentCellPos - playerCellPos).sqrMagnitude);
@@ -297,6 +317,41 @@ public class RyanGarvanAStarPather : MonoBehaviour
                 m_map[x, y] = new Node();
             }
         }
+
+        Collider2D[] colliders = FindObjectsOfType<Collider2D>();
+
+        foreach (Collider2D collider in colliders)
+        {
+            if (!collider.isTrigger)
+            {
+                Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
+
+                if (rb == null || rb.bodyType == RigidbodyType2D.Static)
+                {
+                    Tilemap tilemap = collider.GetComponent<Tilemap>();
+
+                    if (tilemap == null)
+                    {
+                        Vector2Int cellPos = WorldToMap(collider.transform.position);
+                        m_map[cellPos.x, cellPos.y].isDynamic = true;
+                    }
+                    else if (tilemap.gameObject.name.Contains("Changeable"))
+                    {
+                        for (int x = tilemap.cellBounds.xMin; x <= tilemap.cellBounds.xMax; ++x)
+                        {
+                            for (int y = tilemap.cellBounds.yMin; y <= tilemap.cellBounds.yMax; ++y)
+                            {
+                                if (tilemap.HasTile(new Vector3Int(x, y, 0)))
+                                {
+                                    Vector2Int cellPos = new Vector2Int(x - m_xMin, y - m_yMin);
+                                    m_map[cellPos.x, cellPos.y].isDynamic = true;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     // Reset open and closed list flags on all nodes
@@ -316,13 +371,13 @@ public class RyanGarvanAStarPather : MonoBehaviour
     // Convert m_map (internal) coordinates to world coordinates
     public Vector3 MapToWorld(Vector2Int cellPos)
     {
-        return m_mapGrid.CellToWorld((Vector3Int)(cellPos + new Vector2Int(m_xMin, m_yMin))) + new Vector3(0.5f, 0.5f, 0);
+        return m_mapGrids[0].CellToWorld((Vector3Int)(cellPos + new Vector2Int(m_xMin, m_yMin))) + new Vector3(0.5f, 0.5f, 0);
     }
 
     // Convert world coordinates to m_map (internal) coordinates
     public Vector2Int WorldToMap(Vector3 worldPos)
     {
-        return (Vector2Int)m_mapGrid.WorldToCell(worldPos) - new Vector2Int(m_xMin, m_yMin);
+        return (Vector2Int)m_mapGrids[0].WorldToCell(worldPos) - new Vector2Int(m_xMin, m_yMin);
     }
 
     public bool IsCellWalkable(Vector2Int cellPos)
@@ -332,7 +387,30 @@ public class RyanGarvanAStarPather : MonoBehaviour
             return false;
         }
 
-        return !m_map[cellPos.x, cellPos.y].isWall;
+        if (m_map[cellPos.x, cellPos.y].isWall)
+        {
+            return false;
+        }
+
+        if (m_map[cellPos.x, cellPos.y].isDynamic)
+        {
+            List<Collider2D> results = new List<Collider2D>(Physics2D.OverlapPointAll(MapToWorld(cellPos)));
+
+            foreach (Collider2D collider in results)
+            {
+                if (!collider.isTrigger || collider.name.Contains("MimicWall"))
+                {
+                    Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
+
+                    if (rb == null || rb.bodyType == RigidbodyType2D.Static)
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
+        return true;
     }
 
     void AddNodeToOpenList(Vector2Int cellPos, Vector2Int parentCellPos, float givenCost, PriorityQueue openList, float heuristic = 0)

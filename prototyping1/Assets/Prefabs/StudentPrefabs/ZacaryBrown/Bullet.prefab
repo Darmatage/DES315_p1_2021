@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8873357548059110801}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 100
   m_Sprite: {fileID: 4256981802211915850, guid: d05a07428aa777048bb4c76e719fb47e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -117,6 +117,8 @@ MonoBehaviour:
   speed: 10
   hitEffectAnim: {fileID: 2910622652403808077}
   projectileLife: 10
+  bounces: 2
+  active: 0
 --- !u!50 &8873357548059110801
 Rigidbody2D:
   serializedVersion: 4

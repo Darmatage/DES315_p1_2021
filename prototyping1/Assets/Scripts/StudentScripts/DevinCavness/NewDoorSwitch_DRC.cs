@@ -33,13 +33,16 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 					GameObject[] a = GameObject.FindGameObjectsWithTag("togglebutton");
 					for (int i = 0; i < a.Length; ++i)
 					{
-						a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOffArt.SetActive(true);
-						a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(false);
-						a[i].GetComponent<NewDoorSwitch_DRC>().isActive = false;
-						if (a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOff)
-							a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOff.SetActive(false);
-						if (a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOn)
-							a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOn.SetActive(true);
+						if (!a[i].GetComponent<NewDoorSwitch_DRC>().isolate)
+						{
+							a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOffArt.SetActive(true);
+							a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(false);
+							a[i].GetComponent<NewDoorSwitch_DRC>().isActive = false;
+							if (a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOff)
+								a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOff.SetActive(false);
+							if (a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOn)
+								a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOn.SetActive(true);
+						}
 					}
 				}
 				if (DoorObj)
@@ -59,13 +62,16 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 					GameObject[] a = GameObject.FindGameObjectsWithTag("togglebutton");
 					for (int i = 0; i < a.Length; ++i)
 					{
-						a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOffArt.SetActive(false);
-						a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(true);
-						a[i].GetComponent<NewDoorSwitch_DRC>().isActive = true;
-						if (a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOff)
-							a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOff.SetActive(true);
-						if (a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOn)
-							a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOn.SetActive(false);
+						if (!a[i].GetComponent<NewDoorSwitch_DRC>().isolate)
+						{
+							a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOffArt.SetActive(false);
+							a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(true);
+							a[i].GetComponent<NewDoorSwitch_DRC>().isActive = true;
+							if (a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOff)
+								a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOff.SetActive(true);
+							if (a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOn)
+								a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOn.SetActive(false);
+						}
 					}
 				}
 				if (DoorObj)

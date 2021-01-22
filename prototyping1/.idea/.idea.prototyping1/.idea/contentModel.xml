@@ -48,7 +48,8 @@
             </e>
             <e p="AmoghSubhedar" t="Include">
               <e p="Bridge.cs" t="Include" />
-              <e p="BridgeConstructor.cs" t="Include" />
+              <e p="BridgeConstructorFast.cs" t="Include" />
+              <e p="BridgeConstructorSlow.cs" t="Include" />
             </e>
             <e p="AmyStoltz" t="Include">
               <e p="DestructableWalls_AS.cs" t="Include" />

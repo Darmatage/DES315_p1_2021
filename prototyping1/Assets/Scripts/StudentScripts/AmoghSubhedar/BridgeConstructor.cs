@@ -7,39 +7,37 @@ namespace Amogh
     public class BridgeConstructor : MonoBehaviour
     {
         public GameObject bridgePrefab;
-
+        [Tooltip("Holding lmb places bridges, rmb is not used")]
+        public bool freeMode;
+        
         private GameObject lastBridge;
-
-        private Vector3 mousePos;
-
         private GameObject currentBridge;
 
+        private Vector3 mousePos;
         private Camera cam;
-
-        // Start is called before the first frame update
+        
         void Start()
         {
             cam = Camera.main;
             Debug.Assert(cam != null, "No camera found");
-            
         }
 
         private void PlaceBridge(Vector3 position)
         {
             position.z = 0;
-            
+
             if (currentBridge)
-            {
+            { 
                 lastBridge = currentBridge;
                 currentBridge = Instantiate(bridgePrefab, position, Quaternion.identity);
             }
             else
-            {
-                currentBridge = Instantiate(bridgePrefab, position, Quaternion.identity);
+            { 
+                currentBridge = Instantiate(bridgePrefab, position, Quaternion.identity); 
                 PlaceBridge(position);
             }
-
-            lastBridge.GetComponent<Bridge>().enabled = true;
+            
+            lastBridge.GetComponent<Bridge>().BridgePlaced();
         }
 
         private void MoveCurrentBridge()
@@ -94,7 +92,6 @@ namespace Amogh
             currentBridge.transform.position = currPos;
         }
         
-        // Update is called once per frame
         void Update()
         {
             mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -102,11 +99,11 @@ namespace Amogh
             if (currentBridge)
                 MoveCurrentBridge();
             
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) || ( freeMode && Input.GetMouseButton(0)))
             {
                 PlaceBridge(mousePos);
             }
-            else if (Input.GetMouseButtonDown(1))
+            else if (!freeMode && Input.GetMouseButtonDown(1))
             {
                 Destroy(currentBridge);
             }

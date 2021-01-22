@@ -18,19 +18,43 @@ namespace Amogh
         private SpriteRenderer sprite;
 
         private static int triggerCount = 0;
+        private static GameObject lavaTile;
+        private static Collider2D lavaTileCol;
 
         private bool startTimer;
         private bool triggered = false;
         
         private Vector3 initScale;
+
+        private GameObject overlay;
+        private Collider2D boxCol;
         
         void Start()
         {
+            if (!lavaTile)
+            {
+                lavaTile = GameObject.FindWithTag("lava");
+                lavaTileCol = lavaTile.GetComponents<Collider2D>()[1];
+                Debug.Log(lavaTileCol);
+            }
+            
             timer = 0f;
-            sprite = GetComponent<SpriteRenderer>();
             initScale = transform.localScale;
         }
 
+        public void BridgePlaced()
+        {
+            overlay = transform.GetChild(0).gameObject;
+            boxCol = GetComponent<BoxCollider2D>();
+            sprite = GetComponent<SpriteRenderer>();
+
+            boxCol.enabled = true;
+            overlay.SetActive(false);
+            sprite.color = Color.white;
+            
+            this.enabled = true;
+        }
+        
         void Update()
         {
             if (!startTimer && delay > 0f)
@@ -65,7 +89,8 @@ namespace Amogh
                 
                 if (triggerCount == 1)
                 {
-                    Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Default"), LayerMask.NameToLayer("Lava"));
+                    //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Default"), LayerMask.NameToLayer("Lava"));
+                    Physics2D.IgnoreCollision(other, lavaTileCol, true);
                 }
             }
             
@@ -81,7 +106,8 @@ namespace Amogh
                 
                 if (triggerCount == 0)
                 {
-                    Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Default"), LayerMask.NameToLayer("Lava"), false);
+                    //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Default"), LayerMask.NameToLayer("Lava"), false);
+                    Physics2D.IgnoreCollision(other, lavaTileCol, false);
                 }
             }
         }
@@ -93,7 +119,8 @@ namespace Amogh
                 --triggerCount;
                 if (triggerCount == 0)
                 {
-                    Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Default"), LayerMask.NameToLayer("Lava"), false);
+                    //Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Default"), LayerMask.NameToLayer("Lava"), false);
+                    Physics2D.IgnoreCollision(GameObject.FindWithTag("Player").GetComponent<Collider2D>(), lavaTileCol, false);
                 }
             }
         }

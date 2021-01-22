@@ -35,6 +35,7 @@
               <e p="SludgeLogic.cs" t="Include" />
             </e>
             <e p="AdamDoolittle" t="Include">
+              <e p="SpikeFly.cs" t="Include" />
               <e p="TurretLogic.cs" t="Include" />
             </e>
             <e p="AkshatMadan" t="Include">

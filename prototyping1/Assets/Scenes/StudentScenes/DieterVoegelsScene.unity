@@ -25147,7 +25147,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -27535,7 +27535,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' Wave Count: 999'
+  m_Text: ' Wave''s Left: 999'
 --- !u!222 &1432945201
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27937,7 +27937,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2067632338
 PrefabInstance:
@@ -28358,7 +28358,7 @@ PrefabInstance:
     - target: {fileID: 7699604197402814555, guid: 43cdf09bca07a9f4684aad518d0cafed,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7699604197402814555, guid: 43cdf09bca07a9f4684aad518d0cafed,
         type: 3}
@@ -28430,6 +28430,11 @@ PrefabInstance:
         type: 3}
       propertyPath: enemyStartCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7699604197402814556, guid: 43cdf09bca07a9f4684aad518d0cafed,
+        type: 3}
+      propertyPath: enemyClosestSpawnDistance
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43cdf09bca07a9f4684aad518d0cafed, type: 3}

@@ -11,6 +11,7 @@ public class DieterVoegels_SkeletonSpawner : MonoBehaviour
   [SerializeField] GameObject switchReference;
   [SerializeField] string nextScene;
   [SerializeField] float enemySpeed;
+  [SerializeField] float enemyClosestSpawnDistance;
   [SerializeField] int spawnRadius = 0;
   [SerializeField] int waveCount = 0;
   [SerializeField] int waveDuration = 0;
@@ -27,7 +28,7 @@ public class DieterVoegels_SkeletonSpawner : MonoBehaviour
   void Start()
   {
     enemyCount = enemyStartCount;
-    waveUIText.text = "Wave Count: " + waveCount;
+    waveUIText.text = "Wave's Left: " + waveCount;
   }
 
   // Update is called once per frame
@@ -57,8 +58,20 @@ public class DieterVoegels_SkeletonSpawner : MonoBehaviour
       for (int i = 0; i < enemyCount; i++)
       {
         Vector3 spawnPosition = GetComponent<Transform>().position;
-        spawnPosition.x += Random.Range(-spawnRadius, spawnRadius + 1);
-        spawnPosition.y += Random.Range(-spawnRadius, spawnRadius + 1);
+        bool validSpawn = false;
+
+        while (validSpawn == false)
+        {
+          spawnPosition.x += Random.Range(-spawnRadius, spawnRadius);
+          spawnPosition.y += Random.Range(-spawnRadius, spawnRadius);
+
+          Vector3 distanceVector = spawnPosition - playerReference.GetComponent<Transform>().position;
+
+          if(distanceVector.magnitude > enemyClosestSpawnDistance)
+          {
+            validSpawn = true;
+          }
+        }
 
         GameObject newEnemy = Instantiate(enemyReference, spawnPosition, Quaternion.identity);
 
@@ -68,6 +81,6 @@ public class DieterVoegels_SkeletonSpawner : MonoBehaviour
       }
     }
 
-    waveUIText.text = "Wave Count: " + waveCount;
+    waveUIText.text = "Wave's Left: " + waveCount;
   }
 }

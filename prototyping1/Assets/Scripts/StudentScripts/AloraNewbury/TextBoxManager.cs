@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-
 using UnityEngine;
-using UnityEngine.SceneManagement;
-
 using UnityEngine.UI;
 
 public class TextBoxManager : MonoBehaviour
@@ -12,8 +9,6 @@ public class TextBoxManager : MonoBehaviour
     public GameObject text_box;
     public Text display_text;
     public Text continue_text;
-    public Text try_text;
-
     private TextAsset text_file;
     public TextAsset text_file_1;
     public TextAsset text_file_2;
@@ -40,9 +35,7 @@ public class TextBoxManager : MonoBehaviour
     public Button answer2;
     public Button answer3;
 
-    public GameObject playerObj;
-    public GameObject handlerObj;
-
+    public PlayerMove player;
     public int riddle;
 
 
@@ -126,24 +119,6 @@ public class TextBoxManager : MonoBehaviour
                     text_box.SetActive(false);
                     display_text.enabled = false;
                     continue_text.enabled = false;
-                    try_text.enabled = false;
-
-                }
-                else
-                {
-                    playerObj.GetComponent<PlayerMove>().playerHit();
-                    handlerObj.GetComponent<GameHandler>().TakeDamage(50);
-                    try_text.enabled = true;
-                    answer1.enabled = false;
-                    answer1.gameObject.SetActive(false);
-                    if ((answer1.IsActive() == false && answer2.IsActive() == false) || answer3.IsActive() == false && answer1.IsActive() == false)
-                    {
-                        playerObj.GetComponent<PlayerMove>().playerDie();
-                        SceneManager.LoadScene("EndLose");
-
-
-                    }
-
 
                 }
                 break;
@@ -162,26 +137,6 @@ public class TextBoxManager : MonoBehaviour
                     text_box.SetActive(false);
                     display_text.enabled = false;
                     continue_text.enabled = false;
-                    try_text.enabled = false;
-
-
-                }
-                else 
-                {
-                    playerObj.GetComponent<PlayerMove>().playerHit();
-                    handlerObj.GetComponent<GameHandler>().TakeDamage(50);
-                    try_text.enabled = true;
-                    answer2.enabled = false;
-                    answer2.gameObject.SetActive(false);
-
-                    if ((answer3.IsActive() == false && answer2.IsActive() == false) || answer2.IsActive() == false && answer1.IsActive() == false)
-                    {
-                        playerObj.GetComponent<PlayerMove>().playerDie();
-                        SceneManager.LoadScene("EndLose");
-
-
-                    }
-
 
                 }
                 break;
@@ -200,34 +155,11 @@ public class TextBoxManager : MonoBehaviour
                     text_box.SetActive(false);
                     display_text.enabled = false;
                     continue_text.enabled = false;
-                    try_text.enabled = false;
-
-
-                }
-                else 
-                {
-                    playerObj.GetComponent<PlayerMove>().playerHit();
-                    handlerObj.GetComponent<GameHandler>().TakeDamage(50);
-                    answer3.enabled = false;
-                    answer3.gameObject.SetActive(false);
-
-                    try_text.enabled = true;
-                    if ((answer3.IsActive() == false && answer2.IsActive() == false) || answer3.IsActive() == false && answer1.IsActive() == false)
-                    {
-                        playerObj.GetComponent<PlayerMove>().playerDie();
-                        SceneManager.LoadScene("EndLose");
-
-
-                    }
-
-
 
                 }
                 break;
         }
-        
-
-
+    
 
     }
     public void DisplayAnswer()
@@ -239,8 +171,6 @@ public class TextBoxManager : MonoBehaviour
         answer2.enabled = true;
         answer3.enabled = true;
         continue_text.enabled = false;
-        try_text.enabled = false;
-
     }
 
 
@@ -258,10 +188,8 @@ public class TextBoxManager : MonoBehaviour
         text_box.SetActive(false);
         display_text.enabled = false;
         continue_text.enabled = false;
-        try_text.enabled = false;
-
         current_line_counter = 0;
-        //player = FindObjectOfType<PlayerMove>();
+        player = FindObjectOfType<PlayerMove>();
 
         riddle = 1;
 

@@ -97,7 +97,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.5283019, g: 0.40946078, b: 0, a: 1}
+    m_NormalColor: {r: 0.6862745, g: 0.81960785, b: 0.79825294, a: 1}
     m_HighlightedColor: {r: 0.9528302, g: 0.77177787, b: 0.6067551, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 416fef9a3c48a9140b58169f4f8dce8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoToScene: OussamaKhalaf
+  GoToScene: 
 --- !u!1 &6022808478785561540
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,4 +221,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: " \uFEDD\uFEED\uFEF7\uFE8D \uFEEF\uFEEE\uFE98\uFEB4\uFEE3"
+  m_Text: A-01

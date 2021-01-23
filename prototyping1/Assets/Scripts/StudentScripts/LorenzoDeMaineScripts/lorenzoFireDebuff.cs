@@ -12,7 +12,6 @@ public class lorenzoFireDebuff : MonoBehaviour
 
     private GameHandler gameHandlerObj;
     private GameObject player;
-    private GameObject fireDebuff;
     private bool active = false;
     private float damageTimer = 0;
 
@@ -35,9 +34,6 @@ public class lorenzoFireDebuff : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z) ;
-
-
         if (active)
         {
             damageTimer += Time.deltaTime;
@@ -59,8 +55,8 @@ public class lorenzoFireDebuff : MonoBehaviour
         {
             if (!active)
             {
-                this.GetComponent<ParticleSystem>().Play();
-                this.GetComponent<AudioSource>().Play();
+                playerArt.GetComponent<ParticleSystem>().Play();
+                player.GetComponent<AudioSource>().Play();
             }
         }
         else
@@ -68,8 +64,8 @@ public class lorenzoFireDebuff : MonoBehaviour
             if (active)
             {
                 playerArt.GetComponent<SpriteRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f);
-                this.GetComponent<ParticleSystem>().Stop();
-                this.GetComponent<AudioSource>().PlayOneShot(sizzleSFX);
+                playerArt.GetComponent<ParticleSystem>().Stop();
+                player.GetComponent<AudioSource>().PlayOneShot(sizzleSFX);
             }
         
         }

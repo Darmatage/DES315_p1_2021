@@ -141,22 +141,7 @@ public class ExplodingEnemy_AS : MonoBehaviour
 
                     foreach(Vector3 tile in tileWorldLocations)
                     {
-
-                        Vector3 leftLowerCorner = new Vector3(tile.x - .5f, tile.y - .5f, tile.z);
-                        Vector3 rightLowerCorner = new Vector3(tile.x + .5f, tile.y - .5f, tile.z);
-                        Vector3 leftUpperCorner = new Vector3(tile.x - .5f, tile.y + .5f, tile.z);
-                        Vector3 rightUpperCorner = new Vector3(tile.x + .5f, tile.y + .5f, tile.z);
-
-                        //Instantiate(explosionObj, leftLowerCorner, Quaternion.identity);
-                        //Instantiate(explosionObj, rightLowerCorner, Quaternion.identity);
-                        //Instantiate(explosionObj, leftUpperCorner, Quaternion.identity);
-                        //Instantiate(explosionObj, rightUpperCorner, Quaternion.identity);
-
-                        if (Vector2.Distance(tile, transform.position) <= explodeRange ||
-                            Vector2.Distance(leftLowerCorner, transform.position) <= explodeRange ||
-                            Vector2.Distance(rightLowerCorner, transform.position) <= explodeRange ||
-                            Vector2.Distance(leftUpperCorner, transform.position) <= explodeRange ||
-                            Vector2.Distance(rightUpperCorner, transform.position) <= explodeRange)
+                        if(Vector2.Distance(tile, transform.position) <= explodeRange)
                         {
                             //Debug.Log("in range");
 
@@ -211,7 +196,6 @@ public class ExplodingEnemy_AS : MonoBehaviour
         foreach (var pos in destructableTilemap.cellBounds.allPositionsWithin)
         {
             Vector3Int localPlace = new Vector3Int(pos.x, pos.y, pos.z);
-             // makes it center of tile rather than lower left
             Vector3 place = destructableTilemap.CellToWorld(localPlace) + new Vector3(.5f, .5f, 0.0f);
             
             

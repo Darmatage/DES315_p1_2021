@@ -14,7 +14,7 @@ public class InventoryHandlerJW : MonoBehaviour
 	public bool pauseOnOpen = true;
 
 	public int coinCount = 0;
-	public Text[] coinCounters;
+	public Text coinCounter;
 
     void Start()
 	{	
@@ -33,8 +33,8 @@ public class InventoryHandlerJW : MonoBehaviour
 			else{ Open(); }
 		}
 
-		foreach(Text counter in coinCounters)
-			counter.text = coinCount.ToString();
+		if (coinCounter)
+			coinCounter.text = coinCount.ToString();
 	}
 
 	void Open(){
@@ -47,17 +47,5 @@ public class InventoryHandlerJW : MonoBehaviour
 		pauseMenuUI.SetActive(false);
 		Time.timeScale = 1f;
 		InventoryIsOpen = false;
-	}
-
-	public bool Store(CollectibleJW collectible) // returns whether storage was successful
-	{
-		switch (collectible.type)
-		{
-			case "Coin":
-				coinCount++;
-				return true;
-		}
-
-		return false;
 	}
 }

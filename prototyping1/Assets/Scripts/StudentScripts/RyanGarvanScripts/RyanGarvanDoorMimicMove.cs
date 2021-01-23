@@ -5,31 +5,34 @@ using UnityEngine;
 // Movement logic script for the Door Mimic "enemy"
 public class RyanGarvanDoorMimicMove : MonoBehaviour
 {
-    Transform m_children;                         // Empty GameObject containing all children
-    SpriteRenderer m_eyeSprite;                   // Eye sprite component
-    SpriteRenderer m_pupilSprite;                 // Pupil sprite component
-    Sprite m_pupilImageNormal;                    // Normal pupil sprite
-    Sprite m_eyeImageNormal;                      // Normal eye sprite
-    Sprite m_outlineImageNormal;                  // Normal eye outline sprite
-    public Sprite m_pupilImageScared;             // Scared pupil sprite
-    Vector3 m_pupilInitPos;                       // Initial position of the door's pupil relative to the door
-    SpriteRenderer m_outlineSprite;               // Eye outline sprite component
-    Collider2D m_doorCollider;                    // Collider component of child object (the door itself)
-    Vector3 m_doorInitPos;                        // Initial position of the base door relative to the door mimic
-    RyanGarvanAStarPather m_pather;               // Pathfinding component
-    GameObject m_player;                          // Player character
-    bool m_isAwakened = false;                    // Whether the door's eye is open yet (opens when approached for the first time)
-    public float m_speed = 20;                    // The door's move speed
-    public float m_viewDistance = 10;             // How far the door can see
-    public float m_pathUpdatePeriod = 1;          // The minimum number of seconds between pathfinding checks
-    float m_pathCountdown = 0;                    // The number of seconds until the next pathfinding check
-    public int m_maxFleeDistance = 10;            // The maximum distance the door will search to find an escape route
-    List<Vector3> m_path;                         // The path the door is currently following
-    float m_lookAngle = 0;                        // The angle at which the door is looking
-    public float m_awarenessDistance = 2.5f;      // The radius within which the door can hear the player
-    public float m_eyeRotateSpeed = Mathf.PI / 1.5f; // The speed at which the door looks around when it can't see the player
-    AudioSource m_audioSource;                    // Audio source component
-    float m_pathStartTime;                        // The time at which the door last started moving
+    Transform m_children;                  // Empty GameObject containing all children
+    SpriteRenderer m_eyeSprite;            // Eye sprite component
+    SpriteRenderer m_pupilSprite;          // Pupil sprite component
+    Sprite m_pupilImageNormal;             // Normal pupil sprite
+    Sprite m_eyeImageNormal;
+    Sprite m_outlineImageNormal;
+    public Sprite m_pupilImageScared;      // Scared pupil sprite
+    public Sprite m_eyeImageWide;
+    public Sprite m_outlineImageWide;
+    Vector3 m_pupilInitPos;                // Initial position of the door's pupil relative to the door
+    SpriteRenderer m_outlineSprite;        // Eye outline sprite component
+    Collider2D m_doorCollider;             // Collider component of child object (the door itself)
+    Vector3 m_doorInitPos;                 // Initial position of the base door relative to the door mimic
+    RyanGarvanAStarPather m_pather;        // Pathfinding component
+    GameObject m_player;                   // Player character
+    bool m_isAwakened = false;             // Whether the door's eye is open yet (opens when approached for the first time)
+    public float m_speed = 20;             // The door's move speed
+    public float m_viewDistance = 10;      // How far the door can see
+    public float m_pathRate = 1;           // The minimum number of seconds between pathfinding checks
+    float m_pathCountdown = 0;             // The number of seconds until the next pathfinding check
+    public int m_maxFleeDistance = 10;     // The maximum distance the door will search to find an escape route
+    List<Vector3> m_path;                  // The path the door is currently following
+    float m_lookAngle = 0;                 // The angle at which the door is looking
+    float m_awarenessDistance = 2.5f;      // The radius within which the door can hear the player
+    float m_searchSpeed = Mathf.PI / 1.5f; // The speed at which the door looks around when it can't see the player
+    AudioSource m_audioSource;             // Audio source component
+    public AudioClip m_jumpSound;          // The door's jumping sound
+    float m_pathStartTime;                 // The time at which the door last started moving
 
     // Start is called before the first frame update
     void Start()
@@ -122,7 +125,7 @@ public class RyanGarvanDoorMimicMove : MonoBehaviour
                     m_pathStartTime = Time.time;
                 }
 
-                m_pathCountdown = m_pathUpdatePeriod;
+                m_pathCountdown = m_pathRate;
                 m_path = m_pather.GetFleePath(transform.position, 100, m_player.transform.position);
                 if (m_path.Count > m_maxFleeDistance)
                 {
@@ -132,6 +135,9 @@ public class RyanGarvanDoorMimicMove : MonoBehaviour
             
             if (m_path.Count > 0)
             {
+                m_eyeSprite.sprite = m_eyeImageWide;
+                m_outlineSprite.sprite = m_outlineImageWide;
+
                 m_children.localPosition += new Vector3(0, Mathf.Abs(Mathf.Sin((Time.time - m_pathStartTime) * 10.0f) / 2.0f), 0);
                 if (Mathf.Sign(Mathf.Sin((Time.time - m_pathStartTime) * 10.0f)) != Mathf.Sign(Mathf.Sin((Time.time - Time.deltaTime - m_pathStartTime) * 10.0f)))
                 {
@@ -190,7 +196,7 @@ public class RyanGarvanDoorMimicMove : MonoBehaviour
             {
                 if (!can_see_player)
                 {
-                    m_lookAngle += m_eyeRotateSpeed * Time.deltaTime;
+                    m_lookAngle += m_searchSpeed * Time.deltaTime;
                 }
                 else
                 {

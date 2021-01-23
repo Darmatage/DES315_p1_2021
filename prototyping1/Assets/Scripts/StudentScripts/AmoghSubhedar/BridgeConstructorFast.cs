@@ -4,42 +4,56 @@ using UnityEngine;
 
 namespace Amogh
 {
-    public class BridgeConstructor : MonoBehaviour
+    public class BridgeConstructorFast : MonoBehaviour
     {
+        [Header("Use this script for placing bridges in high-speed situations")]
+        
         public GameObject bridgePrefab;
+        
+        [Tooltip("How long can the player keep placing bridges")]
+        [Range(1f, 60f)]
+        public float timeLimit = 1f;
+        
+        [Tooltip("How long does the player have to wait before being able to place bridges again")]
+        [Range(0f, 10f)]
+        public float CooldownTime = 0.1f;
 
+        [Tooltip("These are mouse buttons")]
+        public MouseButtons inputBtn = MouseButtons.LeftBtn;
+        private int mouseBtn;
+        
+        private float timer;
         private GameObject lastBridge;
-
-        private Vector3 mousePos;
-
         private GameObject currentBridge;
 
+        private Vector3 mousePos;
         private Camera cam;
 
-        // Start is called before the first frame update
+        private bool cooldown = false;
         void Start()
         {
+            mouseBtn = (int) inputBtn;
+            timer = 0f;
             cam = Camera.main;
             Debug.Assert(cam != null, "No camera found");
-            
         }
 
         private void PlaceBridge(Vector3 position)
         {
             position.z = 0;
-            
+
             if (currentBridge)
-            {
+            { 
                 lastBridge = currentBridge;
                 currentBridge = Instantiate(bridgePrefab, position, Quaternion.identity);
             }
             else
-            {
-                currentBridge = Instantiate(bridgePrefab, position, Quaternion.identity);
+            { 
+                currentBridge = Instantiate(bridgePrefab, position, Quaternion.identity); 
                 PlaceBridge(position);
             }
-
-            lastBridge.GetComponent<Bridge>().enabled = true;
+            
+            lastBridge.GetComponent<Bridge>().BridgePlaced();
         }
 
         private void MoveCurrentBridge()
@@ -93,24 +107,52 @@ namespace Amogh
             
             currentBridge.transform.position = currPos;
         }
+
+        private void StopCooldown()
+        {
+            cooldown = false;
+        }
+
+        private void StopBridges()
+        {
+            timer = 0f;
+            if (currentBridge)
+                currentBridge.GetComponent<Bridge>().BridgePlaced();
+            lastBridge = currentBridge = null;
+        }
         
-        // Update is called once per frame
         void Update()
         {
             mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             
-            if (currentBridge)
+            if (!cooldown && currentBridge)
                 MoveCurrentBridge();
             
-            if (Input.GetMouseButtonDown(0))
+            if (!cooldown && (Input.GetMouseButtonDown(mouseBtn) || Input.GetMouseButton(mouseBtn)))
             {
                 PlaceBridge(mousePos);
+                timer += Time.deltaTime;
+
+                if (timer >= timeLimit)
+                {
+                    StopBridges();
+                    cooldown = true;
+                    Invoke(nameof(StopCooldown), CooldownTime);
+                }
             }
-            else if (Input.GetMouseButtonDown(1))
+
+            if (Input.GetMouseButtonUp(mouseBtn))
             {
-                Destroy(currentBridge);
+                StopBridges();
             }
         }
+    }
+
+    public enum MouseButtons
+    {
+        LeftBtn = 0,
+        RightBtn = 1
+        
     }
 }
 

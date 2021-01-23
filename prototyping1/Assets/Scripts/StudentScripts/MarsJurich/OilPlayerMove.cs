@@ -31,6 +31,9 @@ public class OilPlayerMove : MonoBehaviour
 
 	private Renderer rend;
 
+    bool enteringOilFromXAxis = false;
+    bool enteringOilFromYAxis = false;
+
     // Start is called before the first frame update
     void Start(){
         lastPosition = new Vector2();
@@ -115,11 +118,62 @@ public class OilPlayerMove : MonoBehaviour
         } //else playerDie();
 
         wasTouchingOil = isTouchingOil;
+        enteringOilFromXAxis = false;
+        enteringOilFromYAxis = false;
     }
 
 
-    void UpdateAnimationAndMove() {
-		if (isAlive == true){
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (wasTouchingOil == false && other.gameObject.name == "TilemapOil")
+        {
+            float verticalDistance = -1;
+            float horizontalDistance = -1;
+
+            BoxCollider2D bc2d = GetComponentInParent<BoxCollider2D>();
+            float offsetX = rb2d.position.x + (bc2d.offset.x * ((Input.GetAxis("Horizontal") < 0) ? -1 : 1));
+            float offsetY = rb2d.position.y + bc2d.offset.y;
+
+            RaycastHit2D hitUp = Physics2D.Raycast(rb2d.position, Vector2.up);
+            if (hitUp.collider != null)
+            {
+                verticalDistance = Mathf.Abs(hitUp.point.y - offsetY);
+            }
+
+            RaycastHit2D hitDown = Physics2D.Raycast(rb2d.position, Vector2.down);
+            if (hitDown.collider != null)
+            {
+                verticalDistance = Mathf.Min(Mathf.Abs(hitDown.point.y - offsetY), verticalDistance);
+            }
+
+            RaycastHit2D hitLeft = Physics2D.Raycast(rb2d.position, Vector2.left);
+            if (hitLeft.collider != null)
+            {
+                horizontalDistance = Mathf.Abs(hitLeft.point.x - offsetX);
+            }
+
+            RaycastHit2D hitRight = Physics2D.Raycast(rb2d.position, Vector2.right);
+            if (hitRight.collider != null)
+            {
+                horizontalDistance = Mathf.Min(Mathf.Abs(hitRight.point.x - offsetX), horizontalDistance);
+            }
+
+            //if (Mathf.Abs(otherPos.y - thisPos.y) < Mathf.Abs(otherPos.x - thisPos.x))
+            if (verticalDistance > horizontalDistance)
+            {
+                enteringOilFromYAxis = true;
+            }
+            else
+            {
+                enteringOilFromXAxis = true;
+            }
+        }
+    }
+
+
+    void UpdateAnimationAndMove()
+    {
+        if (isAlive == true){
 			if (change!=Vector3.zero) {
                 // set old position
                 lastPosition = rb2d.position;
@@ -127,38 +181,61 @@ public class OilPlayerMove : MonoBehaviour
                 // get new position to attempt to move to
                 Vector2 newPos = transform.position + change * speed * Time.deltaTime;
                 
-                // check if trying to go diagonal
+                // check if on oil and trying to move
                 if (isTouchingOil && change.x != 0 && change.y != 0)
                 {
-                    BoxCollider2D bc2d = GetComponentInParent<BoxCollider2D>();
-
-                    Vector2 offset = new Vector2(bc2d.offset.x, bc2d.offset.y);
-                    offset.x *= (Input.GetAxis("Horizontal") < 0) ? -1 : 1;
-                    Vector3 scale = bc2d.size;
-                    ContactFilter2D filter = new ContactFilter2D();
-                    Collider2D[] results = new Collider2D[64];
-
-                    // thanks to Ryan Garvan for helping fix this bit c:
-                    Physics2D.OverlapBox(newPos + offset, scale, 0.0f, filter, results);
-
-                    foreach (var col in results)
+                    if (wasTouchingOil == false)
                     {
-                        if (col == null)
+                        if (enteringOilFromXAxis)
                         {
-                            break;
+                            change.y = 0;
                         }
-
-                        if (col.gameObject.name == "TilemapWalls")
+                        if (enteringOilFromYAxis)
                         {
-                            change = Vector3.zero;
-                            newPos = transform.position;
+                            change.x = 0;
                         }
+                    }
+                    else
+                    {
+                        change.y = 0;
                     }
 
                     rb2d.MovePosition(newPos);
 
-                    anim.SetBool("Walk", false);
+                    anim.SetBool("Walk", true);
                 }
+                // check if trying to go diagonal and wasn't on oil previously (old)
+                //else if (isTouchingOil && change.x != 0 && change.y != 0)
+                //{
+                //    BoxCollider2D bc2d = GetComponentInParent<BoxCollider2D>();
+
+                //    Vector2 offset = new Vector2(bc2d.offset.x, bc2d.offset.y);
+                //    offset.x *= (Input.GetAxis("Horizontal") < 0) ? -1 : 1;
+                //    Vector3 scale = bc2d.size;
+                //    ContactFilter2D filter = new ContactFilter2D();
+                //    Collider2D[] results = new Collider2D[64];
+
+                //    // thanks to Ryan Garvan for helping fix this bit c:
+                //    Physics2D.OverlapBox(newPos + offset, scale, 0.0f, filter, results);
+
+                //    foreach (var col in results)
+                //    {
+                //        if (col == null)
+                //        {
+                //            break;
+                //        }
+
+                //        if (col.gameObject.name == "TilemapWalls")
+                //        {
+                //            change = Vector3.zero;
+                //            newPos = transform.position;
+                //        }
+                //    }
+
+                //    rb2d.MovePosition(newPos);
+
+                //    anim.SetBool("Walk", false);
+                //}
                 else
                 {
                     rb2d.MovePosition(newPos);

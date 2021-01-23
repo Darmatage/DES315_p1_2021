@@ -21,14 +21,19 @@ public class Oil : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<OilPlayerMove>().SetTouchingOil(true);
+        }
+    }
+
     void OnTriggerStay2D(Collider2D other)
     {
 		if (other.gameObject.tag == "Player")
         {
-            OilPlayerMove oilPlayerMove = other.gameObject.GetComponent<OilPlayerMove>();
-            oilPlayerMove.SetTouchingOil(true);
-
-            //Debug.Log("Is touching oil");
+            other.gameObject.GetComponent<OilPlayerMove>().SetTouchingOil(true);
 		}
 	}
 
@@ -36,10 +41,7 @@ public class Oil : MonoBehaviour
     {
 		if (other.gameObject.tag == "Player")
         {
-            OilPlayerMove oilPlayerMove = other.gameObject.GetComponent<OilPlayerMove>();
-            oilPlayerMove.SetTouchingOil(false);
-        
-            //Debug.Log("Stopped touching oil");
-		}
+            other.gameObject.GetComponent<OilPlayerMove>().SetTouchingOil(false);
+        }
 	}
 }

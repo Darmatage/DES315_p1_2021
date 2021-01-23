@@ -202,3 +202,5 @@ MonoBehaviour:
   startTimeBtwShots: 3
   projectile: {fileID: 2897097587681159296, guid: 90a2304f61b17d64d9b5828ac6d3d674,
     type: 3}
+  SlimeSpawnColor: {r: 0.49803925, g: 0.86666673, b: 1, a: 1}
+  GrowTime: 1.5

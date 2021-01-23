@@ -26,7 +26,7 @@ public class PatrolRS : MonoBehaviour
 	// Counterclockwise order of nodes along the path this monster will follow
 	public Vector2Int[] Path;
 	private List<Vector3> path;
-	private float PathingEpsilon = 0.01f; // Distance at which a new node is chosen
+	private float PathingEpsilon = 0.1f; // Distance at which a new node is chosen
 	private Vector3 target;
 	private Vector3 oldTarget;
 	private int targetIndex = 0;
@@ -141,7 +141,6 @@ public class PatrolRS : MonoBehaviour
 		{
 			corneringTimer += Time.deltaTime;
 
-			// Todo: Deprecated: couldn't solve bug where it instantly reaches the target, which hurt gameplay
 			// Rotate toward new target
 			target = Vector3.Slerp(oldTarget, path[(targetIndex + 1) % Path.Length], Mathf.Pow(corneringTimer / CornerningTime, 2.0f));
 
@@ -157,7 +156,7 @@ public class PatrolRS : MonoBehaviour
 		else
 		{
 			// Start rotating toward new target
-			if (Vector3.Distance(target, transform.position) < PathingEpsilon * 2.0f)
+			if (Vector3.Distance(target, transform.position) < PathingEpsilon)
 			{
 				corneringTimer = 0.0f;
 				oldTarget = transform.position + (target - transform.position).normalized * ViewDistance;

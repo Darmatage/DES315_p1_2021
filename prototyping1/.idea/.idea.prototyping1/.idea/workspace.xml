@@ -20,14 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2807b824-211b-4825-8c41-b9035f51e944" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/riderModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/MAINMENU_Buttons/ButtonA11.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/MAINMENU_Buttons/ButtonA11.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StudentScenes/AmoghSubhedar.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StudentScenes/AmoghSubhedar.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TeacherScenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TeacherScenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +37,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentSwitch.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/TeacherScripts/Door.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentDoor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/AmoghSubhedar/BridgeConstructor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/AmoghSubhedar/BridgeConstructorSlow.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/AmoghSubhedar/BridgeConstructorFast.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/AmoghSubhedar/Bridge.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/JacobPresley/JacobPresleyAbility.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" />
       </list>
     </option>
   </component>

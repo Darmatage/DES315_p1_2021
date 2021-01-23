@@ -4,25 +4,24 @@ using UnityEngine;
 
 public class lorenzoLavaScript : MonoBehaviour
 {
-	private GameObject fireDebuff;
+	private GameHandler gameHandlerObj;
 
 	void Start()
 	{
 
-		if (GameObject.FindGameObjectWithTag("Debuff") != null)
+		if (GameObject.FindGameObjectWithTag("GameHandler") != null)
 		{
-			fireDebuff = GameObject.FindGameObjectWithTag("Debuff");
+			gameHandlerObj = GameObject.FindGameObjectWithTag("GameHandler").GetComponent<GameHandler>();
 		}
 	}
 
 
 
-
-    void OnTriggerStay2D(Collider2D other)
+	void OnTriggerStay2D(Collider2D other)
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			fireDebuff.GetComponent<lorenzoFireDebuff>().setActive(true);
+			gameHandlerObj.GetComponent<lorenzoFireDebuff>().setActive(true);
 		}
 	}
 }

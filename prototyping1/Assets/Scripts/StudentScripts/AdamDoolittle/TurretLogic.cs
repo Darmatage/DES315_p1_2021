@@ -5,62 +5,35 @@ using UnityEngine;
 public class TurretLogic : MonoBehaviour
 {
     public GameObject turret;
-	public GameObject switchOn;
-	public GameObject switchOff;
+    public GameObject spike;
     //public Vector2 direction;
-    private Transform playerTransform;
-    public bool triggered = false;
-    
-	public GameObject spikePrefab;
-	public float speed = 10f;
+    Transform playerTransform;
+    bool triggered = false;
+    public float speed = 10f;
     public float projectileLife = 3f;
-	private int spikeCount = 0;
-	public int spikeLimit = 2;
-    private Vector2 spawnPos;
-
+    public float spikeCount = 0;
     // Start is called before the first frame update
     void Start()
     {
-		switchOn.SetActive(false);
-		switchOff.SetActive(true);
-        //playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        spawnPos = new Vector2(turret.transform.position.x, turret.transform.position.y);
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
-    void Update(){
-        if(triggered == true){
-			while (spikeCount <= spikeLimit){
-				StartCoroutine(makeSpike());
-                spikeCount += 1;
+    void Update()
+    {
+        if(triggered == true)
+        {
+            while (spikeCount != 1)
+            {
+                Instantiate(spike);
+                spikeCount = 1;
             }
+            spike.transform.position = Vector2.MoveTowards(turret.transform.position, playerTransform.position, speed * Time.deltaTime);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision){
-		if (triggered == false){
-			triggered = true; 
-			switchOn.SetActive(true); 
-			switchOff.SetActive(false); 
-			//StartCoroutine(makeSpike());
-		}
-		else if (triggered == true){
-			triggered = false; 
-			spikeCount = 0;
-			switchOn.SetActive(false);
-			switchOff.SetActive(true);
-		}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        triggered = true;
     }
-
-	IEnumerator makeSpike(){
-		yield return new WaitForSeconds(1f);
-		GameObject newSpike;
-		newSpike = Instantiate(spikePrefab, spawnPos, Quaternion.identity);
-		//newSpike.transform.position = Vector2.MoveTowards(turret.transform.position, targetPos, speed * Time.deltaTime);
-		newSpike.GetComponent<Rigidbody2D>().AddForce(Vector2.right * speed, ForceMode2D.Impulse);
-		yield return new WaitForSeconds(projectileLife);
-		Destroy(newSpike);
-		spikeCount = 0;
-	}
-
 }

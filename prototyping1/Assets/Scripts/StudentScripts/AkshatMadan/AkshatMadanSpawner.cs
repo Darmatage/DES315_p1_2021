@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class AkshatMadanSpawner : MonoBehaviour
 {
-    public GameObject enemy1Prefab;
-    public GameObject enemy2Prefab;
-    public GameObject enemy3Prefab;
+    public GameObject enemyPrefab;
     public GameObject bossObj;
     public GameObject door;
     private Door doorScript;
@@ -18,10 +16,6 @@ public class AkshatMadanSpawner : MonoBehaviour
     public int numEnemies = 0;
     public int maxEnemies = 5;
     public bool isDone = false;
-    public GameObject spawner1;
-    public GameObject spawner2;
-    public GameObject spawner3;
-    public GameObject spawner4;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +30,7 @@ public class AkshatMadanSpawner : MonoBehaviour
     void Update()
     {
         enemyText.GetComponent<Text>().text = "ENEMIES: " + GameObject.FindGameObjectsWithTag("Enemy").Length.ToString() + " / " + maxEnemies.ToString(); // Update number of enemies on screen
-        bossText.GetComponent<Text>().text = "BOSS HEALTH: " + bossObj.GetComponentInParent<MonsterMoveHit>().EnemyLives; // Get boss' health
+        bossText.GetComponent<Text>().text = "BOSS HEALTH: " + this.GetComponentInParent<MonsterMoveHit>().EnemyLives; // Get boss' health
 
         if (numEnemies == maxEnemies && !isDone)
         {
@@ -63,40 +57,16 @@ public class AkshatMadanSpawner : MonoBehaviour
         {
             waveHandler.waveNumber = waveHandler.maxWaves;
             maxEnemies = 0;
-            bossObj.GetComponent<MonsterMoveHit>().EnemyLives = 1; // Decrease boss lives to 1
-        }
-
-        if (bossObj.GetComponent<MonsterMoveHit>().EnemyLives <= 1 && !isDone)
-        {
             doorScript.DoorOpen(); // Open the door
-            isDone = true;
+            Destroy(bossObj);
         }
     }
 
     void SpawnEnemy()
     {
-        if(Random.Range(0, 100) < 1) // 1/250 % of the time, spawn an enemy
+        if(Random.Range(0, 250) < 1) // 1/250 % of the time, spawn an enemy
         {
-            int rand = Random.Range(0, 4); // Get a random number between 0 and 3
-            GameObject spawner_copy;
-            if (rand == 0)
-                spawner_copy = spawner1;
-            else if(rand == 1)
-                spawner_copy = spawner2;
-            else if (rand == 2)
-                spawner_copy = spawner3;
-            else
-                spawner_copy = spawner4;
-
-            int rand2 = Random.Range(0, 4);
-            GameObject enemyClone;
-
-            if (rand2 < 2)
-                enemyClone = Instantiate(enemy1Prefab, new Vector3(spawner_copy.GetComponent<Transform>().position.x, spawner_copy.GetComponent<Transform>().position.y, spawner_copy.GetComponent<Transform>().position.z), new Quaternion(0, 0, 0, 0));
-            else if (rand2 == 2)
-                enemyClone = Instantiate(enemy2Prefab, new Vector3(spawner_copy.GetComponent<Transform>().position.x, spawner_copy.GetComponent<Transform>().position.y, spawner_copy.GetComponent<Transform>().position.z), new Quaternion(0, 0, 0, 0));
-            else
-                enemyClone = Instantiate(enemy3Prefab, new Vector3(spawner_copy.GetComponent<Transform>().position.x, spawner_copy.GetComponent<Transform>().position.y, spawner_copy.GetComponent<Transform>().position.z), new Quaternion(0, 0, 0, 0));
+            GameObject enemyClone = Instantiate(enemyPrefab, new Vector3(GetComponent<Transform>().position.x - 5.0f, GetComponent<Transform>().position.y, GetComponent<Transform>().position.z), new Quaternion(0, 0, 0, 0));
             enemyClone.tag = "Enemy"; // Tag them as enemy
             numEnemies++; // Increment number of enemies on screen
         }

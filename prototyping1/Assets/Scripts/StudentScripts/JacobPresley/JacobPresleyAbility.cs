@@ -18,14 +18,13 @@ public class JacobPresleyAbility : MonoBehaviour
   
   public GameObject gameMap;
   public TileBase wallTile;
-  public TempWall[] tempWalls = new TempWall[4]; //public to test in editor
+  public TempWall[] tempWalls = new TempWall[3]; //public to test in editor
   public GameObject wallUI;
 
   private Tilemap tileGameMap;
   private int oldestTile = 0;
   private int placedTiles = 0; 
   private Text wallText;
-  private Vector3Int playerPosition;
   
   
   
@@ -42,6 +41,8 @@ public class JacobPresleyAbility : MonoBehaviour
       return;
     }
 
+    Vector3Int playerPosition =
+      tileGameMap.WorldToCell(GameObject.FindWithTag("Player").GetComponent<RectTransform>().position);
     //dont place walls on top of player
     if (hoveredTile == playerPosition)
     {
@@ -62,10 +63,6 @@ public class JacobPresleyAbility : MonoBehaviour
     else if (tempWalls[2].wall == null)
     {
       replaceTile(2, newTempWall, hoveredTile);
-    }
-    else if (tempWalls[3].wall == null)
-    {
-      replaceTile(3, newTempWall, hoveredTile);
     }
     else
     {
@@ -90,7 +87,7 @@ public class JacobPresleyAbility : MonoBehaviour
     tempWalls[tileNumber].wall = newWall;
     tempWalls[tileNumber].position = newWallPosition;
     tempWalls[tileNumber].timer = 4.0f;
-    if (placedTiles < 4)
+    if (placedTiles < 3)
     {
       placedTiles++;
     }
@@ -110,7 +107,6 @@ public class JacobPresleyAbility : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
-    playerPosition = tileGameMap.WorldToCell(GameObject.FindWithTag("Player").GetComponent<RectTransform>().position);
     if (Input.GetMouseButtonDown(0) == true)
     {
       PlaceWall();
@@ -127,7 +123,7 @@ public class JacobPresleyAbility : MonoBehaviour
       {
         wallText.text = "WALLS: ";
         wallText.text += placedTiles.ToString();
-        wallText.text += " / 4";
+        wallText.text += " / 3";
         tempWalls[i].timer -= Time.deltaTime;
         
         if (tempWalls[i].timer <= 0.0f)
@@ -135,11 +131,6 @@ public class JacobPresleyAbility : MonoBehaviour
           tileGameMap.SetTile(tempWalls[i].position, null);
           tempWalls[i].timer = 4.0f;
           placedTiles--;
-        }
-        else if (tempWalls[i].position == playerPosition)
-        {
-          tileGameMap.SetTile(tempWalls[i].position, null);
-          tempWalls[i].timer = 4.0f;
         }
       }
     }

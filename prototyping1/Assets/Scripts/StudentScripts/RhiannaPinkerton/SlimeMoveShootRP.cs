@@ -22,6 +22,15 @@ public class SlimeMoveShootRP : MonoBehaviour
 	public float startTimeBtwShots = 2;
 	public GameObject projectile;
 
+
+	private Color SlimeFinalColor = new Color(135f / 255f, 241f / 255f, 74f / 255f);
+	public Color SlimeSpawnColor;
+	private SpriteRenderer SlimeRenderer;
+
+	public float GrowTime = 1f;
+	
+	private bool ShootEnabled = false;
+	
 	void Start () {
 		anim = gameObject.GetComponentInChildren<Animator>();
 		rend = GetComponentInChildren<Renderer> ();
@@ -37,6 +46,8 @@ public class SlimeMoveShootRP : MonoBehaviour
 		}
 		
 		timeBtwShots = startTimeBtwShots;
+
+		SlimeRenderer = GetComponentInChildren<SpriteRenderer>();
 	}
 
 	void Update () {
@@ -45,23 +56,38 @@ public class SlimeMoveShootRP : MonoBehaviour
 			//if ((attackPlayer == true) && (playerHealth >= 1)){
 			if (attackPlayer == true){
 				transform.position = Vector2.MoveTowards (transform.position, target.position, speed * Time.deltaTime);
-			} 
+			}
 			else if (attackPlayer == false)
 			{
 				transform.position = Vector2.MoveTowards (transform.position, target.position, speed * -1 * Time.deltaTime);
 			}
-			
-			
-			if (timeBtwShots <= 0) {
-				anim.SetTrigger("Attack");
-				GameObject projectileObj = Instantiate (projectile, transform.position, Quaternion.identity);
-				// Set parent time between shots
-				projectileObj.GetComponent<SlimeProjectileRP>().SlimeTimeBtwShots = startTimeBtwShots;
-				timeBtwShots = startTimeBtwShots;
-			} 
-			else {
-				timeBtwShots -= Time.deltaTime;
+
+			if (ShootEnabled == true)
+			{
+				if (timeBtwShots <= 0)
+				{
+					anim.SetTrigger("Attack");
+					GameObject projectileObj = Instantiate(projectile, transform.position, Quaternion.identity);
+					// Set parent time between shots
+					projectileObj.GetComponent<SlimeProjectileRP>().SlimeTimeBtwShots = startTimeBtwShots;
+					timeBtwShots = startTimeBtwShots;
+				}
+				else
+				{
+					timeBtwShots -= Time.deltaTime;
+				}
 			}
+		}
+		
+		// Uniform scale so only need to check one
+		if (transform.localScale.x < 1f)
+		{
+			transform.localScale += new Vector3((0.5f / GrowTime) * Time.deltaTime, (0.5f / GrowTime) * Time.deltaTime);
+		}
+		else // Done with transition and can shoot now
+		{
+			SlimeRenderer.color = SlimeFinalColor;
+			ShootEnabled = true;
 		}
 	}
 

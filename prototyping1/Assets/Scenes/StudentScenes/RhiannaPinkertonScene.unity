@@ -261,7 +261,7 @@ PrefabInstance:
     - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
         type: 3}
@@ -569,14 +569,11 @@ Transform:
   - {fileID: 1010516597}
   - {fileID: 1692446732}
   - {fileID: 1029044648}
-  - {fileID: 1064121595}
   - {fileID: 1027544846}
   - {fileID: 2115443910}
   - {fileID: 634971984}
-  - {fileID: 863584352}
   - {fileID: 953442064}
   - {fileID: 229403929}
-  - {fileID: 1830183183}
   - {fileID: 1686948551}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -695,7 +692,7 @@ PrefabInstance:
     - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
         type: 3}
@@ -837,75 +834,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f15318afe2a4d8741a715281e186ed04, type: 3}
---- !u!1001 &567394754
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 420750420}
-    m_Modifications:
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.7051697
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.3450507
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8795562353032092023, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_Name
-      value: MonsterSlimePinkerton (8)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bd836f359ed82094bb14bdf2781dfdbc, type: 3}
 --- !u!1001 &581560868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16446,12 +16374,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aed2516063b04d4a9377e4a840b16d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &863584352 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-    type: 3}
-  m_PrefabInstance: {fileID: 1867234066}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &875102879
 GameObject:
   m_ObjectHideFlags: 0
@@ -18241,7 +18163,7 @@ PrefabInstance:
     - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
         type: 3}
@@ -18262,75 +18184,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MonsterSlimePinkerton (3)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bd836f359ed82094bb14bdf2781dfdbc, type: 3}
---- !u!1001 &926887921
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 420750420}
-    m_Modifications:
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 10.167848
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 8.46767
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8795562353032092023, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_Name
-      value: MonsterSlimePinkerton (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd836f359ed82094bb14bdf2781dfdbc, type: 3}
@@ -18780,12 +18633,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!4 &1064121595 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-    type: 3}
-  m_PrefabInstance: {fileID: 567394754}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1172433382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18831,7 +18678,7 @@ PrefabInstance:
     - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
         type: 3}
@@ -19276,7 +19123,7 @@ PrefabInstance:
     - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
         type: 3}
@@ -19848,7 +19695,7 @@ PrefabInstance:
     - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
         type: 3}
@@ -20542,10 +20389,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6304935616593031737, guid: bd836f359ed82094bb14bdf2781dfdbc,
+        type: 3}
+      propertyPath: SlimeStartColor.b
+      value: 0.2901961
+      objectReference: {fileID: 0}
     - target: {fileID: 8795562353032092023, guid: bd836f359ed82094bb14bdf2781dfdbc,
         type: 3}
       propertyPath: m_Name
       value: MonsterSlimePinkerton (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795562353032092023, guid: bd836f359ed82094bb14bdf2781dfdbc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd836f359ed82094bb14bdf2781dfdbc, type: 3}
@@ -20960,81 +20817,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1830183183 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-    type: 3}
-  m_PrefabInstance: {fileID: 926887921}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &1867234066
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 420750420}
-    m_Modifications:
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 11.447352
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.277991
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1752800895972075738, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8795562353032092023, guid: bd836f359ed82094bb14bdf2781dfdbc,
-        type: 3}
-      propertyPath: m_Name
-      value: MonsterSlimePinkerton (4)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bd836f359ed82094bb14bdf2781dfdbc, type: 3}
 --- !u!1 &1910949915
 GameObject:
   m_ObjectHideFlags: 0
@@ -22311,6 +22093,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MonsterSlimePinkerton (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795562353032092023, guid: bd836f359ed82094bb14bdf2781dfdbc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd836f359ed82094bb14bdf2781dfdbc, type: 3}

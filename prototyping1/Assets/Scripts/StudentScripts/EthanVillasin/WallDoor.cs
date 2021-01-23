@@ -5,10 +5,11 @@ using UnityEngine;
 public class WallDoor : MonoBehaviour
 {
     public bool state;
+    public GameObject doors;
     // Start is called before the first frame update
     void Start()
     {
-        state = gameObject.activeSelf;
+        state = doors.activeSelf;
     }
 
     // Update is called once per frame
@@ -21,12 +22,12 @@ public class WallDoor : MonoBehaviour
     {
         if (state == true) //open door
         {
-            gameObject.SetActive(false);
+            doors.SetActive(false);
             state = false;
         }
         else
         {
-            gameObject.SetActive(true);
+            doors.SetActive(true);
             state = true;
         }
     }

@@ -6101,6 +6101,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3572093426575328155, guid: 1ca709bb392329744aa60f72501f8d62,
+        type: 3}
+      propertyPath: GoToScene
+      value: MarkCulpScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640870586122797355, guid: 1ca709bb392329744aa60f72501f8d62,
+        type: 3}
+      propertyPath: m_Text
+      value: Mark Culp
+      objectReference: {fileID: 0}
     - target: {fileID: 9063200576718847643, guid: 1ca709bb392329744aa60f72501f8d62,
         type: 3}
       propertyPath: m_Name

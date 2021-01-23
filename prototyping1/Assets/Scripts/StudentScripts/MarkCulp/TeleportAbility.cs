@@ -28,7 +28,7 @@ public class TeleportAbility : MonoBehaviour
             if (markerInstance)
                 Destroy(markerInstance.gameObject);
             
-            markerInstance = Instantiate(markerPrefab, transform.position, Quaternion.identity);
+            markerInstance = Instantiate(markerPrefab, transform.position + new Vector3(0, 0, -0.1f), Quaternion.identity);
         }
 
         if (Input.GetKeyDown(teleportKey))

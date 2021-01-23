@@ -57,7 +57,7 @@ public class SlimeProjectileRP : MonoBehaviour
 			GameObject slime = Instantiate(SlimePrefab, transform.position, Quaternion.identity);
 			SlimeMoveShootRP slimeScript = slime.GetComponent<SlimeMoveShootRP>();
 			// Increase the time between shots by 1
-			slimeScript.startTimeBtwShots = SlimeTimeBtwShots + 2;
+			slimeScript.startTimeBtwShots = SlimeTimeBtwShots + 3;
 			// Set start color
 			slime.GetComponentInChildren<SpriteRenderer>().color = slimeScript.SlimeSpawnColor;
 			slime.transform.localScale = new Vector3(0.5f, 0.5f);

@@ -27,7 +27,7 @@ public class SlimeMoveShootRP : MonoBehaviour
 	public Color SlimeSpawnColor;
 	private SpriteRenderer SlimeRenderer;
 
-	public float GrowTime = 1f;
+	[Range(0.5f, 10f)] public float GrowTime = 1f;
 	
 	private bool ShootEnabled = false;
 	

@@ -37,13 +37,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://C:/Program Files/Unity/Editor/2019.4.10f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Button.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/StudentScripts/AmoghSubhedar/BridgeConstructorFast.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://C:/Program Files/Unity/Editor/2019.4.10f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/StandaloneInputModule.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EE47BE73-F7EF-409C-A5E5-CE4B121745B7/ab/d6a9203d/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://C:/Program Files/Unity/Editor/2019.4.10f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -55,6 +48,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/AmoghSubhedar/BridgeConstructorSlow.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/AmoghSubhedar/BridgeConstructorFast.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/AmoghSubhedar/Bridge.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/JacobPresley/JacobPresleyAbility.cs" />
       </list>
     </option>
   </component>
@@ -90,10 +84,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="15656">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="15656" />
+      <option name="pid" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -116,6 +110,7 @@
       <workItem from="1611170262360" duration="1169000" />
       <workItem from="1611281014910" duration="10690000" />
       <workItem from="1611376759054" duration="2278000" />
+      <workItem from="1611383268128" duration="2222000" />
     </task>
     <servers />
   </component>

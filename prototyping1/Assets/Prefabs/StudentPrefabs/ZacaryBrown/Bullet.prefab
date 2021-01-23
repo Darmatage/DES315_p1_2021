@@ -116,7 +116,7 @@ MonoBehaviour:
   damage: 1
   speed: 10
   hitEffectAnim: {fileID: 2910622652403808077}
-  projectileLife: 10
+  projectileLife: 12
   bounces: 2
   active: 0
 --- !u!50 &8873357548059110801

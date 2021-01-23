@@ -46,6 +46,20 @@ public class CrabBossFireball : MonoBehaviour
         }
     }
 
+    public void covergroundbelow(Vector3Int position) 
+    {
+        if (fireballs == false) return;
+
+        for (int x = -1; x <= 1; x++)
+        {
+            for (int y = -1; y <= 1; y++)
+            {
+                Vector3Int pos = new Vector3Int(position.x + x, position.y + y, position.z);
+                lavalayer.SetTile(pos, lavatile);
+            }
+        }
+    }
+
     public void coverinlava()
     {
         for (int i = 0; i < tilelist.Count; i++)

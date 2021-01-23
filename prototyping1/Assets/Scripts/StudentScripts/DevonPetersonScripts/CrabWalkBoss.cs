@@ -71,6 +71,9 @@ public class CrabWalkBoss : MonoBehaviour
             }
             else 
             {
+                Vector3Int newpos = new Vector3Int((int)gameObject.transform.position.x, (int)gameObject.transform.position.y, (int)transform.position.z);
+                gameObject.GetComponent<CrabBossFireball>().covergroundbelow(newpos);
+
                 delayed = false;
                 if (switchmoves == false && transform.position != firstmove)
                 {

@@ -26,4 +26,15 @@ public class Crab_Fireball : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player") 
+        {
+            Vector3Int ye = new Vector3Int((int)gameObject.transform.position.x, (int)gameObject.transform.position.y, (int)gameObject.transform.position.z);
+            lavamap.SetTile(ye, lavatile);
+            GameObject.FindGameObjectWithTag("GameHandler").GetComponent<GameHandler>().TakeDamage(5);
+            Destroy(gameObject);
+        }
+    }
 }

@@ -26,6 +26,7 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "Player"){
+			GetComponent<AudioSource>().Play();
 			if (!SwitchOffArt.activeSelf) // If switch is being turned off
 			{
 				if (!isolate)

@@ -93,8 +93,6 @@ public class RyanGarvanAStarPather : MonoBehaviour
 
     PriorityQueue openList; // Open list for pathfinding
 
-    public ContactFilter2D m_dynamicObstacleFilter; // Filter for detecting dynamic obstacles
-
     // Start is called before the first frame update
     void Start()
     {
@@ -261,9 +259,6 @@ public class RyanGarvanAStarPather : MonoBehaviour
                     if ((x != 0 || y != 0) && IsCellWalkable(adjacentCellPos))
                     {
                         if ((startCellPos - adjacentCellPos).magnitude >= 15)
-                            continue;
-
-                        if ((playerCellPos - adjacentCellPos).magnitude <= 3 && (playerCellPos - nextCellPos).magnitude > 3)
                             continue;
 
                         if ((playerCellPos - adjacentCellPos).magnitude <= 2.0f)

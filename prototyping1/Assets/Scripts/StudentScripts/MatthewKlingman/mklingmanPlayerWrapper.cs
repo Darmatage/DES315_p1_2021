@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Security.Cryptography;
-using JetBrains.Annotations;
 using Unity.Mathematics;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.Windows.Speech;
 
 public class mklingmanPlayerWrapper : MonoBehaviour
 {
@@ -132,7 +127,7 @@ public class mklingmanPlayerWrapper : MonoBehaviour
             }
 
             GameObject fx = Instantiate(attackEffect, player.transform.position + attackDir * 1.5f, quaternion.identity);
-            Destroy(fx, 1.0f);
+            Destroy(fx, 0.6f);
         }
     }
 

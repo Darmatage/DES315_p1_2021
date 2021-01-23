@@ -772,6 +772,7 @@ MonoBehaviour:
   text_box: {fileID: 6324278659115538783}
   display_text: {fileID: 6324278658347692401}
   continue_text: {fileID: 6324278658048657519}
+  try_text: {fileID: 0}
   text_file_1: {fileID: 4900000, guid: b95b6b5dc33c3584b8cf7cef8915455f, type: 3}
   text_file_2: {fileID: 4900000, guid: 8e27400024f842543b89bfd1dfda7003, type: 3}
   text_file_3: {fileID: 4900000, guid: 8bf74378933ae014db73858da3eadd81, type: 3}
@@ -788,7 +789,8 @@ MonoBehaviour:
   answer1: {fileID: 6324278658922046982}
   answer2: {fileID: 6324278659431087273}
   answer3: {fileID: 6324278657893527045}
-  player: {fileID: 0}
+  playerObj: {fileID: 0}
+  handlerObj: {fileID: 0}
   riddle: 1
 --- !u!1 &6324278659431087275
 GameObject:
@@ -1033,6 +1035,85 @@ Transform:
   - {fileID: 6324278658922046983}
   - {fileID: 6324278659431087274}
   - {fileID: 6324278657893527046}
+  - {fileID: 3956059636038889373}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8880789413951198623
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3956059636038889373}
+  - component: {fileID: 7520541078486500474}
+  - component: {fileID: 7995087837754588995}
+  m_Layer: 5
+  m_Name: TryAgain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &3956059636038889373
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880789413951198623}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 432.98828}
+  m_LocalScale: {x: 0.76953125, y: 0.76953125, z: 0.76953125}
+  m_Children: []
+  m_Father: {fileID: 3759403694885758233}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 432, y: 37}
+  m_SizeDelta: {x: 526.8948, y: 53.46035}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7520541078486500474
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880789413951198623}
+  m_CullTransparentMesh: 0
+--- !u!114 &7995087837754588995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8880789413951198623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 40
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Try again if you dare

@@ -19,6 +19,11 @@ TagManager:
   - GuideTorch
   - WallDoor
   - bullet
+  - Block_CEGP
+  - Border_CEGP
+  - ExplodeEnemy
+  - Trap
+  - Debuff
   layers:
   - Default
   - TransparentFX
@@ -37,8 +42,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - BorderLayer_CEGP
+  - BlockLayer_CEGP
   - 
   - 
   - 
@@ -55,4 +60,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 2049400549
     locked: 0

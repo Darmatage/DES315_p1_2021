@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class lorenzoWaterScript : MonoBehaviour
 {
-	private GameHandler gameHandlerObj;
+	private GameObject fireDebuff;
 
 	void Start()
 	{
 
-		if (GameObject.FindGameObjectWithTag("GameHandler") != null)
+		if (GameObject.FindGameObjectWithTag("Debuff") != null)
 		{
-			gameHandlerObj = GameObject.FindGameObjectWithTag("GameHandler").GetComponent<GameHandler>();
+			fireDebuff = GameObject.FindGameObjectWithTag("Debuff");
 		}
 	}
 
@@ -21,7 +21,7 @@ public class lorenzoWaterScript : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			gameHandlerObj.GetComponent<lorenzoFireDebuff>().setActive(false);
+			fireDebuff.GetComponent<lorenzoFireDebuff>().setActive(false);
 		}
 	}
 }

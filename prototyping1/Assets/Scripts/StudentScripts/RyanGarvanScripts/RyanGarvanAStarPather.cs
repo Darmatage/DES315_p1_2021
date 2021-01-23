@@ -93,8 +93,6 @@ public class RyanGarvanAStarPather : MonoBehaviour
 
     PriorityQueue openList; // Open list for pathfinding
 
-    public ContactFilter2D m_dynamicObstacleFilter; // Filter for detecting dynamic obstacles
-
     // Start is called before the first frame update
     void Start()
     {
@@ -128,11 +126,16 @@ public class RyanGarvanAStarPather : MonoBehaviour
 
             foreach (Tilemap tilemap in grid.GetComponentsInChildren<Tilemap>())
             {
+                if (tilemap.name.Contains("Changeable"))
+                {
+                    continue;
+                }
+
                 // Current tilemap's collider, if any
                 CompositeCollider2D tilemapCollider = tilemap.GetComponent<CompositeCollider2D>();
 
                 // If current tilemap has a solid collider, use it to set wall flags
-                if (tilemapCollider != null && !tilemapCollider.isTrigger)
+                if ((tilemapCollider != null && !tilemapCollider.isTrigger) || tilemap.gameObject.name.Contains("MimicWall"))
                 {
                     // Mark all tiles on the current tilemap as walls on the internal node map
                     for (int x = 0; x < m_mapWidth; ++x)
@@ -256,9 +259,6 @@ public class RyanGarvanAStarPather : MonoBehaviour
                     if ((x != 0 || y != 0) && IsCellWalkable(adjacentCellPos))
                     {
                         if ((startCellPos - adjacentCellPos).magnitude >= 15)
-                            continue;
-
-                        if ((playerCellPos - adjacentCellPos).magnitude <= 3 && (playerCellPos - nextCellPos).magnitude > 3)
                             continue;
 
                         if ((playerCellPos - adjacentCellPos).magnitude <= 2.0f)
@@ -393,7 +393,7 @@ public class RyanGarvanAStarPather : MonoBehaviour
 
             foreach (Collider2D collider in results)
             {
-                if (!collider.isTrigger)
+                if (!collider.isTrigger || collider.name.Contains("MimicWall"))
                 {
                     Rigidbody2D rb = collider.GetComponent<Rigidbody2D>();
 

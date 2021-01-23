@@ -613,41 +613,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonA16
       objectReference: {fileID: 0}
-    - target: {fileID: 6654663669661147028, guid: 56c860b7f8a973346a21033e9e3ae220,
-        type: 3}
-      propertyPath: GoToScene
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7942948826064923285, guid: 56c860b7f8a973346a21033e9e3ae220,
-        type: 3}
-      propertyPath: m_Colors.m_NormalColor.g
-      value: 0.81960785
-      objectReference: {fileID: 0}
-    - target: {fileID: 7942948826064923285, guid: 56c860b7f8a973346a21033e9e3ae220,
-        type: 3}
-      propertyPath: m_Colors.m_NormalColor.b
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7942948826064923285, guid: 56c860b7f8a973346a21033e9e3ae220,
-        type: 3}
-      propertyPath: m_Colors.m_NormalColor.r
-      value: 0.6862745
-      objectReference: {fileID: 0}
-    - target: {fileID: 7942948826064923285, guid: 56c860b7f8a973346a21033e9e3ae220,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.9529412
-      objectReference: {fileID: 0}
-    - target: {fileID: 7942948826064923285, guid: 56c860b7f8a973346a21033e9e3ae220,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.77254903
-      objectReference: {fileID: 0}
-    - target: {fileID: 7942948826064923285, guid: 56c860b7f8a973346a21033e9e3ae220,
-        type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.60784316
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56c860b7f8a973346a21033e9e3ae220, type: 3}
 --- !u!1001 &194133127
@@ -1106,6 +1071,11 @@ PrefabInstance:
       propertyPath: GoToScene
       value: JiwonJungScene
       objectReference: {fileID: 0}
+    - target: {fileID: 3523529418599697421, guid: d028c571f7775204a8318b921886c2e3,
+        type: 3}
+      propertyPath: m_Text
+      value: Jiwon Jung
+      objectReference: {fileID: 0}
     - target: {fileID: 4516263217698647980, guid: d028c571f7775204a8318b921886c2e3,
         type: 3}
       propertyPath: m_Name
@@ -1141,10 +1111,40 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1787377386}
     m_Modifications:
+    - target: {fileID: 577314258115442696, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: m_Text
+      value: DavidDasky
+      objectReference: {fileID: 0}
+    - target: {fileID: 577314258115442696, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 577314258115442696, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.8396226
+      objectReference: {fileID: 0}
+    - target: {fileID: 577314258115442696, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.8396226
+      objectReference: {fileID: 0}
+    - target: {fileID: 577314258115442696, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.8396226
+      objectReference: {fileID: 0}
     - target: {fileID: 4261250981421729665, guid: 43043ad63e6d6c741a9d7e29ab54e363,
         type: 3}
       propertyPath: m_Name
       value: ButtonA10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4268522479195134151, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: GoToScene
+      value: DavidDasky
       objectReference: {fileID: 0}
     - target: {fileID: 7142760554811778893, guid: 43043ad63e6d6c741a9d7e29ab54e363,
         type: 3}
@@ -1250,6 +1250,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228107971155238977, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.59261876
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228107971155238977, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0.12322002
+      objectReference: {fileID: 0}
+    - target: {fileID: 8228107971155238977, guid: 43043ad63e6d6c741a9d7e29ab54e363,
+        type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0.6698113
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43043ad63e6d6c741a9d7e29ab54e363, type: 3}
@@ -1408,6 +1423,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1787377386}
     m_Modifications:
+    - target: {fileID: 1307139406356595852, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307139406356595852, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 128.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 1307139406356595852, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 55.2136
+      objectReference: {fileID: 0}
     - target: {fileID: 1753281227383224542, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
         type: 3}
       propertyPath: m_FontData.m_FontStyle
@@ -1427,6 +1457,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753281227383224542, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Robert
+
+        Seiver'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753281227383224542, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 4527799750313788441, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
         type: 3}
@@ -6058,6 +6100,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3572093426575328155, guid: 1ca709bb392329744aa60f72501f8d62,
+        type: 3}
+      propertyPath: GoToScene
+      value: MarkCulpScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6640870586122797355, guid: 1ca709bb392329744aa60f72501f8d62,
+        type: 3}
+      propertyPath: m_Text
+      value: Mark Culp
       objectReference: {fileID: 0}
     - target: {fileID: 9063200576718847643, guid: 1ca709bb392329744aa60f72501f8d62,
         type: 3}

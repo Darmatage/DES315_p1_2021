@@ -305,17 +305,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 258566121282360543, guid: e5a8c4449f49e8c4689636e44c06b3ea,
-        type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 171670759}
-    - target: {fileID: 258566121282360543, guid: e5a8c4449f49e8c4689636e44c06b3ea,
-        type: 3}
-      propertyPath: Projectile
-      value: 
-      objectReference: {fileID: 7942596985354070013, guid: cdfc87df15518a4418510c791d1fb392,
-        type: 3}
     - target: {fileID: 5997092501218380451, guid: e5a8c4449f49e8c4689636e44c06b3ea,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2482,7 +2471,7 @@ MonoBehaviour:
   Player: {fileID: 171670759}
   Projectile: {fileID: 7942596985354070013, guid: cdfc87df15518a4418510c791d1fb392,
     type: 3}
-  inventoryHandler: {fileID: 0}
+  inventoryHandler: {fileID: 426955848}
   AttackSpeed: 1
 --- !u!4 &1187010099 stripped
 Transform:
@@ -2855,7 +2844,7 @@ PrefabInstance:
     - target: {fileID: 6551937145445057747, guid: 401a933dbd2195744a4fb43f251707d7,
         type: 3}
       propertyPath: NextScene
-      value: JWymerScene
+      value: ChaseGraves
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 401a933dbd2195744a4fb43f251707d7, type: 3}

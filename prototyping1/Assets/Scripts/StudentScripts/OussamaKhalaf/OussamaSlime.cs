@@ -5,8 +5,9 @@ using UnityEngine;
 public class OussamaSlime : MonoBehaviour
 {
 
-    public float replicationTime = 3.0f;
-    public int replicationLimit = 5;
+    public float replicationTime;
+    public Gradient gradient;
+    public int replicationLimit;
     private float timer;
     // Start is called before the first frame update
     void Start()
@@ -17,19 +18,27 @@ public class OussamaSlime : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (replicationLimit == 0 || !gameObject.GetComponentInChildren<SpriteRenderer>().isVisible)
+        {
+
+            return;
+        }
+
         timer -= Time.deltaTime;
+        this.gameObject.GetComponentInChildren<SpriteRenderer>().color = gradient.Evaluate(timer / replicationTime);
         if (timer <= 0)
         {
-            if (replicationLimit == -1 || replicationLimit > 0)
+            if (replicationLimit != -1)
             {
-                if (replicationLimit > 0)
-                {
-                    replicationLimit--;
-                }
-                GameObject Child = Instantiate(this.gameObject);
-
+                replicationLimit--;
             }
             timer = replicationTime;
+
+            GameObject child = Instantiate(this.gameObject);
+            child.GetComponent<OussamaSlime>().replicationTime = replicationTime;
+            child.transform.position = this.transform.position;
+            child.GetComponent<OussamaSlime>().replicationLimit = replicationLimit;
         }
     }
 }

@@ -24,6 +24,8 @@ TagManager:
   - ExplodeEnemy
   - Trap
   - Debuff
+  - CrabWalkBoss
+  - Walls
   layers:
   - Default
   - TransparentFX

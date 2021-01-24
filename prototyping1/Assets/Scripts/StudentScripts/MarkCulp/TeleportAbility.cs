@@ -6,14 +6,17 @@ using UnityEngine;
 
 public class TeleportAbility : MonoBehaviour
 {
-    [SerializeField] private KeyCode placeMarkerKey = KeyCode.M;
     [SerializeField] private KeyCode teleportKey = KeyCode.T;
     
     [SerializeField] private TeleportAbilityMarker markerPrefab;
     private TeleportAbilityMarker markerInstance;
+
+    private Camera camera;
     
     private void Awake()
     {
+        camera = FindObjectOfType<Camera>();
+        
         if (!markerPrefab)
         {
             Debug.LogError("Missing marker prefab! Disabling...");
@@ -23,12 +26,15 @@ public class TeleportAbility : MonoBehaviour
     
     void Update()
     {
-        if (Input.GetKeyDown(placeMarkerKey))
+        if (Input.GetMouseButtonDown(0))
         {
             if (markerInstance)
                 Destroy(markerInstance.gameObject);
+
+            var spawnPos = camera.ScreenToWorldPoint(Input.mousePosition);
+            spawnPos.z = transform.position.z;
             
-            markerInstance = Instantiate(markerPrefab, transform.position + new Vector3(0, 0, -0.1f), Quaternion.identity);
+            markerInstance = Instantiate(markerPrefab, spawnPos, Quaternion.identity);
         }
 
         if (Input.GetKeyDown(teleportKey))

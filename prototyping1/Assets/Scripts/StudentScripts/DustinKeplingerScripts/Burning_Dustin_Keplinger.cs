@@ -5,7 +5,7 @@ using UnityEngine;
 public class Burning_Dustin_Keplinger : MonoBehaviour
 {
 	public int damage = 1;
-	private float damageTime = 2.0f;
+	public float damageTime = 2.0f;
 	private float damageTimer = 0f;
 	private bool isOnFire = false;
 	private float BurnTimerComplete = 30.0f;

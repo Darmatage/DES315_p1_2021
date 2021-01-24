@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3786465916510430606}
   - component: {fileID: 8178945685349912361}
   m_Layer: 0
-  m_Name: KT_Rope
+  m_Name: KT_RopeSlide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,12 +96,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2edcdbd3d010f8648bd71a008c500b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GrabRadius: 1
+  GrabRadius: 0.5
   MaxLength: 3
   UI_Prefab: {fileID: 2126307063996128108, guid: 0f528e2411946bc488d11bcfa32da9b9,
     type: 3}
-  HoverColor: {r: 0.9716981, g: 0.80591786, b: 0.21542363, a: 0}
-  UIColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 0}
+  HoverColor: {r: 0.9716981, g: 0.80591786, b: 0.21542363, a: 1}
+  UIColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 1}
   PostTop: {fileID: 0}
   PostBot: {fileID: 0}
   HighlightedPost: {fileID: 0}

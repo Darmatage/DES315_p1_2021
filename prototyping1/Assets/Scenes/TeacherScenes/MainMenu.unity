@@ -616,7 +616,7 @@ PrefabInstance:
     - target: {fileID: 6654663669661147028, guid: 56c860b7f8a973346a21033e9e3ae220,
         type: 3}
       propertyPath: GoToScene
-      value: 
+      value: KeeganTompkinsScene
       objectReference: {fileID: 0}
     - target: {fileID: 7942948826064923285, guid: 56c860b7f8a973346a21033e9e3ae220,
         type: 3}

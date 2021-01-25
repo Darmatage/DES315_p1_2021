@@ -2417,6 +2417,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6379975839361808759, guid: 249e842794872ac4997ce60bc6447dc9,
+        type: 3}
+      propertyPath: m_Text
+      value: Lowell N
+      objectReference: {fileID: 0}
     - target: {fileID: 8878650466656786910, guid: 249e842794872ac4997ce60bc6447dc9,
         type: 3}
       propertyPath: GoToScene

@@ -23,6 +23,8 @@ TagManager:
   - Border_CEGP
   - ExplodeEnemy
   - Debuff
+  - CrabWalkBoss
+  - Walls
   layers:
   - Default
   - TransparentFX

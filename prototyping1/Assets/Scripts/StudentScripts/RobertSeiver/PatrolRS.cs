@@ -128,16 +128,6 @@ public class PatrolRS : MonoBehaviour
 				
 				break;
 			}
-			// RaycastHit2D hit = Physics2D.Raycast(transform.position, ray, ViewDistance, VisionLayers);
-			// if (hit.collider != null && !hit.collider.isTrigger && hit.transform.CompareTag("Player"))
-			// {
-			// 	detectedPlayer = true;
-			// 	anim.Play("monsterSkull_walk");
-			// 	GameObject popUp = Instantiate(AlertPopUpPrefab, transform);
-			// 	popUp.transform.position += transform.lossyScale.y * Vector3.up;
-			// 	Instantiate(AlertHandlerPrefab, transform.position, Quaternion.identity);
-			// 	break;
-			// }
 		}
 	}
 	
@@ -150,9 +140,9 @@ public class PatrolRS : MonoBehaviour
 			corneringTimer += Time.deltaTime;
 
 			// Rotate toward new target
-			// target = Vector3.Slerp(oldTarget,
-			// 	path[(targetIndex + 1) % Path.Length],
-			// 	corneringTimer / CornerningTime);
+			target = Vector3.Slerp(oldTarget,
+				path[(targetIndex + 1) % Path.Length],
+				corneringTimer / CornerningTime);
 
 			// Update target
 			if (corneringTimer >= CornerningTime)
@@ -166,7 +156,7 @@ public class PatrolRS : MonoBehaviour
 		else
 		{
 			// Start rotating toward new target
-			if (Vector3.Distance(target, transform.position) < PathingEpsilon)
+			if (Vector3.Distance(target, transform.position) < PathingEpsilon * 2.0f)
 			{
 				corneringTimer = 0.0f;
 				oldTarget = transform.position + (target - transform.position).normalized * ViewDistance;

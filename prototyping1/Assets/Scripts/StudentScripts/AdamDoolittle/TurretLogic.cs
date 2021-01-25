@@ -53,7 +53,7 @@ public class TurretLogic : MonoBehaviour
     }
 
 	IEnumerator makeSpike(){
-		yield return new WaitForSeconds(1f);
+		yield return new WaitForSeconds(0.5f);
 		GameObject newSpike;
 		newSpike = Instantiate(spikePrefab, spawnPos, Quaternion.identity);
 		//newSpike.transform.position = Vector2.MoveTowards(turret.transform.position, targetPos, speed * Time.deltaTime);

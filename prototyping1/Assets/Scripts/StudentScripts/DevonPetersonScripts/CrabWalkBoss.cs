@@ -71,6 +71,8 @@ public class CrabWalkBoss : MonoBehaviour
             }
             else 
             {
+                gameObject.GetComponent<CrabBossFireball>().lavatrail(gameObject.transform.position);
+
                 delayed = false;
                 if (switchmoves == false && transform.position != firstmove)
                 {

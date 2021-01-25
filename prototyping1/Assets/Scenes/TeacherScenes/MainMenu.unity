@@ -5070,6 +5070,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1787377386}
     m_Modifications:
+    - target: {fileID: 3401112484624127081, guid: be1d83323472bf5499c13d3e7b38c1e3,
+        type: 3}
+      propertyPath: m_Text
+      value: John Paul
+      objectReference: {fileID: 0}
     - target: {fileID: 4860677099984328512, guid: be1d83323472bf5499c13d3e7b38c1e3,
         type: 3}
       propertyPath: m_Name

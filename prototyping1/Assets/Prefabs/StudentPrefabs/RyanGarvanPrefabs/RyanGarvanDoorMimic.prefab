@@ -128,13 +128,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_pupilImageScared: {fileID: 21300000, guid: e870c6b533f237a469282d923d3b32be, type: 3}
-  m_eyeImageWide: {fileID: 21300000, guid: 206c232246aef9545bd887aa15c0f5dc, type: 3}
-  m_outlineImageWide: {fileID: 21300000, guid: daede7a6c0185254fb3b68469fc95da3, type: 3}
   m_speed: 6
   m_viewDistance: 7
   m_pathRate: 1
   m_maxFleeDistance: 10
-  m_jumpSound: {fileID: 0}
+  m_awarenessDistance: 2.5
+  m_eyeTurnSpeed: 2.0943952
 --- !u!114 &563904351101217720
 MonoBehaviour:
   m_ObjectHideFlags: 0

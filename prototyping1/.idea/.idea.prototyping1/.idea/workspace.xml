@@ -20,8 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2807b824-211b-4825-8c41-b9035f51e944" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/JiwonJung.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StudentScenes/JiwonJungScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StudentScenes/JiwonJungScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/JiwonJung/JiwonJung_Proliferation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/JiwonJung/JiwonJung_Proliferation.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,19 +36,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentSwitch.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/TeacherScripts/Door.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentDoor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/AmoghSubhedar/BridgeConstructor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/AmoghSubhedar/BridgeConstructorSlow.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/AmoghSubhedar/BridgeConstructorFast.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/AmoghSubhedar/Bridge.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/PatrolRS.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/JacobPresley/JacobPresleyAbility.cs" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/JiwonJung/JiwonJung_Proliferation.cs" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1mwZ4q0wiN2DJQFlqSAetr8fzGT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -57,6 +51,7 @@
     <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.29989868" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -74,7 +69,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -83,7 +78,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <set />
+        <list />
       </option>
       <method v="2" />
     </configuration>
@@ -106,6 +101,7 @@
       <workItem from="1611376759054" duration="2278000" />
       <workItem from="1611383268128" duration="2222000" />
       <workItem from="1611472241104" duration="585000" />
+      <workItem from="1611537626414" duration="270000" />
     </task>
     <servers />
   </component>

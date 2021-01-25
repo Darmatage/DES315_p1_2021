@@ -261,9 +261,6 @@ public class RyanGarvanAStarPather : MonoBehaviour
                         if ((startCellPos - adjacentCellPos).magnitude >= 15)
                             continue;
 
-                        if ((playerCellPos - adjacentCellPos).magnitude <= 3 && (playerCellPos - nextCellPos).magnitude > 3)
-                            continue;
-
                         if ((playerCellPos - adjacentCellPos).magnitude <= 2.0f)
                             continue;
 

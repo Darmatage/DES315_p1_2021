@@ -991,6 +991,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonB7
       objectReference: {fileID: 0}
+    - target: {fileID: 2229366675481435720, guid: 0f128fa2e6ec46b45bdbac373c6789cd,
+        type: 3}
+      propertyPath: m_Text
+      value: Dustin K.
+      objectReference: {fileID: 0}
     - target: {fileID: 3688493574915477389, guid: 0f128fa2e6ec46b45bdbac373c6789cd,
         type: 3}
       propertyPath: GoToScene
@@ -1906,6 +1911,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ButtonA8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5313581059362037270, guid: 56b95229d70442d4e96f9bc173c85755,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Lorenzo
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 5839939632498995814, guid: 56b95229d70442d4e96f9bc173c85755,
         type: 3}
@@ -6323,6 +6335,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4970591334266216574, guid: 61e64d198bd08d146a49430aaf651c51,
+        type: 3}
+      propertyPath: m_Text
+      value: Akshat :)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61e64d198bd08d146a49430aaf651c51, type: 3}

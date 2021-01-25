@@ -109,7 +109,6 @@ public class TextBoxManager : MonoBehaviour
 
     public void IsAnswerCorrect(int button_number)
     {
-        try_text.enabled = false;
 
         switch (button_number)
         {
@@ -128,14 +127,14 @@ public class TextBoxManager : MonoBehaviour
                     text_box.SetActive(false);
                     display_text.enabled = false;
                     continue_text.enabled = false;
-                    try_text.enabled = false;
+                    try_text.gameObject.SetActive(false);
 
                 }
                 else
                 {
                     playerObj.GetComponent<PlayerMove>().playerHit();
                     handlerObj.GetComponent<GameHandler>().TakeDamage(50);
-                    try_text.enabled = true;
+                    try_text.gameObject.SetActive(true);
                     answer1.enabled = false;
                     answer1.gameObject.SetActive(false);
                     if ((answer1.IsActive() == false && answer2.IsActive() == false) || answer3.IsActive() == false && answer1.IsActive() == false)
@@ -164,7 +163,7 @@ public class TextBoxManager : MonoBehaviour
                     text_box.SetActive(false);
                     display_text.enabled = false;
                     continue_text.enabled = false;
-                    try_text.enabled = false;
+                    try_text.gameObject.SetActive(false);
 
 
                 }
@@ -172,7 +171,7 @@ public class TextBoxManager : MonoBehaviour
                 {
                     playerObj.GetComponent<PlayerMove>().playerHit();
                     handlerObj.GetComponent<GameHandler>().TakeDamage(50);
-                    try_text.enabled = true;
+                    try_text.gameObject.SetActive(true);
                     answer2.enabled = false;
                     answer2.gameObject.SetActive(false);
 
@@ -202,7 +201,7 @@ public class TextBoxManager : MonoBehaviour
                     text_box.SetActive(false);
                     display_text.enabled = false;
                     continue_text.enabled = false;
-                    try_text.enabled = false;
+                    try_text.gameObject.SetActive(false);
 
 
                 }
@@ -213,7 +212,7 @@ public class TextBoxManager : MonoBehaviour
                     answer3.enabled = false;
                     answer3.gameObject.SetActive(false);
 
-                    try_text.enabled = true;
+                    try_text.gameObject.SetActive(true);
                     if ((answer3.IsActive() == false && answer2.IsActive() == false) || answer3.IsActive() == false && answer1.IsActive() == false)
                     {
                         playerObj.GetComponent<PlayerMove>().playerDie();
@@ -229,9 +228,6 @@ public class TextBoxManager : MonoBehaviour
         }
 
 
-        try_text.enabled = false;
-
-
     }
     public void DisplayAnswer()
     {
@@ -242,7 +238,7 @@ public class TextBoxManager : MonoBehaviour
         answer2.enabled = true;
         answer3.enabled = true;
         continue_text.enabled = false;
-        try_text.enabled = false;
+        try_text.gameObject.SetActive(false);
 
     }
 
@@ -261,7 +257,7 @@ public class TextBoxManager : MonoBehaviour
         text_box.SetActive(false);
         display_text.enabled = false;
         continue_text.enabled = false;
-        try_text.enabled = false;
+        try_text.gameObject.SetActive(false);
 
         current_line_counter = 0;
         //player = FindObjectOfType<PlayerMove>();

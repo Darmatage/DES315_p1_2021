@@ -49,22 +49,30 @@ public class AustinSteadBounce : MonoBehaviour
 		circle.endColor = circleIdleColor;
 	}
 
+
+    private void FixedUpdate()
+    {
+		if (bounceTimer > 0)
+		{
+			bounceTimer -= Time.deltaTime;
+			if (bounceTimer <= 0)
+			{
+				bounceTimer = 0;
+				playerMove.speed = playerMoveSpeed;
+			}
+			else
+			{
+				rb2d.MovePosition((Vector2)transform.position + bounceDirection * bounceSpeed * Time.deltaTime);
+			}
+		}
+	}
+
     // Update is called once per frame
     void Update()
 	{
 		if(bounceTimer > 0)
         {
-			bounceTimer -= Time.deltaTime;
-			if (bounceTimer <= 0)
-            {
-				bounceTimer = 0;
-				playerMove.speed = playerMoveSpeed;
-			}
-			else
-            {
-				rb2d.MovePosition((Vector2)transform.position + bounceDirection * bounceSpeed * Time.deltaTime);
-				return;
-			}
+			return;
 		}
 
 
@@ -108,7 +116,6 @@ public class AustinSteadBounce : MonoBehaviour
                 {
 					projectileBounce.GetBounced(-bounceDirection, bounceSpeed, bounceDuration);
 				}
-
 			}
 
 		}
@@ -119,8 +126,6 @@ public class AustinSteadBounce : MonoBehaviour
 		}
 
 	}
-
-
 
 
 

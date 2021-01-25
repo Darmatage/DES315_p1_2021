@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 11
   m_Sprite: {fileID: 21300000, guid: 2af330cea42d2ae46aac732747e6d752, type: 3}
   m_Color: {r: 0.7830189, g: 0.7068341, b: 0.62419903, a: 1}
   m_FlipX: 0
@@ -98,10 +98,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GrabRadius: 1
   MaxLength: 3
-  UI_Prefab: {fileID: 2126307063996128108, guid: 63dc2e307ae2238449129d707163da3a,
+  UI_Prefab: {fileID: 2126307063996128108, guid: 0f528e2411946bc488d11bcfa32da9b9,
     type: 3}
   HoverColor: {r: 0.9716981, g: 0.80591786, b: 0.21542363, a: 0}
   UIColor: {r: 0.735849, g: 0.735849, b: 0.735849, a: 0}
+  PostTop: {fileID: 0}
+  PostBot: {fileID: 0}
+  HighlightedPost: {fileID: 0}
+  Player: {fileID: 0}
+  Slideable: 1
 --- !u!1 &2977237140377296025
 GameObject:
   m_ObjectHideFlags: 0

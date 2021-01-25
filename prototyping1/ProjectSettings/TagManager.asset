@@ -21,6 +21,10 @@ TagManager:
   - bullet
   - Block_CEGP
   - Border_CEGP
+  - ExplodeEnemy
+  - Debuff
+  - CrabWalkBoss
+  - Walls
   layers:
   - Default
   - TransparentFX
@@ -54,9 +58,10 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 1382494675
     locked: 0

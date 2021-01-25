@@ -1154,6 +1154,16 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1753281227383224542, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_Text
+      value: Robert S.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753281227383224542, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 4527799750313788441, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
         type: 3}
       propertyPath: GoToScene
@@ -6178,6 +6188,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ColorLerpSpeed: 10
+  MinScale: 0.8
+  MaxScale: 1.2
+  SquishSpeed: 2
+  TextTimer: 2
 --- !u!1001 &1992967906
 PrefabInstance:
   m_ObjectHideFlags: 0

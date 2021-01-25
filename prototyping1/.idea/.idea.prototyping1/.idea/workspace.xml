@@ -21,11 +21,11 @@
   <component name="ChangeListManager">
     <list default="true" id="2807b824-211b-4825-8c41-b9035f51e944" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.prototyping1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/StudentPrefabs/JiwonJung.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/StudentScenes/JiwonJungScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/StudentScenes/JiwonJungScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/JiwonJung/JiwonJung_Proliferation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/JiwonJung/JiwonJung_Proliferation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/TeacherScenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/TeacherScenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/ButtonColorRS.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/ButtonColorRS.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,9 +36,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
-    <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/JiwonJung/JiwonJung_Proliferation.cs" />
-    </changedPaths>
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/StudentScripts/RobertSeiver/ButtonColorRS.cs" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1mwZ4q0wiN2DJQFlqSAetr8fzGT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -69,7 +71,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -78,7 +80,7 @@
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -102,6 +104,7 @@
       <workItem from="1611383268128" duration="2222000" />
       <workItem from="1611472241104" duration="585000" />
       <workItem from="1611537626414" duration="270000" />
+      <workItem from="1611601248585" duration="913000" />
     </task>
     <servers />
   </component>
@@ -202,17 +205,5 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="623" y="227" key="search.everywhere.popup/0.0.1920.1050/-1600.69.1600.870@0.0.1920.1050" timestamp="1610920945369" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/StudentDavidDaskyScripts/StudentDoor.cs</url>
-          <line>33</line>
-          <properties documentPath="D:\DigiPen\DES315\DES315_p1_2021\prototyping1\Assets\Scripts\StudentDavidDaskyScripts\StudentDoor.cs" initialLine="38" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

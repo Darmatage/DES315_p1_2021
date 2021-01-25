@@ -946,6 +946,11 @@ PrefabInstance:
       propertyPath: GoToScene
       value: JiwonJungScene
       objectReference: {fileID: 0}
+    - target: {fileID: 3523529418599697421, guid: d028c571f7775204a8318b921886c2e3,
+        type: 3}
+      propertyPath: m_Text
+      value: Jiwon Jung
+      objectReference: {fileID: 0}
     - target: {fileID: 4516263217698647980, guid: d028c571f7775204a8318b921886c2e3,
         type: 3}
       propertyPath: m_Name
@@ -1148,6 +1153,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753281227383224542, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_Text
+      value: Robert S.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1753281227383224542, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 4527799750313788441, guid: 8f29a2a0b2000c54ab417d2bc4f481cf,
         type: 3}
@@ -2401,6 +2416,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6379975839361808759, guid: 249e842794872ac4997ce60bc6447dc9,
+        type: 3}
+      propertyPath: m_Text
+      value: Lowell N
       objectReference: {fileID: 0}
     - target: {fileID: 8878650466656786910, guid: 249e842794872ac4997ce60bc6447dc9,
         type: 3}
@@ -5065,6 +5085,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1787377386}
     m_Modifications:
+    - target: {fileID: 3401112484624127081, guid: be1d83323472bf5499c13d3e7b38c1e3,
+        type: 3}
+      propertyPath: m_Text
+      value: John Paul
+      objectReference: {fileID: 0}
     - target: {fileID: 4860677099984328512, guid: be1d83323472bf5499c13d3e7b38c1e3,
         type: 3}
       propertyPath: m_Name
@@ -6168,6 +6193,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ColorLerpSpeed: 10
+  MinScale: 0.8
+  MaxScale: 1.2
+  SquishSpeed: 2
+  TextTimer: 2
 --- !u!1001 &1992967906
 PrefabInstance:
   m_ObjectHideFlags: 0

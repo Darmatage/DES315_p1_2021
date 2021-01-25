@@ -17,7 +17,7 @@ public class AustinSteadProjectileBounce : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(bounceTimer > 0)
         {

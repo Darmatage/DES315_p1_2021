@@ -46,7 +46,7 @@ namespace Amogh
         {
             overlay = transform.GetChild(0).gameObject;
             boxCol = GetComponent<BoxCollider2D>();
-            sprite = GetComponent<SpriteRenderer>();
+            sprite = gameObject.GetComponent<SpriteRenderer>();
 
             boxCol.enabled = true;
             overlay.SetActive(false);

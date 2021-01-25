@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 865373006560775183}
-  - component: {fileID: 865373006560775176}
+  - component: {fileID: 6262764642649038439}
   m_Layer: 0
   m_Name: AS_Slow_BridgeBuilder
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &865373006560775176
+--- !u!114 &6262764642649038439
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,7 +40,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 865373006560775177}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d94693060dcfb04c9d455c88892f5da, type: 3}
+  m_Script: {fileID: 11500000, guid: 996d289f6a8b2cf4ca94662afa3117d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bridgePrefab: {fileID: 800937499279082808, guid: 23aae1d492220454292bb49b9167843b,

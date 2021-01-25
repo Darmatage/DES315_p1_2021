@@ -991,6 +991,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonB7
       objectReference: {fileID: 0}
+    - target: {fileID: 2229366675481435720, guid: 0f128fa2e6ec46b45bdbac373c6789cd,
+        type: 3}
+      propertyPath: m_Text
+      value: Dustin K.
+      objectReference: {fileID: 0}
     - target: {fileID: 3688493574915477389, guid: 0f128fa2e6ec46b45bdbac373c6789cd,
         type: 3}
       propertyPath: GoToScene

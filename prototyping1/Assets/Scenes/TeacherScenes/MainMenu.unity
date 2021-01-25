@@ -1907,6 +1907,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonA8
       objectReference: {fileID: 0}
+    - target: {fileID: 5313581059362037270, guid: 56b95229d70442d4e96f9bc173c85755,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Lorenzo
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 5839939632498995814, guid: 56b95229d70442d4e96f9bc173c85755,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -23,16 +23,16 @@ public class AustinSteadEnemyBounce : MonoBehaviour
         shootMoveScript = GetComponent<AustinSteadMonsterShootMove>();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    private void FixedUpdate()
     {
-        if(bounceTimer > 0)
+        if (bounceTimer > 0)
         {
             bounceTimer -= Time.deltaTime;
 
-            if(rb2d)
+            if (rb2d)
                 rb2d.MovePosition((Vector2)transform.position + bounceDirection * bounceSpeed * Time.deltaTime);
-            
+
             if (bounceTimer <= 0)
             {
                 bounceTimer = 0;
@@ -40,8 +40,6 @@ public class AustinSteadEnemyBounce : MonoBehaviour
             }
         }
     }
-
-
 
     public void GetBounced(Vector2 bounceDirection, float bounceSpeed, float bounceDuration)
     {

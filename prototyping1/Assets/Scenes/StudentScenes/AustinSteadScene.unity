@@ -57024,12 +57024,12 @@ PrefabInstance:
     - target: {fileID: -6943855800092726602, guid: 871bedd3cfcbb6645b5b863b6bf8a50d,
         type: 3}
       propertyPath: bounceDuration
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: -6943855800092726602, guid: 871bedd3cfcbb6645b5b863b6bf8a50d,
         type: 3}
       propertyPath: bounceSpeed
-      value: 60
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 240956303, guid: 871bedd3cfcbb6645b5b863b6bf8a50d, type: 3}
       propertyPath: radius
@@ -69051,7 +69051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030518, y: -437}
+  m_AnchoredPosition: {x: -0.000030518, y: -310}
   m_SizeDelta: {x: 310.1126, y: 63.569977}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &917698400
@@ -75983,7 +75983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damagePerTick: 5
   tickTime: 1
-  activeTime: 2
+  activeTime: 2.3
   startActive: 0
 --- !u!4 &3651818055832536647
 Transform:

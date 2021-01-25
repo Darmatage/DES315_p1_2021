@@ -11,6 +11,7 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 	public GameObject ChangeableGridOff;
 
 	public bool isActive;
+	public bool isolate;
 
     // Start is called before the first frame update
     void Start()
@@ -25,14 +26,25 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "Player"){
-			if (!SwitchOffArt.activeSelf)
+			GetComponent<AudioSource>().Play();
+			if (!SwitchOffArt.activeSelf) // If switch is being turned off
 			{
-				GameObject[] a = GameObject.FindGameObjectsWithTag("togglebutton");
-				for(int i = 0; i < a.Length; ++i)
-                {
-					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOffArt.SetActive(true);
-					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(false);
-					a[i].GetComponent<NewDoorSwitch_DRC>().isActive = false;
+				if (!isolate)
+				{
+					GameObject[] a = GameObject.FindGameObjectsWithTag("togglebutton");
+					for (int i = 0; i < a.Length; ++i)
+					{
+						if (!a[i].GetComponent<NewDoorSwitch_DRC>().isolate)
+						{
+							a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOffArt.SetActive(true);
+							a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(false);
+							a[i].GetComponent<NewDoorSwitch_DRC>().isActive = false;
+							if (a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOff)
+								a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOff.SetActive(false);
+							if (a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOn)
+								a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOn.SetActive(true);
+						}
+					}
 				}
 				if (DoorObj)
 				{
@@ -44,14 +56,24 @@ public class NewDoorSwitch_DRC : MonoBehaviour
 				if (ChangeableGridOff)
 					ChangeableGridOff.SetActive(false);
 			}
-			else
+			else // If switch is being turned on
             {
-				GameObject[] a = GameObject.FindGameObjectsWithTag("togglebutton");
-				for (int i = 0; i < a.Length; ++i)
+				if (!isolate)
 				{
-					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOffArt.SetActive(false);
-					a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(true);
-					a[i].GetComponent<NewDoorSwitch_DRC>().isActive = true;
+					GameObject[] a = GameObject.FindGameObjectsWithTag("togglebutton");
+					for (int i = 0; i < a.Length; ++i)
+					{
+						if (!a[i].GetComponent<NewDoorSwitch_DRC>().isolate)
+						{
+							a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOffArt.SetActive(false);
+							a[i].GetComponent<NewDoorSwitch_DRC>().SwitchOnArt.SetActive(true);
+							a[i].GetComponent<NewDoorSwitch_DRC>().isActive = true;
+							if (a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOff)
+								a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOff.SetActive(true);
+							if (a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOn)
+								a[i].GetComponent<NewDoorSwitch_DRC>().ChangeableGridOn.SetActive(false);
+						}
+					}
 				}
 				if (DoorObj)
 				{

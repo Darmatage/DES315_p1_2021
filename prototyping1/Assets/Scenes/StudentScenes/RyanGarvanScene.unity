@@ -301,7 +301,7 @@ PrefabInstance:
     - target: {fileID: 2124206441391891057, guid: 3347bb3c66cfaec45a3b7396857eec83,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.48
+      value: 5.48
       objectReference: {fileID: 0}
     - target: {fileID: 2124206441391891057, guid: 3347bb3c66cfaec45a3b7396857eec83,
         type: 3}
@@ -2120,7 +2120,7 @@ PrefabInstance:
     - target: {fileID: 2124206441391891057, guid: 3347bb3c66cfaec45a3b7396857eec83,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.48
+      value: 5.48
       objectReference: {fileID: 0}
     - target: {fileID: 2124206441391891057, guid: 3347bb3c66cfaec45a3b7396857eec83,
         type: 3}
@@ -2352,7 +2352,7 @@ PrefabInstance:
     - target: {fileID: 7071164946737911440, guid: 2abc26fe1382713428be9214821dd9dc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.53
+      value: 6.53
       objectReference: {fileID: 0}
     - target: {fileID: 7071164946737911440, guid: 2abc26fe1382713428be9214821dd9dc,
         type: 3}
@@ -9193,7 +9193,7 @@ PrefabInstance:
     - target: {fileID: 2124206441391891057, guid: 3347bb3c66cfaec45a3b7396857eec83,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.48
+      value: 5.48
       objectReference: {fileID: 0}
     - target: {fileID: 2124206441391891057, guid: 3347bb3c66cfaec45a3b7396857eec83,
         type: 3}
@@ -11702,6 +11702,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DoorMimic
+      objectReference: {fileID: 0}
+    - target: {fileID: 6705795963494307876, guid: e4baca7e26d51c240bc6571d098eea25,
+        type: 3}
+      propertyPath: m_awarenessDistance
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7966546244797052718, guid: e4baca7e26d51c240bc6571d098eea25,
         type: 3}

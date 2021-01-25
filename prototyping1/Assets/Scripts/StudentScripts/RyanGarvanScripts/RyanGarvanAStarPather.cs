@@ -92,9 +92,7 @@ public class RyanGarvanAStarPather : MonoBehaviour
     Node[,] m_map; // Internal grid of pathfinding nodes
 
     PriorityQueue openList; // Open list for pathfinding
-
-    public ContactFilter2D m_dynamicObstacleFilter; // Filter for detecting dynamic obstacles
-
+    
     // Start is called before the first frame update
     void Start()
     {
